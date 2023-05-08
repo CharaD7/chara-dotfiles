@@ -22,6 +22,8 @@
         acm = "!f() { git add . && git commit -m \"$(echo $@)\"; }; f";
         aca = "!f() { git commit --ammend -m \"$(echo $@)\"; }; f";
         c = checkout
+        cn = config --get user.name
+        ce = config --get user.email
         con = checkout main
         cob = checkout -b
         co = checkout --orphan
