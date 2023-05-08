@@ -14,33 +14,13 @@ sudo apt install build-essential libx11-dev libxinerama-dev sharutils suckless-t
 
 echo "Checking for git installation..."
 gitPath = $(which git)
+
 # Checking to see if git path is registered
 if [ $gitPath -ne "/usr/bin/git" ]; then
   echo "Git not detected, installing git..."
-  sudo apt install git
+  # Install git
+  installGit &
 fi
-
-# Setting up gitconfig with alias
-read -p "Would you like to setup your gitconfig now? [Y,n]: " -i Y gitConfigReply
-if [ $gitConfigReply = "y" || $gitConfigReply = "Y" ]; then
-  read -r "Enter your git username: " gitUsername
-  read -r "Enter your git email address: " gitEmail
-
-  echo "Setting your global git username to '$gitUsername'"
-  git config --global user.name "$gitUsername"
-  echo "Setting your global git email to '$gitEmail'"
-  git config --global user.email "$gitEmail"
-
-else
-  echo "Skipping git configuration. Kindly configure your git after installation process..."
-fi
-
-cp -r .gitconfig ~/.gitconfig
-
-alias g=git
-sleep 1
-echo "Your git command is now aliased 'g'"
-echo "You can run 'g cn' to check your global git username and 'g ce' to check your global git email address."
 
 # Install dwm
 echo "Installing dwm..."
