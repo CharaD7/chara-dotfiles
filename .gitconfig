@@ -1,0 +1,85 @@
+[core]
+        excludesfile = ~/.gitignore
+        editor = neovide
+[push]
+  default = simple
+[color]
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  grep = auto
+  ui = auto
+[alias]
+        i = init
+        f = fetch
+        pr = fetch origin +refs/pull/*/head:refs/remotes/origin/pr/*
+        cl = clone
+
+        rao = remote add origin
+        rso = remote set-url origin
+
+        acm = "!f() { git add . && git commit -m \"$(echo $@)\"; }; f";
+        aca = "!f() { git commit --ammend -m \"$(echo $@)\"; }; f";
+        c = checkout
+        con = checkout main
+        cob = checkout -b
+        co = checkout --orphan
+        b = branch
+        br = branch -r
+        brn = branch -m # rename branch
+        ba = branch -a
+        bm = branch --merged
+        bn = branch --no-merged
+        df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+        hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+        llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+        open = "!hub browse"
+
+        # Display current reomte connections
+        r = remote -v
+
+        # Delete a remote origin
+        rmo = remote rm origin
+
+        # Delete branches.
+        # -d for normal delete, -D for forced delete
+        # Example g bd branch_name OR g bD branch_name
+        bd = branch -d
+        bD = branch -D
+
+        p = push
+        pl = pull origin
+        pa = pull --all
+        pon = push origin main
+        plon = pull origin main
+        po = push origin
+
+        s = status
+
+        # Undo a `git push`
+        undopush = push -f origin HEAD^:main;
+
+        # merge
+        mn = merge main
+        m = merge
+
+        # Undo merge
+        undomerge = reset --hard HEAD@{1};
+
+        # Undo changes not commited
+        undo = reset --hard;
+
+        # Undo last commit and remove from stage
+        # Example
+        # git unstage file1 file2 ...
+        unstage = reset HEAD -- #file;
+[user]
+        name = enter_your_username
+        email = your_email@domain.extension
+
+[core]
+        ignorecase = false
+
+[init]
+        defaultBranch = main
