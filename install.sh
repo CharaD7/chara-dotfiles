@@ -3,6 +3,16 @@
 # Stop on errors
 set -e
 
+# .gitconfig setup function
+setGitConfig () {
+  cp -r .gitconfig ~/.gitconfig
+
+  alias g=git
+  sleep 1
+  echo "Your git command is now aliased 'g'"
+  echo "You can run 'g cn' to check your global git username and 'g ce' to check your global git email address."
+}
+
 # do a global system update
 echo "Running system update..."
 sudo apt update && sudo apt upgrade
@@ -18,8 +28,25 @@ gitPath = $(which git)
 # Checking to see if git path is registered
 if [ $gitPath -ne "/usr/bin/git" ]; then
   echo "Git not detected, installing git..."
-  # Install git
-  installGit &
+
+  sudo apt install git
+
+  # Setting up gitconfig with alias
+  read -p "Would you like to setup your gitconfig now? [Y,n]: " -i Y gitConfigReply
+  if [ $gitConfigReply -eq "y" || $gitConfigReply -eq "Y" ]; then
+    # Configure git
+    configGit &
+  else
+    echo "Skipping git configuration. Kindly configure your git after installation process..."
+  fi
+fi
+
+# Ask to use repo's gitconfig
+read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " -i Y gitAliases
+if [ $gitAliases -eq "y" || $gitAliases -eq "Y" ]; then
+  # Copy git aliases
+  setGitConfig
+  configGit &
 fi
 
 # Install dwm
