@@ -3,6 +3,9 @@
 # Stop on errors
 set -e
 
+basePath = '~/chara-dotfiles'
+fishPath = '~/.config/fish/'
+
 echo "Installing fish shell..."
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 
@@ -31,4 +34,5 @@ cd ~/exa/
 cargo build --release
 sudo cp -r target/release/exa /usr/bin/exa
 
-echo "Copying fish configuration files to ~/.config/fish"
+echo "Copying fish configuration files to ~/.config/fish..."
+cd $basePath && cp -rf fish/ $fishPath
