@@ -9,7 +9,7 @@ mkdir -p $basePath
 
 echo "Copying directory contents to $basePath"
 # Copy all files except .git
-cp -rf * -A | grep -v '.git' $basePath
+cp -rf * -A | grep -v '.git' $basePath && cd $basePath
 
 # .gitconfig setup function
 setGitConfig () {

@@ -34,4 +34,4 @@ cargo build --release
 sudo cp -r target/release/exa /usr/bin/exa
 
 echo "Copying fish configuration files to ~/.config/fish..."
-cd $basePath && cp -rf fish/ $fishPath
+cp -rf fish/ $fishPath
