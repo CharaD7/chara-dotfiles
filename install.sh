@@ -3,6 +3,14 @@
 # Stop on errors
 set -e
 
+# Make a base path
+basePath = '~/chara-dotfiles/'
+mkdir -p $basePath
+
+echo "Copying directory contents to $basePath"
+# Copy all files except .git
+cp -rf * -A | grep -v '.git' $basePath
+
 # .gitconfig setup function
 setGitConfig () {
   cp -r .gitconfig ~/.gitconfig

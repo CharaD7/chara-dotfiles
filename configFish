@@ -3,7 +3,6 @@
 # Stop on errors
 set -e
 
-basePath = '~/chara-dotfiles'
 fishPath = '~/.config/fish/'
 
 echo "Installing fish shell..."
