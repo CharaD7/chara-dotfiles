@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Stop on errors
+set -e
+
+echo "Installing fish shell..."
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
+echo "Setting up fish terminal..."
+omf install z peco
+omf theme bobthefish
+
+sleep 1
+
+echo "Installing prerequisites for exa..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo "Adding cargo bin path to environment variables"
+export PATH='~/.cargo/bin:$PATH'
+
+curl https://github.com/ogham/exa/archive/master.zip
+mv master.zip exa.zip
+echo 'Checking for unzip install path'
+unzipPath = $(which unzip)
+
+# Checking to see if path is registered
+if [ $unzipPath -ne '/usr/bin/unzip' ]; then
+  sudo apt install unzip
+fi
+unzip exa.zip && mv exa/ ~/exa/
+cd ~/exa/
+cargo build --release
+sudo cp -r target/release/exa /usr/bin/exa
+
+echo "Copying fish configuration files to ~/.config/fish"

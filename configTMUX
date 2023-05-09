@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Stop on errors
+set -e
+
+sudo apt install tmux

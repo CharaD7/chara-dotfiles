@@ -20,3 +20,25 @@
   17: clone3
              at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
 
+2023-05-08 18:58:04 - Neovide panicked with the message 'Could not parse event from neovim: invalid string format []'. (File: src/error_handling.rs; Line: 5, Column: 5)
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: start_thread
+             at ./nptl/pthread_create.c:442:8
+  17: clone3
+             at ./misc/../sysdeps/unix/sysv/linux/x86_64/clone3.S:81
+
