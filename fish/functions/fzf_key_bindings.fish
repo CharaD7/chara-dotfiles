@@ -1,0 +1,1 @@
+/home/charapyge/.fzf/shell/key-bindings.fish
