@@ -55,6 +55,9 @@ else
   echo "Skipping git configuration. Kindly configure your git after installation process..."
 fi
 
+echo "Installing NerdFonts..."
+cp -r NerdFonts/* ~/.local/share/fonts/
+
 # Install fish terminal
 configFish &
 
