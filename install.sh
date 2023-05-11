@@ -25,11 +25,6 @@ setGitConfig () {
 echo "Running system update..."
 sudo apt update && sudo apt upgrade
 
-# Install prerequisites for Dynamic Window Manager (dwm)
-echo "Installing prerequisites..."
-sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
-sudo apt install -y build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm curl
-
 echo "Checking for git installation..."
 gitPath = $(which git)
 
@@ -62,8 +57,7 @@ cp -r NerdFonts/* ~/.local/share/fonts/
 configFish &
 
 # Install tmux
-configTMUX &
+configTmux &
 
 # Install dwm
-echo "Installing dwm..."
-sudo apt install dwm
+configDwm &
