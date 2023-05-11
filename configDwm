@@ -20,8 +20,21 @@ cp -r eww/ ~/.config/eww/
 cp -r picom/ ~/.config/picom/
 cp -r rofi/ ~/.config/rofi/
 cp -r dwm/ ~/.config/dwm/
+
+# Copy the desktop session call to xsessions
 sudo cp -r dwm.desktop /usr/share/xsessions/dwm.desktop
+
+# Copy background pictures to the Pictures folder
+cp -r wall/ ~/Pictures/wall/
 
 # Compile dwm files
 echo "Compiling dwm configuration"
 cd ~/.config/dwm/ && sudo make install
+
+echo "Compile done"
+# Ask to restart
+read -p "Would you like to reboot now? [Y,n]: " -i Y rebootResult
+if [ $rebootResult -eq "y" || $rebootResult -eq "Y" ]; then
+  # Reboot system
+  sudo reboot
+fi
