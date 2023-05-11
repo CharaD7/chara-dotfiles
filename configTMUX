@@ -3,4 +3,16 @@
 # Stop on errors
 set -e
 
+echo "Installing tmux essentials..."
+sudo apt install python3 python3-pip powerline
+
+echo "Installing tmux"
 sudo apt install tmux
+
+echo "Copying config files for tmux powerline setup..."
+sudo cp -r powerline-config /usr/bin/powerline-config
+cp -r .tmux.conf ~/.tmux.conf
+cp -r .tmux.powerline.conf ~/.tmux.powerline.conf
+
+echo "Running powerline-config to setup tmux..."
+source ~/.tmux.conf

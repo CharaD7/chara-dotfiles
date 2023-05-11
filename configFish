@@ -32,10 +32,12 @@ unzipPath = $(which unzip)
 if [ $unzipPath -ne '/usr/bin/unzip' ]; then
   sudo apt install unzip
 fi
+
 unzip exa.zip && mv exa/ ~/exa/
 cd ~/exa/
 cargo build --release
 sudo cp -r target/release/exa /usr/bin/exa
 
 echo "Copying fish configuration files to ~/.config/fish..."
+cd $basePath
 cp -rf fish/ $fishPath
