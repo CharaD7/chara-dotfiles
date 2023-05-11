@@ -16,3 +16,6 @@ cp -r .tmux.powerline.conf ~/.tmux.powerline.conf
 
 echo "Running powerline-config to setup tmux..."
 source ~/.tmux.conf
+
+echo "Setting system default shell to tmux"
+sudo chsh $(which tmux)
