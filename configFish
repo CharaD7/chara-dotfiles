@@ -30,7 +30,7 @@ unzipPath = $(which unzip)
 
 # Checking to see if path is registered
 if [ $unzipPath -ne '/usr/bin/unzip' ]; then
-  sudo apt install unzip
+  sudo apt install -y unzip
 fi
 
 unzip exa.zip && mv exa/ ~/exa/

@@ -4,7 +4,7 @@
 set -e
 
 echo "Installing tmux essentials..."
-sudo apt install python3 python3-pip powerline
+sudo apt install -y python3 python3-pip powerline
 
 echo "Installing tmux"
 sudo apt install tmux
