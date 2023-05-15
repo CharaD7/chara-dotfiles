@@ -27,7 +27,11 @@ sudo cp -r dwm.desktop /usr/share/xsessions/dwm.desktop
 xrdb merge ~/.config/dwm/.Xresources
 
 # Copy background pictures to the Pictures folder
-cp -r wall/ ~/Pictures/wall/
+mkdir -p ~/Pictures/wall
+
+picturesDir='~/Pictures/wall/'
+echo "Copying wallpapers to $picturesDir"
+cp -r wall/ $picturesDir
 
 # Compile dwm files
 echo "Compiling dwm configuration"
