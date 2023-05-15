@@ -10,7 +10,7 @@ sudo apt install -y build-essential libx11-dev libxinerama-dev sharutils suckles
 
 # Installing other tools
 echo "Installing other necessary tools"
-sudo apt install -y picom feh acpi rofi
+sudo apt install -y picom feh acpi rofi brightnessctl
 
 echo "Installing dwm..."
 sudo apt install -y dwm
@@ -23,6 +23,8 @@ cp -r dwm/ ~/.config/dwm/
 
 # Copy the desktop session call to xsessions
 sudo cp -r dwm.desktop /usr/share/xsessions/dwm.desktop
+
+xrdb merge ~/.config/dwm/.Xresources
 
 # Copy background pictures to the Pictures folder
 cp -r wall/ ~/Pictures/wall/
