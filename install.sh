@@ -59,5 +59,14 @@ configFish &
 # Install tmux
 configTmux &
 
+# Install bubbly on user request
+read -p "Would you like to install the bubbly chat widget now? [Y,n]: " -i Y bubblyReply
+if [ $bubblesReply -eq "y" || $bubblyReply -eq "Y" ]; then
+  configBubbly &
+else
+  echo "Skipping bubbly installation..."
+fi
+
+echo "Last step!"
 # Install dwm
 configDwm &

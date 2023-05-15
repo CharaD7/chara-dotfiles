@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Bubbly
+Comment=Screencast keys & generate on-screen chat bubbles
+Exec=~/.local/share/bubbly/shart.sh
+Icon=preferences.desktop-keyboard-shortcuts
+Categories=Utility
