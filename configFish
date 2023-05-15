@@ -3,7 +3,7 @@
 # Stop on errors
 set -e
 
-fishPath = '~/.config/fish/'
+fishPath='~/.config/fish/'
 
 echo "Installing fish shell..."
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
@@ -26,7 +26,7 @@ export PATH='~/.cargo/bin:$PATH'
 curl https://github.com/ogham/exa/archive/master.zip
 mv master.zip exa.zip
 echo 'Checking for unzip install path'
-unzipPath = $(which unzip)
+unzipPath=$(which unzip)
 
 # Checking to see if path is registered
 if [ $unzipPath -ne '/usr/bin/unzip' ]; then

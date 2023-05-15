@@ -4,7 +4,7 @@
 set -e
 
 # Make a base path
-basePath = '~/chara-dotfiles/'
+basePath='~/chara-dotfiles/'
 mkdir -p $basePath
 
 echo "Copying directory contents to $basePath"
@@ -26,7 +26,7 @@ echo "Running system update..."
 sudo apt update && sudo apt upgrade
 
 echo "Checking for git installation..."
-gitPath = $(which git)
+gitPath=$(which git)
 
 # Checking to see if git path is registered
 if [ $gitPath -ne "/usr/bin/git" ]; then
@@ -65,6 +65,14 @@ if [ $bubblesReply -eq "y" || $bubblyReply -eq "Y" ]; then
   configBubbly &
 else
   echo "Skipping bubbly installation..."
+fi
+
+# Configure neovim on user request
+read -p "Would you like to configure the neovim IDE now? [Y,n]: " -i Y nvimReply
+if [ $nvimReply -eq "y" || $nvimReply -eq "Y" ]; then
+  configNvim &
+else
+  echo "Skipping neovide installation..."
 fi
 
 echo "Last step!"
