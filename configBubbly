@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Stop on errors
+set -e
+
+# Copy local content to ~/.loca/share/
+echo "Setting up bubbly..."
+
+mkdir -p ~/local/share/bubbly
+echo "Copying bubbly files to respective directories"
+cp -r bubbles/local/* ~/.local/share/bubbly/
+
+mkdir -p ~/.config/bubbly
+cp -r bubbles/config/* ~/.config/bubbly/
+
+# Register desktop application
+echo "Registering desktop bubbly application"
+cp -r bubbles/bubbly.desktop ~/.local/share/applications/
