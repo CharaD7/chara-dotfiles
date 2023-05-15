@@ -1,0 +1,16 @@
+(defwidget backlightSlider []
+    (metric
+             :class 'brightness'
+             :value brightness
+             ;; :onchange 'printf "%.0f\n" $(xrandr --output eDP-1-1 --brightness {}%)'
+             :onchange "brightnessctl -d 'intel_backlight' set {}%"
+             :orientation 'h'
+             :flipped false
+             )
+)
+
+(defwidget footer []
+  (box :orientation "v"
+  (backlightSlider)
+  (btns)
+ ))

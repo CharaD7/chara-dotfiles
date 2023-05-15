@@ -1,0 +1,15 @@
+#!/bin/sh
+
+headvol() {
+  amixer -c 1 sget Headphone | grep 'Left:' | cut -d\  -f7 | tr -d '[%]'
+}
+
+mastervol() {
+  amixer -c 1 get Master | awk '$0~/%/{print $4}' | tr -d '[%]'
+}
+
+micvol() {
+  amixer -c 1 sget Mic | grep 'Left:' | cut -d\  -f7 | tr -d '[%]'
+}
+
+"$@"
