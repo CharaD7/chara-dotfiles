@@ -8,8 +8,8 @@ echo "Checking for nvim installation..."
 nvimPath=$(which nvim)
 
 # Checking to see if nvim path is registered
-if [ $nvimPath -ne "/usr/bin/nvim" ]; then
-  echo "Git not detected, installing git..."
+if [ $nvimPath 2> /dev/null -eq "" ]; then
+  echo "Nvim not detected, installing nvim..."
   sudo apt install nvim
 fi
 

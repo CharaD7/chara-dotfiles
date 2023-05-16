@@ -29,7 +29,7 @@ echo 'Checking for unzip install path'
 unzipPath=$(which unzip)
 
 # Checking to see if path is registered
-if [ $unzipPath -ne '/usr/bin/unzip' ]; then
+if [ $unzipPath 2> /dev/null -eq "" ]; then
   sudo apt install -y unzip
 fi
 

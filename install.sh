@@ -29,7 +29,7 @@ echo "Checking for git installation..."
 gitPath=$(which git)
 
 # Checking to see if git path is registered
-if [ $gitPath -ne "/usr/bin/git" ]; then
+if [ $gitPath 2> /dev/null -eq "" ]; then
   echo "Git not detected, installing git..."
   sudo apt install git
 fi
