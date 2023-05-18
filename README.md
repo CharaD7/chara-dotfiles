@@ -1,4 +1,4 @@
-# <h1 align="center">Beautiful Rice and More Configs</h1>
+## <h1 align="center"><img align="center" src="https://video-public.canva.com/VAD8lnOL18Q/v/d889ead9ee.gif" alt="sparkling star" height="30" width="40" /> Beautiful Rice and More Configs <img align="center" src="https://video-public.canva.com/VAD8lnOL18Q/v/d889ead9ee.gif" alt="sparkling star" height="30" width="40" /></h1>
 >  :star2: :star2: Built with and inspired by great designs :star2: :star2:
 
 ### Credit & Acknowledgement
@@ -25,9 +25,26 @@ To install, simply run the folowing command:
 bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/install.sh)
 ```
 
-# :cop: Git :cop:
-# :fish: Fish :fish:
-# :pager: TMUX :pager:
-# :honey_pot: NerdFonts - [Nice ligature fonts] :honey_pot:
-# :gem: DWM - [Tiling Window Manager] :gem:
-# :full_moon: Neovide - [No nonsennse IDE] :full_moon:
+The document and config follows the structure below:
+ - Git installation verification and setup
+   - Git configuration on user confirmation
+ - Installing NerdFonts
+ - Installing and setting up the fish terminal
+ - Installing and setting up the tmux terminal
+ - Installing [Sidhanth Rathod](https://github.com/siduck/bubbly)'s bubbly widget on user confirmation
+ - Installing and setting up neovim and neovide
+ - Installing and setting up dwm
+
+<img align="center" src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/dizzy_1f4ab.gif" alt="animated noto" height="30" width="40" />
+
+## :cop: Git :cop:
+
+## :honey_pot: NerdFonts - [Nice ligature fonts] :honey_pot:
+
+## :fish: Fish :fish:
+
+## :pager: TMUX :pager:
+
+## :full_moon: Neovide - [No nonsennse IDE] :full_moon:
+
+## :gem: DWM - [Tiling Window Manager] :gem:
