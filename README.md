@@ -38,6 +38,7 @@ bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/ins
 <img align="center" src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/dizzy_1f4ab.gif" alt="animated noto" height="30" width="40" />
 
 ## :cop: Git :cop:
+
 [![Git Demo](https://res.cloudinary.com/marcomontalbano/image/upload/v1684419466/video_to_markdown/images/google-drive--1h6fLk4QII3nU4hDQpzqXObXa-hyIYf3D-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1h6fLk4QII3nU4hDQpzqXObXa-hyIYf3D/view?usp=share_link "Git Demo")
 
 <details>
