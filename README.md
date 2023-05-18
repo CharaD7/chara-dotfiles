@@ -1,7 +1,23 @@
-# <span color="#144B49">Beautiful Rice and More Configs</span>
-# :gem: <span style="color:seablue">Git - [Tiling Window Manager]</span> :gem:
-# :fish: <span style="color:seablue">Fish </span> :fish:
-# :pager: <span style="color:seablue">TMUX </span> :pager:
-# :honey_pot: <span style="color: seablue">NerdFonts </span> :honey_pot:
-# :gem: <span style="color:seablue">DWM - [Tiling Window Manager]</span> :gem:
-# :full_moon: <span style="color: seablue">Neovide </span> :full_moon:
+# Beautiful Rice and More Configs
+>  :star2: :star2: Built with and inspired by great designs :star2: :star2:
+
+### Credit & Acknowledgement
+
+I want to acknowledge these wonderful people for inspiring me to make this config. Some helped by
+providing the bootstrap of some components, some by suggesting better scripting styles and others by
+recommending fixes and the logic structure to how things work. Without them, this might not have been
+possible.
+
+|               Name                |               Support             |               Socials             |
+|:----------------------------------|:----------------------------------|:----------------------------------|
+| Gyen Abubakar Sadick              | Reviewed rices and made countless great suggestions |<a href="https://twitter.com/gyenabubakar" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="Gyen Abubakar" height="30" width="40" /></a>  <a href="https://linkedin.com/in/gyenabubakar" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="gyen abubakar" height="30" width="40" /></a>  <a href="https://hashnode.com/@gyenabubakar" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hashnode.svg" alt="gyen abubakar" height="30" width="40" /></a>|
+| Sidhanth Rathod                   | Provided riced dwm bootstrap      |<a href="https://matrix.to/#/@siduck:matrix.org" target="blank"><img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0HK0vPikdoBqarhpV5gdQq9DzUc25mUowB2EawNTrP7kWhelKhYG--ZskvzpKuWJGUg&usqp=CAU" alt="Sidhanth Rathod" height="30" width="40" /></a>  <a href="https://discord.com/users/600704648038580235" target="blank"><img align="center" src="https://www.svgrepo.com/show/353655/discord-icon.svg" alt="Sidhanth Rathod" height="30" width="40" /></a>  <a href="https://t.me/siduck" target="blank"><img align="center" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Sidhanth Rathod" height="30" width="40" /></a> |
+|
+
+
+# :cop: Git :cop:
+# :fish: Fish :fish:
+# :pager: TMUX :pager:
+# :honey_pot: NerdFonts - [Beautiful Fonts with ligatures] :honey_pot:
+# :gem: DWM - [Tiling Window Manager] :gem:
+# :full_moon: Neovide - [No nonsennse IDE] :full_moon:
