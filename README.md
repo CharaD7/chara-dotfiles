@@ -128,6 +128,7 @@ making you the developer super-productive. To learn more about scripting with fi
    > - [bobthefish](https://github.com/oh-my-fish/theme-bobthefish) - A theme for the fish terminal
    > - [ghq](https://github.com/x-motemen/ghq) - A repository organizer, very handy when you work with a lot of them and can't structure it easily.
    > - [exa](https://the.exa.website/) - A mordern replacement for `ls` with rich features
+   > - [peco](https://github.com/peco/peco) - A fuzzy finder plugin for fish terminal
 </details>
 
 ___
