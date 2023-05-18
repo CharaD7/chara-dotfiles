@@ -20,6 +20,6 @@ possible.
 # :cop: Git :cop:
 # :fish: Fish :fish:
 # :pager: TMUX :pager:
-# :honey_pot: NerdFonts - [Nice Fonts with ligatures] :honey_pot:
+# :honey_pot: NerdFonts - [Nice ligature fonts] :honey_pot:
 # :gem: DWM - [Tiling Window Manager] :gem:
 # :full_moon: Neovide - [No nonsennse IDE] :full_moon:
