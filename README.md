@@ -53,6 +53,40 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/7b3c9776-9740-4ae5-a686
    > - `git remote add origin` is aliased `g rao`
    > - `git remote set-url origin` is aliased `g rso`
    > - `git commit -m {message}` is aliased `g acm {message}`
+   > - `git commit --amend -m {message}` is aliased `g aca {message}`
+   > - `git checkout` is aliased `g c`
+   > - `git config --get user.name` is aliased `g cn`
+   > - `git config --get user.email` is aliased `g ce`
+   > - `git checkout main` is aliased `g con`
+   > - `git checkout -b` is aliased `g cob`
+   > - `git checkout --orphan` is aliased `g co`
+   > - `git branch` is aliased `g b`
+   > - `git branch -r` is aliased `g br`
+   > - `git branch -m` is aliased `g brn`
+   > - `git branch -a` is aliased `g ba`
+   > - `git branch --merged` is aliased `g bm`
+   > - `git branch --no-merged` is aliased `g bn`
+   > - `git diff` is aliased `g df` *Note that this is an advance git diff that uses peco, hist and awk*
+   > - `git log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --al` is aliased `g hist`
+   > - `git log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative` is aliased `g llog`
+   > - `git !hub browse` is aliased `g open`
+   > - `git remote -v` is aliased `g r`
+   > - `git remote rm origin` is aliased `g rmo`
+   > - `git branch -d` is aliased `g bd`
+   > - `git branch -D` is aliased `g bD`
+   > - `git push` is aliased `g p`
+   > - `git pull origin` is aliased `g pl`
+   > - `git pull --all` is aliased `g pa`
+   > - `git push origin main` is aliased `g pon`
+   > - `git pull origin main` is aliased `g plon`
+   > - `git push origin` is aliased `g po`
+   > - `git status` is aliased `g s`
+   > - `git push -f origin HEAD^:main` is aliased `g undopush`
+   > - `git merge main` is aliased `g mn`
+   > - `git merge` is aliased `g m`
+   > - `git reset --hard HEAD@{1}` is aliased `g undomerge`
+   > - `git reset --hard` is aliased `g undo`
+   > - `git reset HEAD {file}` is aliased `g unstage {file}`
 </details>
 
 ## :honey_pot: NerdFonts - [Nice ligature fonts] :honey_pot:
