@@ -120,7 +120,7 @@ ___
 
 ___
 
-## :full_moon: Neovide - [No nonsennse IDE] :full_moon:
+## :full_moon: Neovide - [No nonsense IDE] :full_moon:
 
 ___
 
