@@ -89,9 +89,10 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/7b3c9776-9740-4ae5-a686
 
 ## :honey_pot: NerdFonts - [Nice ligature fonts] :honey_pot:
 
+[NerdFonts](https://www.nerdfonts.com) is a home of great and beautiful wide range of fonts.
+
 <details>
-    <summary>[NerdFonts](https://www.nerdfonts.com/) is a home of great and beautiful wide range of fonts.
-    To give you the best of ligature feel and look, the following fonts have been used in this setup:</summary>
+    <summary>To give you the best of ligature feel and look, the following fonts have been used in this setup:</summary>
 
     > - Caskaydia Cove NerdFont
     > - Fira Code NerdFont
