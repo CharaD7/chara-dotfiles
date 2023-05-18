@@ -5,21 +5,7 @@ set -e
 
 # Make a base path
 basePath='~/chara-dotfiles/'
-mkdir -p $basePath
-
-echo "Copying directory contents to $basePath"
-# Copy all files except .git
-cp -rf * -A | grep -v '.git' $basePath && cd $basePath
-
-# .gitconfig setup function
-setGitConfig () {
-  cp -r .gitconfig ~/.gitconfig
-
-  alias g=git
-  sleep 1
-  echo "Your git command is now aliased 'g'"
-  echo "You can run 'g cn' to check your global git username and 'g ce' to check your global git email address."
-}
+mkdir -p $basePath && cd $basePath
 
 # do a global system update
 echo "Running system update..."
@@ -33,6 +19,19 @@ if [ $gitPath 2> /dev/null -eq "" ]; then
   echo "Git not detected, installing git..."
   sudo apt install git
 fi
+
+# Clone the repository
+git clone https://github.com/CharaD7/chara-dotfiles.git .
+
+# .gitconfig setup function
+setGitConfig () {
+  cp -r .gitconfig ~/.gitconfig
+
+  alias g=git
+  sleep 1
+  echo "Your git command is now aliased 'g'"
+  echo "You can run 'g cn' to check your global git username and 'g ce' to check your global git email address."
+}
 
 # Ask to use repo's gitconfig
 read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " -i Y gitAliases

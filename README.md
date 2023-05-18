@@ -15,7 +15,15 @@ possible.
 | Alkis Georgopoulos                | Contributed greatly to the wal script for setting random wallpapers      |<a href="https://matrix.to/#/@alkis:matrix.org" target="blank"><img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh0HK0vPikdoBqarhpV5gdQq9DzUc25mUowB2EawNTrP7kWhelKhYG--ZskvzpKuWJGUg&usqp=CAU" alt="Alkis Georgopoulos " height="30" width="40" /></a>  <a href="https://github.com/alkisg" target="blank"><img align="center" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="alkisg" height="40" width="40" /></a> |
 ---
 
+### Install Guide
+This script is made for Linux platform-based machines that utilize the `aptitude` package manager. Maybe some
+time later, I will consider making releasing support for other package managers for Linux.
 
+To install, simply run the folowing command:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/install.sh)
+```
 
 # :cop: Git :cop:
 # :fish: Fish :fish:
