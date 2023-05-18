@@ -39,7 +39,9 @@ bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/ins
 
 ## :cop: Git :cop:
 
-[![Git Demo](https://res.cloudinary.com/marcomontalbano/image/upload/v1684419466/video_to_markdown/images/google-drive--1h6fLk4QII3nU4hDQpzqXObXa-hyIYf3D-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1h6fLk4QII3nU4hDQpzqXObXa-hyIYf3D/view?usp=share_link "Git Demo")
+
+https://github.com/CharaD7/chara-dotfiles/assets/9804780/7b3c9776-9740-4ae5-a686-003e383d4b22
+
 
 <details>
     <summary>After user permits the setup of git aliases, user will be able to execute git several calls using shortcuts</summary>
