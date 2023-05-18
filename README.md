@@ -114,6 +114,22 @@ ___
 
 ## :fish: Fish :fish:
 
+[Fish](https://fishshell.com) terminal is one of the best terminals to use as a developer if [VIM](https://vim.org) is your preferred IDE. It
+has been made such that there is a mode you can switch to in order to emulate [VIM](https://vim.org) commands,
+making you the developer super-productive. To learn more about scripting with fish, kindly visit the [docs](https://fishshell.com/docs/current/index.html).
+
+<details>
+    <summary>The fish config script installs a couple of packages to make your experience with fish seemless:</summary>
+
+   > - [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish) *My fish is not lost* :smirk:
+   > - [fisher](https://github.com/jorgebucaran/fisher/tree/main) - A package manager for fish
+   > - [z](https://github.com/jethrokuan/z) - A directory jumper that can be installed using [fisher](https://github.com/jorgebucaran/fisher/tree/main)
+   > - [powerline-config](https://powerline.readthedocs.io/en/master/installation.html#patched-fonts) - A python-based font patcher for terminals
+   > - [bobthefish](https://github.com/oh-my-fish/theme-bobthefish) - A theme for the fish terminal
+   > - [ghq](https://github.com/x-motemen/ghq) - A repository organizer, very handy when you work with a lot of them and can't structure it easily.
+   > - [exa](https://the.exa.website/) - A mordern replacement for `ls` with rich features
+</details>
+
 ___
 
 ## :pager: TMUX :pager:
