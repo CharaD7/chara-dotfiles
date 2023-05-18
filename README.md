@@ -39,16 +39,22 @@ bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/ins
 
 ## :cop: Git :cop:
 
+<figure class="video_container">
+    <video controls="true" allowfullscreen="true" poster="https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/.github/images/git.jpg">
+        <source height="300" width="400" src="https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/.github/images/git.mp4" type="video/mp4">
+    </video>
+</figure>
+
 <details>
     <summary>After user permits the setup of git aliases, user will be able to execute git several calls using shortcuts</summary>
 
-   > - <font style="color:red">`git init`</font> is aliased <font style="color:green">`g i`</font>
-   > - <font style="color:red">`git fetch`</font> is aliased <font style="color:green">`g f`</font>
-   > - <font style="color:red">`git clone`</font> is aliased <font style="color:green">`g cl`</font>
-   > - <font style="color:red">`git fetch origin +refs/pull/*/head:refs/remotes/origin/pr/*`</font> is aliased <font style="color:green">`g pr`</font>
-   > - <font style="color:red">`git remote add origin`</font> is aliased <font style="color:green">`g rao`</font>
-   > - <font style="color:red">`git remote set-url origin`</font> is aliased <font style="color:green">`g rso`</font>
-   > - <font style="color:red">`git commit -m {message}`</font> is aliased <font style="color:green">`g acm {message}`</font>
+   > - `git init` is aliased `g i`
+   > - `git fetch` is aliased `g f`
+   > - `git clone` is aliased `g cl`
+   > - `git fetch origin +refs/pull/*/head:refs/remotes/origin/pr/*` is aliased `g pr`
+   > - `git remote add origin` is aliased `g rao`
+   > - `git remote set-url origin` is aliased `g rso`
+   > - `git commit -m {message}` is aliased `g acm {message}`
 </details>
 
 ## :honey_pot: NerdFonts - [Nice ligature fonts] :honey_pot:
