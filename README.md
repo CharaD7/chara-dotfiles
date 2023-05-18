@@ -35,6 +35,7 @@ bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/ins
  - Installing and setting up neovim and neovide
  - Installing and setting up dwm
 
+___
 
 ## :cop: Git :cop:
 
@@ -88,6 +89,7 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/7b3c9776-9740-4ae5-a686
    > - `git reset HEAD {file}` is aliased `g unstage {file}`
 </details>
 
+___
 
 ## :honey_pot: NerdFonts - [Nice ligature fonts] :honey_pot:
 
@@ -108,10 +110,18 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/7b3c9776-9740-4ae5-a686
    These fonts can be located in the [NerdFonts directory](https://github.com/CharaD7/chara-dotfiles/tree/main/NerdFonts)
 </details>
 
+___
+
 ## :fish: Fish :fish:
+
+___
 
 ## :pager: TMUX :pager:
 
+___
+
 ## :full_moon: Neovide - [No nonsennse IDE] :full_moon:
+
+___
 
 ## :gem: DWM - [Tiling Window Manager] :gem:
