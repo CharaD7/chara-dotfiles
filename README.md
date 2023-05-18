@@ -19,13 +19,13 @@ possible.
 This script is made for Linux platform-based machines that utilize the `aptitude` package manager. Maybe some
 time later, I will consider making releasing support for other package managers for Linux.
 
-To install, simply run the folowing command:
+> To install, simply run the folowing command:
 
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/install.sh)
 ```
 
-The document and config follows the structure below:
+> The document and config follows the structure below:
  - Git installation verification and setup
    - Git configuration on user confirmation
  - Installing NerdFonts
@@ -38,6 +38,18 @@ The document and config follows the structure below:
 <img align="center" src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/dizzy_1f4ab.gif" alt="animated noto" height="30" width="40" />
 
 ## :cop: Git :cop:
+
+<details>
+    <summary>After user permits the setup of git aliases, user will be able to execute git several calls using shortcuts</summary>
+
+   > - <font style="color:red">`git init`</font> is aliased <font style="color:green">`g i`</font>
+   > - <font style="color:red">`git fetch`</font> is aliased <font style="color:green">`g f`</font>
+   > - <font style="color:red">`git clone`</font> is aliased <font style="color:green">`g cl`</font>
+   > - <font style="color:red">`git fetch origin +refs/pull/*/head:refs/remotes/origin/pr/*`</font> is aliased <font style="color:green">`g pr`</font>
+   > - <font style="color:red">`git remote add origin`</font> is aliased <font style="color:green">`g rao`</font>
+   > - <font style="color:red">`git remote set-url origin`</font> is aliased <font style="color:green">`g rso`</font>
+   > - <font style="color:red">`git commit -m {message}`</font> is aliased <font style="color:green">`g acm {message}`</font>
+</details>
 
 ## :honey_pot: NerdFonts - [Nice ligature fonts] :honey_pot:
 
