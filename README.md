@@ -38,12 +38,7 @@ bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/ins
 <img align="center" src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/dizzy_1f4ab.gif" alt="animated noto" height="30" width="40" />
 
 ## :cop: Git :cop:
-
-<figure class="video_container">
-    <video height="300" width="400" controls="true" allowfullscreen="true" poster="https://drive.google.com/file/d/1PXhV8Sgyp6wnFlVK3XhM9m87pWxQ5OxV/view?usp=share_link">
-        <source src="https://drive.google.com/file/d/1h6fLk4QII3nU4hDQpzqXObXa-hyIYf3D/view?usp=share_link" type="video/mp4">
-    </video>
-</figure>
+[![Git Demo](https://res.cloudinary.com/marcomontalbano/image/upload/v1684419466/video_to_markdown/images/google-drive--1h6fLk4QII3nU4hDQpzqXObXa-hyIYf3D-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1h6fLk4QII3nU4hDQpzqXObXa-hyIYf3D/view?usp=share_link "Git Demo")
 
 <details>
     <summary>After user permits the setup of git aliases, user will be able to execute git several calls using shortcuts</summary>
