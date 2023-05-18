@@ -40,8 +40,8 @@ bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/ins
 ## :cop: Git :cop:
 
 <figure class="video_container">
-    <video controls="true" allowfullscreen="true" poster="https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/.github/images/git.jpg">
-        <source height="300" width="400" src="https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/.github/images/git.mp4" type="video/mp4">
+    <video height="300" width="400" controls="true" allowfullscreen="true" poster="https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/.github/images/git.jpg">
+        <source src="https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/.github/images/git.mp4" type="video/mp4">
     </video>
 </figure>
 
