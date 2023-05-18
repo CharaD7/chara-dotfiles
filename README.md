@@ -35,8 +35,6 @@ bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/ins
  - Installing and setting up neovim and neovide
  - Installing and setting up dwm
 
-<img align="center" src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/dizzy_1f4ab.gif" alt="animated noto" height="30" width="40" />
-
 ## :cop: Git :cop:
 
 
@@ -90,6 +88,22 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/7b3c9776-9740-4ae5-a686
 </details>
 
 ## :honey_pot: NerdFonts - [Nice ligature fonts] :honey_pot:
+
+<details>
+    <summary>[NerdFonts](https://www.nerdfonts.com/) is a home of great and beautiful wide range of fonts.
+    To give you the best of ligature feel and look, the following fonts have been used in this setup:</summary>
+
+    > - Caskaydia Cove NerdFont
+    > - Fira Code NerdFont
+    > - FiraCode iScript
+    > - Hurmit NerdFont *Bonus Font that has not been used in this setup*
+    > - Iosevka NerdFont
+    > - Jetbrains Mono NerdFont
+    > - MaterialDesignIconsDesktop Font
+    > - Roboto Mono NerdFont
+
+    These fonts can be located in the [NerdFonts directory](https://github.com/CharaD7/chara-dotfiles/tree/main/NerdFonts)
+</details>
 
 ## :fish: Fish :fish:
 
