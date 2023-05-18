@@ -116,7 +116,7 @@ ___
 
 https://github.com/CharaD7/chara-dotfiles/assets/9804780/324b41a7-729a-4184-8802-bbdafc792238
 
-[Fish](https://fishshell.com) terminal is one of the best terminals to use as a developer if [VIM](https://vim.org) is your preferred IDE. It
+[Fish](https://fishshell.com) shells is one of the best shells to use as a developer if [VIM](https://vim.org) is your preferred IDE. It
 has been made such that there is a mode you can switch to in order to emulate [VIM](https://vim.org) commands,
 making you the developer super-productive. To learn more about scripting with fish, kindly visit the [docs](https://fishshell.com/docs/current/index.html).
 
@@ -131,6 +131,9 @@ making you the developer super-productive. To learn more about scripting with fi
    > - [ghq](https://github.com/x-motemen/ghq) - A repository organizer, very handy when you work with a lot of them and can't structure it easily.
    > - [exa](https://the.exa.website/) - A mordern replacement for `ls` with rich features
    > - [peco](https://github.com/peco/peco) - A fuzzy finder plugin for fish terminal
+
+   **NB:** Go to the [fish config's aliases](https://github.com/CharaD7/chara-dotfiles/blob/main/fish/config.fish) to see which aliases are registered for the fish shell.
+   *To emulate vim movement and Visual key bindings, hit the `<Escape>` key. Hit `i` to get back into edit mode*
 </details>
 
 ___
