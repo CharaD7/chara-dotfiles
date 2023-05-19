@@ -315,7 +315,7 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
 
    As you can see, the **AudioMute** button's keycode is the very first on the list, now, we need to make sure it is the same keycode for the readable part like `XF86AudioMute` in the keycodes file.
    On [this line](https://github.com/CharaD7/chara-dotfiles/blob/213d90fb716366c1b67357773c42eb531b615b4c/bubbles/local/keycodes#L114), you can see that the keycode matches with what was printed in my terminal. If you
-   what you see in your terminal does not match what is in the keycode file, please modify it to match that of the terminal. You can grep match and other keys to get their exact keycodes to use.
+   what you see in your terminal does not match what is in the keycode file, please modify it to match that of the terminal. You can grep match any other keys to get their exact keycodes to use.
 
    > - dashboard - *(concept made from siduck's chadwm riced dwm)*
 
