@@ -200,14 +200,14 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    > - [picom](https://gist.github.com/AvishekPD/f70dea1449cfae856d42b771912985f9) - for managing rounded corners and opacity of windows
    > - [rofi](https://github.com/davatorium/rofi) - a window switcher, application launcher and replacement for dmenu
    > - [eww](https://elkowar.github.io/eww/) - Elkowar's Wacky Widgets for dwm
-      > - bubbly - *(concept made from siduck's bubbly widget)*
-      > - dashboard - *(concept made from siduck's chadwm riced dwm)*
+   > - bubbly - *(concept made from siduck's bubbly widget)*
+   > - dashboard - *(concept made from siduck's chadwm riced dwm)*
 
    **NB:** You may have to reconfigure your bubbly and dashboard to work perfectly based on your display. I had to reconfigure bubbly and dashboard
    before I got them to work as my inspirations but thankfully enough, I have highlighted where the changes can be made and how to change the values
    as you would like.
 
-   *(I really thank [Sidhanth Rathod](https://github.com/siduck) for inspiring me to come with this compillation. You are such a beautiful gem.)
+   *(I really thank [Sidhanth Rathod](https://github.com/siduck) for inspiring me to come with this compillation. You are such a beautiful gem.)*
 
    ### Picom
 
