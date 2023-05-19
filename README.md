@@ -156,6 +156,9 @@ ___
  
  ![neovide](https://github.com/CharaD7/chara-dotfiles/assets/9804780/a3ce5a06-e8f0-4b17-9596-f9d40dc8cc52)
 
+https://github.com/CharaD7/chara-dotfiles/assets/9804780/7bef1b54-c233-46cb-85e9-5d1f628468f1
+
+
 [Neovide](https://neovide.dev) is a no-nonsense, cross-platform graphical user interface for [Neovim](https://github.com/neovim/neovim) (an awesome IDE that
 is open source and seeks to aggresively refactor [VIM](https://www.vim.org/)). Supporting a lot of very cool [features](https://neovide.dev/features.html),
 it promises a wonderful future of an extensible, yet, very stable IDE for vimmers like myself. The [Neovide](https://neovide.dev) graphical user interface though
