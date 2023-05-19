@@ -322,6 +322,23 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    #### Dashboard config
 
    The [dashboard](https://github.com/CharaD7/chara-dotfiles/tree/main/eww) widget serves as a control panel for dwm. You can control your audio and brightness levels, know a summary of your hard disk size, your OS, 
-   the window manager and the current date and time. It is called in the `config.def.h` file which can be located in your `~/.config/dwm/dwm/config.def.h` directory. It is hooked to the launcher defined on 
+   the window manager and the current date and time. It is called in the `config.def.h` file which can be located in your `~/.config/dwm/dwm/config.def.h` directory. It is hooked to the launcher defined on  [line 97](https://github.com/CharaD7/chara-dotfiles/blob/b6623c4618239cbc4f6a207c76208876ad1d6be0/dwm/dwm/config.def.h#L97)  
+   Configuration files for the dashboard can be found [here](https://github.com/CharaD7/chara-dotfiles/tree/main/eww). The [var.yuck](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/var.yuck) file defines the various objects 
+   in the eww widget and how long it takes for their values to be updated when triggered. Below are styles and script hotlinks for the dashboard:
+
+   **The Styles**
+   > - The [audio slider](https://github.com/CharaD7/chara-dotfiles/tree/main/eww/scss/focal) styles
+   > - The [footer styles](https://github.com/CharaD7/chara-dotfiles/tree/main/eww/scss/footer) for brightness and buttons in the footer
+   > - The [header styles](https://github.com/CharaD7/chara-dotfiles/tree/main/eww/scss/header) for the status buttons and system info
+   > - The [themes styles](https://github.com/CharaD7/chara-dotfiles/tree/main/eww/scss/themes) for setting the theme of the dashboard
+
+   The theme for the dashboard is set in the [eww.scss](https://github.com/CharaD7/chara-dotfiles/blob/b6623c4618239cbc4f6a207c76208876ad1d6be0/eww/eww.scss#L1) file  
+
+   **The Scripts**
+   > - The [system script](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/scripts/system) contains scripts for executing package update, battery, cpu, ram, backlight, wifi, power and disk.
+   > - The [fetch sccript](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/scripts/fetch) contains methods for displaying OS, window manager and shell information.
+   > - The [audio script](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/scripts/audio) contains methods for executing audio level control
+
+   By default, you should have **amixer** installed so it is not included in the install script. If you use a different audio mixer, you may want to consider editing the [audio script](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/scripts/audio) and setting your mixer in place of `amixer`
 
 </details>
