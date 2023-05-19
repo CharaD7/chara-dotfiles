@@ -195,7 +195,15 @@ ___
 [DWM](https://dwm.suckless.org/) (Dynamic Window Manager) is a window manager for X. It displays windows in several layouts such as
 tiled, monocle and floating. It is more convenient to use though requires some work if you need it to look beautiful and want to
 use your custom keybindings to invoke certain calls or programs. There are several [patches](https://dwm.suckless.org/patches/) available
-on the [suckless](https://dwm.suckless.org) site that can be added to the config to suit user's taste.
+on the [suckless](https://dwm.suckless.org) site that can be added to the config to suit user's taste.  
+
+[Configuration](https://github.com/CharaD7/chara-dotfiles/tree/main/dwm) files for dwm can be found in your `~/.config/dwm/` directory. In there 
+you should see a *scripts* folder which contains *bar*, *bubbly*, *fetch*, *run.sh* and *wal* scripts. In addition to these, there is the *bar_themes* directory.  
+
+- The [wall](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/scripts/wal) script changes the desktop wallpaper after every 20 minutes. You can change the duration [here](https://github.com/CharaD7/chara-dotfiles/blob/d93f53b8b476f13bf767f30c18c055223ce73010/dwm/scripts/wal#L12)
+- The [bubbly](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/scripts/bubbly) script houses methods for calling the chat and keystroke widgets
+- The [bar](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/scripts/bar) script contains methods for the tasks on the status bar. You can add to it if you wish.
+- The [run.sh](https://github.com/CharaD7/chara-dotfiles/blob/main/dwm/scripts/run.sh) script is what gets executed anytime dwm starts
 
 <details>
     <summary>Included in this config are the following plugins:</summary>
@@ -214,7 +222,7 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
 
    ### Picom
 
- ![picom](https://github.com/CharaD7/chara-dotfiles/assets/9804780/d54ea1a2-af9b-4dee-a915-32ebe73bf29b )
+ ![picom](https://github.com/CharaD7/chara-dotfiles/assets/9804780/d54ea1a2-af9b-4dee-a915-32ebe73bf29b)
  *Picom windows preview*
 
    The [picom](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/picom/picom.conf) plugin will automatically be saved to your `~/.config/picom` directory, as such, any
