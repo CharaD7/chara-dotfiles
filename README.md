@@ -17,7 +17,7 @@ possible.
 
 ### Install Guide
 This script is made for Linux platform-based machines that utilize the `aptitude` package manager. Maybe some
-time later, I will consider making releasing support for other package managers for Linux.
+time later, I will consider releasing support for other package managers for Linux.
 
 > To install, simply run the folowing command:
 
@@ -174,6 +174,7 @@ some features of [Neovide](https://neovide.dev) configured to make your experien
    > - Animated Cursor Particles - ```vim.g.neovide_curosr_vfx_mode =  "railgun"``` *(Leave animated particles anytime cursor jumps around)*
    > - Smooth Scrolling - *(enabled by default)*
    > - Animated Windows - *(enabled by default)*
+   > - Transparency - ```vim.g.neovide_transparency = 0.8``` *(you can increase the opacity as you like it)
    > - Blurred Floating Windows - ```vim.g.neovide_floating_blur_amount_x = 4.0``` and ```vim.g.neovide_floating_blur_amount_y = 4.0```
    > - Emoji Support - *(enabled by default)*
    > - IDE Paddings - ```vim.g.neovide_padding_[direction] = 10``` *(substitute **[direction]** for **top**, **bottom**, **left** and **right**)*
@@ -187,3 +188,37 @@ some features of [Neovide](https://neovide.dev) configured to make your experien
 ___
 
 ## :gem: DWM - [Tiling Window Manager] :gem:
+
+[DWM](https://dwm.suckless.org/) (Dynamic Window Manager) is a window manager for X. It displays windows in several layouts such as 
+tiled, monocle and floating. It is more convenient to use though requires some work if you need it to look beautiful and want to 
+use your custom keybindings to invoke certain calls or programs. There are several [patches](https://dwm.suckless.org/patches/) available 
+on the [suckless](https://dwm.suckless.org) site that can be added to the config to suit user's taste.  
+
+<details>
+    <summary>Included in this config is the following plugins:</summary>
+
+   > - [picom](https://gist.github.com/AvishekPD/f70dea1449cfae856d42b771912985f9) - for managing rounded corners and opacity of windows
+   > - [rofi](https://github.com/davatorium/rofi) - a window switcher, application launcher and replacement for dmenu
+   > - [eww](https://elkowar.github.io/eww/) - Elkowar's Wacky Widgets for dwm
+     > - bubbly - *(concept made from [siduck's bubbly])(https://github.com/siduck/bubbly) widget*
+     > - dashboard - *(concept made from [siduck's chadwm])(https://github.com/siduck/chadwm) riced dwm*
+
+   **NB:** You may have to reconfigure your bubbly and dashboard to work perfectly based on your display. I had to reconfigure bubbly and dashboard 
+   before I got them to work as my inspirations but thankfully enough, I have highlighted where the changes can be made and how to change the values 
+   as you would like.
+
+   *(I really thank [Sidhanth Rathod](https://github.com/siduck) for inspiring me to come with this compillation. You are such a beautiful gem.)
+
+   ### Picom
+
+   The [picom](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/picom/picom.conf) plugin will automatically be saved to your `~/.config/picom` directory, as such, any 
+   changes you wish to make to the window transparency, blur or corners should be done in the `~/.config/picom/picom.conf` file. You can also make changes to the animation of windows 
+   in the same file. Here is a highlight of what you can change in picom  
+
+   > - The [animation](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L1)
+   > - The [corners](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L14)
+   > - The [shadows](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L37)
+   > - The [fades](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L112)
+   > - The [transparency/opacity](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L144)
+
+</details>
