@@ -260,7 +260,9 @@ You may want to take a look at it to know where to set your display in case you 
    > - **Logo+Leftclick** moves a floating window. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L339)
    > - **Logo+Rightclick** resizes a floating window. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L341)
 
-   **NB:** You need to hold the mouse buttons down together with the Logo button while performing mouse actions.
+   **NB:** 
+   1. You need to hold the mouse buttons down together with the Logo button while performing mouse actions.
+   2. If you make a change to the `config.def.h` file, you will need to recompile it by running `sudo make clean install` and run **Logo+Shift+r** to reload your dwm.
 
 </details>
 
