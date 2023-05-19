@@ -212,7 +212,8 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
 
    ### Picom
  
- ![picom](https://github.com/CharaD7/chara-dotfiles/assets/9804780/d54ea1a2-af9b-4dee-a915-32ebe73bf29b)
+ ![picom](https://github.com/CharaD7/chara-dotfiles/assets/9804780/d54ea1a2-af9b-4dee-a915-32ebe73bf29b )
+ *Picom windows preview*
 
    The [picom](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/picom/picom.conf) plugin will automatically be saved to your `~/.config/picom` directory, as such, any
    changes you wish to make to the window transparency, blur or corners should be done in the `~/.config/picom/picom.conf` file. You can also make changes to the animation of windows
@@ -229,10 +230,41 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    ### Rofi
  
  ![rofi-run](https://github.com/CharaD7/chara-dotfiles/assets/9804780/782ecf9f-a4e4-4ec8-bf52-1d5d2cfd53e9)
+ *rofi -show run*
 
  ![rofi-drun](https://github.com/CharaD7/chara-dotfiles/assets/9804780/0b0ad848-0e0b-413f-85a0-0e5363283d57)
+ *rofi -show drun*
 
    [Rofi](https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html) is a window switcher application that works on basically any X11 display manager. It is included in this config
-   to allow users launch applications and run scripts from a mini-window.
+   to allow users launch applications and run scripts from a mini-window. There is a `config.rasi` for every rofi application that specifies the looks and behaviour of rofi modes. After 
+   running the `install.sh`, you will locate the config file in `~/.config/rofi/config.rasi`. In addition to this, you will find a directory in the *rofi* directory called *themes* which 
+   has a couple of themes from which you can choose to set for your rofi application. Here are the options available to use and modify in this rofi config.
+
+   #### Themes
+
+   > - [Dracula](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/rofi/themes/dracula.rasi)
+   > - [Everblush](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/rofi/themes/everblush.rasi)
+   > - [Forest](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/rofi/themes/forest.rasi)
+   > - [Gruv](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/rofi/themes/gruv.rasi)
+   > - [Nord](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/rofi/themes/nord.rasi)
+   > - [Onedark](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/rofi/themes/onedark.rasi)
+
+   #### Rofi config
+
+   Go to the [rofi config](https://github.com/CharaD7/chara-dotfiles/blob/main/rofi/config.rasi) to have a quick look at how things are structured in there to be well-informed of your decision 
+   to make changes to the rofi application. Feel free to skip taking a peek if you are already familiar with configuring rofi.
+
+   > - [Basic configuration](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L1)
+   > - [Theme selection](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L15)
+   > - [Element styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L17)
+   > - [Window styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L22)
+   > - [Mainbox styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L30)
+   > - [Inputbar styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L34)
+   > - [Prompt styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L41)
+   > - [Entry styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L54)
+   > - [Items view styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L61)
+   > - [Icon styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L75)
+   > - [Button styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L88)
+
 
 </details>
