@@ -55,6 +55,13 @@ create({ 'CursorHold', 'CursorHoldI' }, {
   end
 })
 
+-- Enable autosave at every edit and on focus lost
+create({ 'CursorHold', 'CursorHoldI', 'FocusLost' }, {
+  callback = function()
+    vim.cmd [[ :wa ]]
+  end
+})
+
 -- Set all .rsh files to use js syntax and highlighting
 create({ 'BufRead' }, {
   pattern = { '.rsh' },

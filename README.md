@@ -154,6 +154,25 @@ ___
 
 ## :full_moon: Neovide - [No nonsense IDE] :full_moon:
 
+[Neovide](https://neovide.dev) is a no-nonsense, cross-platform graphical user interface for [Neovim](https://github.com/neovim/neovim) (an awesome IDE that
+is open source and seeks to aggresively refactor [VIM](https://www.vim.org/)). Supporting a lot of very cool [features](https://neovide.dev/features.html),
+it promises a wonderful future of an extensible, yet, very stable IDE for vimmers like myself. The [Neovide](https://neovide.dev) graphical user interface though
+intuitive, does not work off of its own, it needs a [Neovim](https://github.com/neovim/neovim) ```init.lua``` or ```init.vim``` file to work and so you may want to
+consider having that before using this beauty 😎 That said, this [nvimConfig](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/configNvim) comes with
+some features of [Neovide](https://neovide.dev) configured to make your experience using the IDE awesome ✨
+
+<details>
+    <summary>Below is a list of the features enabled and how they are used:</summary>
+
+   > - Ligature Support *(enabled by default)*
+   > - Animated Cursor
+   > - Animated Cursor Particles
+   > - Smooth Scrolling
+   > - Animated Windows
+   > - Blurred Floating Windows
+   > - Emoji Support
+</details>
+
 ___
 
 ## :gem: DWM - [Tiling Window Manager] :gem:
