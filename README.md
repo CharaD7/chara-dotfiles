@@ -139,14 +139,16 @@ making you the developer super-productive. To learn more about scripting with fi
 ___
 
 ## :pager: TMUX :pager:
- 
+
  ![tmux](https://github.com/CharaD7/chara-dotfiles/assets/9804780/c1eba1d3-3591-4c7b-99f4-5dc1d36b89d2)
 
 [tmux](https://github.com/tmux/tmux/wiki) is a terminal multiplexer, allowing you to switch between several programs, detach and reattach them in
 different programs, it proves to be one of the best terminals out there. to know more about it and how to easily navigate your way while using it,
 go to read the [docs](https://github.com/tmux/tmux/wiki/Getting-Started). This repo's `tmuxConfig` script comes with powerline fonts and a script
 to run and configure tmux to have the status bar as you see it in the above picture. To know more about the key combinations, I recommend using the
-[docs](https://github.com/tmux/tmux/wiki/Modifier-Keys).
+section on [key moodifiers](https://github.com/tmux/tmux/wiki/Modifier-Keys). However, the [setup](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/.tmux.conf)
+comes with predefined key bindings you may want to take a look at the [tmux conf](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/.tmux.conf)
+file.
 
 ___
 
