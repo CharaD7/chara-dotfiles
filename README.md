@@ -398,7 +398,7 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/3980af9c-59f2-4dae-a7d8
 
 
    The [dashboard](https://github.com/CharaD7/chara-dotfiles/tree/main/eww) widget serves as a control panel for dwm. You can control your audio and brightness levels, know a summary of your hard disk size, your OS,
-   the window manager and the current date and time. It is called in the `config.def.h` file which can be located in your `~/.config/dwm/dwm/config.def.h` directory. It is hooked to the launcher defined on  [line 97](https://github.com/CharaD7/chara-dotfiles/blob/b6623c4618239cbc4f6a207c76208876ad1d6be0/dwm/dwm/config.def.h#L97)
+   the window manager and the current date and time. It is called in the `config.def.h` file which can be located in your `~/.config/dwm/dwm/config.def.h` directory. It is hooked to the launcher defined on  [line 97](https://github.com/CharaD7/chara-dotfiles/blob/b6623c4618239cbc4f6a207c76208876ad1d6be0/dwm/dwm/config.def.h#L97).
    Configuration files for the dashboard can be found [here](https://github.com/CharaD7/chara-dotfiles/tree/main/eww). The [var.yuck](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/var.yuck) file defines the various objects
    in the eww widget and how long it takes for their values to be updated when triggered. Below are styles and script hotlinks for the dashboard:
 
