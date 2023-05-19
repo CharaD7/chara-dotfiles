@@ -276,11 +276,14 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
 
    #### Bubbly config
 
+https://github.com/CharaD7/chara-dotfiles/assets/9804780/8d3e2b41-9664-49fc-a8c7-6ab00d962711
+
+
+https://github.com/CharaD7/chara-dotfiles/assets/9804780/8ad60084-d06d-4723-a9ee-1fcbc808ae19
+
+
    Bubbly is a chat-like widget that displays keystrokes as chat bubbles. There are two modes, the *chat* mode, and the *keystroke* mode. Below are videos demonstating the use of each mode. The script
    saves [bubbly desktop](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/bubbly.desktop) to your `/usr/share/applications/` directory.
-
-
-
 
    The [keystrokes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/config/keystrokes) file is where keystroke limit and theme is set. It is stored in your `~/.config/bubbly/` directory.
    The [keycodes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/local/keycodes) is where your keycodes are set. The keycodes in here may be different from yours aside the basic alphabet
@@ -320,6 +323,9 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    what you see in your terminal does not match what is in the keycode file, please modify it to match that of the terminal. You can grep match any other key to get its exact keycodes to use.
 
    #### Dashboard config
+ 
+https://github.com/CharaD7/chara-dotfiles/assets/9804780/3980af9c-59f2-4dae-a7d8-ec677e0dd2c1
+
 
    The [dashboard](https://github.com/CharaD7/chara-dotfiles/tree/main/eww) widget serves as a control panel for dwm. You can control your audio and brightness levels, know a summary of your hard disk size, your OS, 
    the window manager and the current date and time. It is called in the `config.def.h` file which can be located in your `~/.config/dwm/dwm/config.def.h` directory. It is hooked to the launcher defined on  [line 97](https://github.com/CharaD7/chara-dotfiles/blob/b6623c4618239cbc4f6a207c76208876ad1d6be0/dwm/dwm/config.def.h#L97)  
