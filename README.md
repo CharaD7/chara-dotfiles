@@ -211,7 +211,7 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    *(I really thank [Sidhanth Rathod](https://github.com/siduck) for inspiring me to make with this compilation. You are such a beautiful gem.)*
 
    ### Picom
- 
+
  ![picom](https://github.com/CharaD7/chara-dotfiles/assets/9804780/d54ea1a2-af9b-4dee-a915-32ebe73bf29b )
  *Picom windows preview*
 
@@ -228,7 +228,7 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    > - General [render](https://github.com/CharaD7/chara-dotfiles/blob/aae40ed4f6cac8922601d6c28c0f4ca1d1b638de/picom/picom.conf#L285)
 
    ### Rofi
- 
+
  ![rofi-run](https://github.com/CharaD7/chara-dotfiles/assets/9804780/782ecf9f-a4e4-4ec8-bf52-1d5d2cfd53e9)
  *rofi -show run*
 
@@ -236,8 +236,8 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
  *rofi -show drun*
 
    [Rofi](https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html) is a window switcher application that works on basically any X11 display manager. It is included in this config
-   to allow users launch applications and run scripts from a mini-window. There is a `config.rasi` for every rofi application that specifies the looks and behaviour of rofi modes. After 
-   running the `install.sh`, you will locate the config file in `~/.config/rofi/config.rasi`. In addition to this, you will find a directory in the *rofi* directory called *themes* which 
+   to allow users launch applications and run scripts from a mini-window. There is a `config.rasi` for every rofi application that specifies the looks and behaviour of rofi modes. After
+   running the `install.sh`, you will locate the config file in `~/.config/rofi/config.rasi`. In addition to this, you will find a directory in the *rofi* directory called *themes* which
    has a couple of themes from which you can choose to set for your rofi application. Here are the options available to use and modify in this rofi config.
 
    #### Themes
@@ -251,7 +251,7 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
 
    #### Rofi config
 
-   Go to the [rofi config](https://github.com/CharaD7/chara-dotfiles/blob/main/rofi/config.rasi) to have a quick look at how things are structured in there to be well-informed of your decision 
+   Go to the [rofi config](https://github.com/CharaD7/chara-dotfiles/blob/main/rofi/config.rasi) to have a quick look at how things are structured in there to be well-informed of your decision
    to make changes to the rofi application. Feel free to skip taking a peek if you are already familiar with configuring rofi.
 
    > - [Basic configuration](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L1)
@@ -269,21 +269,21 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
 
    ### EWW
 
-   [eww](https://elkowar.github.io/eww/) *(Elkowar's Wacky Widgets for dwm)* is stress-free way to create your own widgets in dwm. It uses `eww.yuck` as its configuration file and `eww.scss` as its 
+   [eww](https://elkowar.github.io/eww/) *(Elkowar's Wacky Widgets for dwm)* is stress-free way to create your own widgets in dwm. It uses `eww.yuck` as its configuration file and `eww.scss` as its
    stylesheet configuration. Two plugins were used in this config (bubbly, and dashboard).
 
    #### Bubbly config
 
-   Bubbly is a chat-like widget that displays keystrokes as chat bubbles. There are two modes, the *chat* mode, and the *keystroke* mode. Below are videos demonstating the use of each mode. The script 
+   Bubbly is a chat-like widget that displays keystrokes as chat bubbles. There are two modes, the *chat* mode, and the *keystroke* mode. Below are videos demonstating the use of each mode. The script
    saves [bubbly desktop](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/bubbly.desktop) to your `/usr/share/applications/` directory.
 
 
 
 
    The [keystrokes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/config/keystrokes) file is where keystroke limit and theme is set. It is stored in your `~/.config/bubbly/` directory.
-   The [keycodes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/local/keycodes) is where your keycodes are set. The keycodes in here may be different from yours aside the basic alphabet 
-   and number keys. To know and set the keycodes for your audio control keys, run `xmodmap -pK | grep -i audio`. This will show you what keycodes are used for your audio keys so you can map them in the 
-   [keycodes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/local/keycodes) file. This file will be located in your `~/.local/share/bubbly/` directory.  
+   The [keycodes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/local/keycodes) is where your keycodes are set. The keycodes in here may be different from yours aside the basic alphabet
+   and number keys. To know and set the keycodes for your audio control keys, run `xmodmap -pK | grep -i audio`. This will show you what keycodes are used for your audio keys so you can map them in the
+   [keycodes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/local/keycodes) file. This file will be located in your `~/.local/share/bubbly/` directory.
 
    For example, if I want to know the keycode to my audio mute key, this is what it is going to look like.
 
@@ -313,8 +313,8 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
     234         0x1008ff32 (XF86AudioMedia)     0x0000 (NoSymbol)       0x1008ff32 (XF86AudioMedia)
    ```
 
-   As you can see, the **AudioMute** button's keycode has been given up as the very first on the list, now, we need to make sure it is the same keycode for the readable part like `XF86AudioMute` in the keycodes file. 
-   On [this line](https://github.com/CharaD7/chara-dotfiles/blob/213d90fb716366c1b67357773c42eb531b615b4c/bubbles/local/keycodes#L114), you can see that the keycode matches with what was printed in my terminal. If you 
+   As you can see, the **AudioMute** button's keycode is the very first on the list, now, we need to make sure it is the same keycode for the readable part like `XF86AudioMute` in the keycodes file.
+   On [this line](https://github.com/CharaD7/chara-dotfiles/blob/213d90fb716366c1b67357773c42eb531b615b4c/bubbles/local/keycodes#L114), you can see that the keycode matches with what was printed in my terminal. If you
    what you see in your terminal does not match what is in the keycode file, please modify it to match that of the terminal. You can grep match and other keys to get their exact keycodes to use.
 
    > - dashboard - *(concept made from siduck's chadwm riced dwm)*
