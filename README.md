@@ -44,7 +44,8 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/7b3c9776-9740-4ae5-a686
 
 
 <details>
-    <summary>After user permits the setup of git aliases, user will be able to execute git several calls using shortcuts</summary>
+    <summary>After user permits the setup of git aliases, user will be able to execute several Git calls
+    using abbreviated form or shortcuts</summary>
 
    > - `git init` is aliased `g i`
    > - `git fetch` is aliased `g f`
@@ -162,7 +163,7 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/7bef1b54-c233-46cb-85e9
 [Neovide](https://neovide.dev) is a no-nonsense, cross-platform graphical user interface for [Neovim](https://github.com/neovim/neovim) (an awesome IDE that
 is open source and seeks to aggresively refactor [VIM](https://www.vim.org/)). Supporting a lot of very cool [features](https://neovide.dev/features.html),
 it promises a wonderful future of an extensible, yet, very stable IDE for vimmers like myself. The [Neovide](https://neovide.dev) graphical user interface though
-intuitive, does not work off of its own, it needs a [Neovim](https://github.com/neovim/neovim) ```init.lua``` or ```init.vim``` file to work and so you may want to
+intuitive, does not work on its own, it needs a [Neovim](https://github.com/neovim/neovim) ```init.lua``` or ```init.vim``` file to work and so you may want to
 consider having that before using this beauty 😎 That said, this [nvimConfig](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/configNvim) comes with
 some features of [Neovide](https://neovide.dev) configured to make your experience using the IDE awesome ✨
 
@@ -195,10 +196,10 @@ use your custom keybindings to invoke certain calls or programs. There are sever
 on the [suckless](https://dwm.suckless.org) site that can be added to the config to suit user's taste.
 
 <details>
-    <summary>Included in this config is the following plugins:</summary>
+    <summary>Included in this config are the following plugins:</summary>
 
    > - [picom](https://gist.github.com/AvishekPD/f70dea1449cfae856d42b771912985f9) - for managing rounded corners and opacity of windows
-   > - [rofi](https://github.com/davatorium/rofi) - a window switcher, application launcher and replacement for dmenu
+   > - [rofi](https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html) - a window switcher, application launcher and replacement for dmenu
    > - [eww](https://elkowar.github.io/eww/) - Elkowar's Wacky Widgets for dwm
    > - bubbly - *(concept made from siduck's bubbly widget)*
    > - dashboard - *(concept made from siduck's chadwm riced dwm)*
@@ -207,7 +208,7 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    before I got them to work as my inspirations but thankfully enough, I have highlighted where the changes can be made and how to change the values
    as you would like.
 
-   *(I really thank [Sidhanth Rathod](https://github.com/siduck) for inspiring me to come with this compillation. You are such a beautiful gem.)*
+   *(I really thank [Sidhanth Rathod](https://github.com/siduck) for inspiring me to make with this compilation. You are such a beautiful gem.)*
 
    ### Picom
 
@@ -222,5 +223,10 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    > - The [transparency/opacity](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L144)
    > - The [blur](https://github.com/CharaD7/chara-dotfiles/blob/aae40ed4f6cac8922601d6c28c0f4ca1d1b638de/picom/picom.conf#L222)
    > - General [render](https://github.com/CharaD7/chara-dotfiles/blob/aae40ed4f6cac8922601d6c28c0f4ca1d1b638de/picom/picom.conf#L285)
+
+   ### Rofi
+
+   [Rofi](https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html) is a window switcher application that works on basically any X11 display manager. It is included in this config
+   to allow users launch applications and run scripts from a mini-window.
 
 </details>
