@@ -341,7 +341,7 @@ You may want to take a look at it to know where to set your display in case you 
 
    ### EWW
 
-   [eww](https://elkowar.github.io/eww/) *(Elkowar's Wacky Widgets for dwm)* is stress-free way to create your own widgets in dwm. It uses `eww.yuck` as its configuration file and `eww.scss` as its
+   [EWW](https://elkowar.github.io/eww/) *(Elkowar's Wacky Widgets for dwm)* is a stress-free way to create your own widgets in dwm. It uses `eww.yuck` as its configuration file and `eww.scss` as its
    stylesheet configuration. Two plugins were used in this config (bubbly, and dashboard).
 
    #### Bubbly config
