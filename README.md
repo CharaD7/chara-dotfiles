@@ -211,6 +211,8 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    *(I really thank [Sidhanth Rathod](https://github.com/siduck) for inspiring me to make with this compilation. You are such a beautiful gem.)*
 
    ### Picom
+ 
+ ![picom](https://github.com/CharaD7/chara-dotfiles/assets/9804780/d54ea1a2-af9b-4dee-a915-32ebe73bf29b)
 
    The [picom](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/picom/picom.conf) plugin will automatically be saved to your `~/.config/picom` directory, as such, any
    changes you wish to make to the window transparency, blur or corners should be done in the `~/.config/picom/picom.conf` file. You can also make changes to the animation of windows
@@ -225,6 +227,10 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    > - General [render](https://github.com/CharaD7/chara-dotfiles/blob/aae40ed4f6cac8922601d6c28c0f4ca1d1b638de/picom/picom.conf#L285)
 
    ### Rofi
+ 
+ ![rofi-run](https://github.com/CharaD7/chara-dotfiles/assets/9804780/782ecf9f-a4e4-4ec8-bf52-1d5d2cfd53e9)
+
+ ![rofi-drun](https://github.com/CharaD7/chara-dotfiles/assets/9804780/0b0ad848-0e0b-413f-85a0-0e5363283d57)
 
    [Rofi](https://manpages.ubuntu.com/manpages/bionic/en/man1/rofi.1.html) is a window switcher application that works on basically any X11 display manager. It is included in this config
    to allow users launch applications and run scripts from a mini-window.
