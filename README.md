@@ -153,6 +153,8 @@ file.
 ___
 
 ## :full_moon: Neovide - [No nonsense IDE] :full_moon:
+ 
+ ![neovide](https://github.com/CharaD7/chara-dotfiles/assets/9804780/a3ce5a06-e8f0-4b17-9596-f9d40dc8cc52)
 
 [Neovide](https://neovide.dev) is a no-nonsense, cross-platform graphical user interface for [Neovim](https://github.com/neovim/neovim) (an awesome IDE that
 is open source and seeks to aggresively refactor [VIM](https://www.vim.org/)). Supporting a lot of very cool [features](https://neovide.dev/features.html),
