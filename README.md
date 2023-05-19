@@ -416,3 +416,7 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/3980af9c-59f2-4dae-a7d8
    By default, you should have **amixer** installed so it is not included in the install script. If you use a different audio mixer, you may want to consider editing the [audio script](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/scripts/audio) and setting your mixer in place of `amixer`
 
 </details>
+
+___
+Hello, I am Chara. If you find this helpful, please do share. If you need to get in touch with me by all means, you can connect with me on [telegram](https://t.me/CharaD7), [twitter](https://twitter.com/joy_ayitey) and on [discord](https://discordapp.com/users/CharaD7#0898)
+___
