@@ -352,7 +352,7 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/8d3e2b41-9664-49fc-a8c7
 https://github.com/CharaD7/chara-dotfiles/assets/9804780/8ad60084-d06d-4723-a9ee-1fcbc808ae19
 
 
-   Bubbly is a chat-like widget that displays keystrokes as chat bubbles. There are two modes, the *chat* mode, and the *keystroke* mode. Below are videos demonstating the use of each mode. The script
+   Bubbly is a chat-like widget that displays keystrokes as chat bubbles. There are two modes, the *chat* mode, and the *keystroke* mode. The above videos demonstrate the use of each mode. The script
    saves [bubbly desktop](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/bubbly.desktop) to your `/usr/share/applications/` directory.
 
    The [keystrokes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/config/keystrokes) file is where keystroke limit and theme is set. It is stored in your `~/.config/bubbly/` directory.
