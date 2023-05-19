@@ -140,6 +140,12 @@ ___
 
 ## :pager: TMUX :pager:
 
+[tmux](https://github.com/tmux/tmux/wiki) is a terminal multiplexer, allowing you to switch between several programs, detach and reattach them in
+different programs, it proves to be one of the best terminals out there. to know more about it and how to easily navigate your way while using it,
+go to read the [docs](https://github.com/tmux/tmux/wiki/Getting-Started). This repo's `tmuxConfig` script comes with powerline fonts and a script
+to run and configure tmux to have the status bar as you see it in the above picture. To know more about the key combinations, I recommend using the
+[docs](https://github.com/tmux/tmux/wiki/Modifier-Keys).
+
 ___
 
 ## :full_moon: Neovide - [No nonsense IDE] :full_moon:
