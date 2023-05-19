@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Stop on errors
+set -e
+
+# Get the ~/Pictures dir even if it's localized
+wpdir=$(xdg-user-dir PICTURES)
+
+while true; do
+  wp=$(find "$wpdir/wall" -maxdepth 1 -iname '*.png' -or -iname '*.jpg' | shuf -n1)
+  feh --bg-fill "$wp"
+  sleep 20m
+done

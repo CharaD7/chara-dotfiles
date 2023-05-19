@@ -142,6 +142,7 @@ ___
 ## :pager: TMUX :pager:
 
  ![tmux](https://github.com/CharaD7/chara-dotfiles/assets/9804780/c1eba1d3-3591-4c7b-99f4-5dc1d36b89d2)
+ *Tmux preview*
 
 [tmux](https://github.com/tmux/tmux/wiki) is a terminal multiplexer, allowing you to switch between several programs, detach and reattach them in
 different programs, it proves to be one of the best terminals out there. to know more about it and how to easily navigate your way while using it,
@@ -156,6 +157,7 @@ ___
 ## :full_moon: Neovide - [No nonsense IDE] :full_moon:
 
  ![neovide](https://github.com/CharaD7/chara-dotfiles/assets/9804780/a3ce5a06-e8f0-4b17-9596-f9d40dc8cc52)
+ *Neovide preview*
 
 https://github.com/CharaD7/chara-dotfiles/assets/9804780/7bef1b54-c233-46cb-85e9-5d1f628468f1
 
@@ -317,6 +319,9 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    On [this line](https://github.com/CharaD7/chara-dotfiles/blob/213d90fb716366c1b67357773c42eb531b615b4c/bubbles/local/keycodes#L114), you can see that the keycode matches with what was printed in my terminal. If you
    what you see in your terminal does not match what is in the keycode file, please modify it to match that of the terminal. You can grep match any other key to get its exact keycodes to use.
 
-   > - dashboard - *(concept made from siduck's chadwm riced dwm)*
+   #### Dashboard config
+
+   The [dashboard](https://github.com/CharaD7/chara-dotfiles/tree/main/eww) widget serves as a control panel for dwm. You can control your audio and brightness levels, know a summary of your hard disk size, your OS, 
+   the window manager and the current date and time. It is called in the `config.def.h` file which can be located in your `~/.config/dwm/dwm/config.def.h` directory. It is hooked to the launcher defined on 
 
 </details>
