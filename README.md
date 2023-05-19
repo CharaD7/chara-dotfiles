@@ -205,7 +205,7 @@ you should see a *scripts* folder which contains *bar*, *bubbly*, *fetch*, *run.
 - The [bar](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/scripts/bar) script contains methods for the tasks on the status bar. You can add to it if you wish.
 - The [run.sh](https://github.com/CharaD7/chara-dotfiles/blob/main/dwm/scripts/run.sh) script is what gets executed anytime dwm starts
 
-There is provision for extended display in the [run.sh](https://github.com/CharaD7/chara-dotfiles/blob/main/dwm/scripts/run.sh) script and in the In there [config.def.h](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/dwm/config.def.h). [Configuration](https://github.com/CharaD7/chara-dotfiles/tree/main/dwm/) files for dwm can be found in your `~/.config/dwm/` directory.
+There is provision for extended display in the [run.sh](https://github.com/CharaD7/chara-dotfiles/blob/main/dwm/scripts/run.sh) script and in the [config.def.h](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/dwm/config.def.h). [Configuration](https://github.com/CharaD7/chara-dotfiles/tree/main/dwm/) files for dwm can be found in your `~/.config/dwm/` directory.
 You may want to take a look at it to know where to set your display in case you have an extended display on. By default, the *run.sh* script launches dwm with the screen extended to the monitor on the right.
 
 ### DWM key combinations
