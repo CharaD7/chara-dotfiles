@@ -418,5 +418,5 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/3980af9c-59f2-4dae-a7d8
 </details>
 
 ___
-Hello, I am Chara. If you find this helpful, please do share. If you need to get in touch with me by all means, you can connect with me on [telegram](https://t.me/CharaD7), [twitter](https://twitter.com/joy_ayitey) and on [discord](https://discordapp.com/users/CharaD7#0898)
+Hello, I am Chara. If you find this helpful, please do share. If you need to get in touch with me by all means, you can connect with me on [telegram](https://t.me/CharaD7), [twitter](https://twitter.com/joy_ayitey), [LinkedIn](http://linkedin.com/in/joy-ayitey-73127699) and on [discord](https://discordapp.com/users/CharaD7#0898)
 ___
