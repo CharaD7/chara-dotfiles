@@ -139,6 +139,8 @@ making you the developer super-productive. To learn more about scripting with fi
 ___
 
 ## :pager: TMUX :pager:
+ 
+ ![tmux](https://github.com/CharaD7/chara-dotfiles/assets/9804780/c1eba1d3-3591-4c7b-99f4-5dc1d36b89d2)
 
 [tmux](https://github.com/tmux/tmux/wiki) is a terminal multiplexer, allowing you to switch between several programs, detach and reattach them in
 different programs, it proves to be one of the best terminals out there. to know more about it and how to easily navigate your way while using it,
