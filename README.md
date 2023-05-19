@@ -153,7 +153,7 @@ file.
 ___
 
 ## :full_moon: Neovide - [No nonsense IDE] :full_moon:
- 
+
  ![neovide](https://github.com/CharaD7/chara-dotfiles/assets/9804780/a3ce5a06-e8f0-4b17-9596-f9d40dc8cc52)
 
 https://github.com/CharaD7/chara-dotfiles/assets/9804780/7bef1b54-c233-46cb-85e9-5d1f628468f1
@@ -179,9 +179,9 @@ some features of [Neovide](https://neovide.dev) configured to make your experien
    > - Emoji Support - *(enabled by default)*
    > - IDE Paddings - ```vim.g.neovide_padding_[direction] = 10``` *(substitute **[direction]** for **top**, **bottom**, **left** and **right**)*
 
-   You can take a peek at the features enabled using the [permalink](https://github.com/CharaD7/chara-dotfiles/blob/2119a40ee647ae530261c916cd184424a5b7d44c/nvim/lua/chara/options.lua#L88)  
+   You can take a peek at the features enabled using the [permalink](https://github.com/CharaD7/chara-dotfiles/blob/2119a40ee647ae530261c916cd184424a5b7d44c/nvim/lua/chara/options.lua#L88)
 
-   **NB:** I have enabled autosave on every edit and on focus lost by default in this config. If it is bothersome to you, come to [this block](https://github.com/CharaD7/chara-dotfiles/blob/2119a40ee647ae530261c916cd184424a5b7d44c/nvim/after/plugin/autocommands.lua#L58) 
+   **NB:** I have enabled autosave on every edit and on focus lost by default in this config. If it is bothersome to you, come to [this block](https://github.com/CharaD7/chara-dotfiles/blob/2119a40ee647ae530261c916cd184424a5b7d44c/nvim/after/plugin/autocommands.lua#L58)
    and comment it out.
 </details>
 
@@ -189,10 +189,10 @@ ___
 
 ## :gem: DWM - [Tiling Window Manager] :gem:
 
-[DWM](https://dwm.suckless.org/) (Dynamic Window Manager) is a window manager for X. It displays windows in several layouts such as 
-tiled, monocle and floating. It is more convenient to use though requires some work if you need it to look beautiful and want to 
-use your custom keybindings to invoke certain calls or programs. There are several [patches](https://dwm.suckless.org/patches/) available 
-on the [suckless](https://dwm.suckless.org) site that can be added to the config to suit user's taste.  
+[DWM](https://dwm.suckless.org/) (Dynamic Window Manager) is a window manager for X. It displays windows in several layouts such as
+tiled, monocle and floating. It is more convenient to use though requires some work if you need it to look beautiful and want to
+use your custom keybindings to invoke certain calls or programs. There are several [patches](https://dwm.suckless.org/patches/) available
+on the [suckless](https://dwm.suckless.org) site that can be added to the config to suit user's taste.
 
 <details>
     <summary>Included in this config is the following plugins:</summary>
@@ -200,25 +200,27 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    > - [picom](https://gist.github.com/AvishekPD/f70dea1449cfae856d42b771912985f9) - for managing rounded corners and opacity of windows
    > - [rofi](https://github.com/davatorium/rofi) - a window switcher, application launcher and replacement for dmenu
    > - [eww](https://elkowar.github.io/eww/) - Elkowar's Wacky Widgets for dwm
-     > - bubbly - *(concept made from [siduck's bubbly])(https://github.com/siduck/bubbly) widget*
-     > - dashboard - *(concept made from [siduck's chadwm])(https://github.com/siduck/chadwm) riced dwm*
+      > - bubbly - *(concept made from siduck's bubbly widget)*
+      > - dashboard - *(concept made from siduck's chadwm riced dwm)*
 
-   **NB:** You may have to reconfigure your bubbly and dashboard to work perfectly based on your display. I had to reconfigure bubbly and dashboard 
-   before I got them to work as my inspirations but thankfully enough, I have highlighted where the changes can be made and how to change the values 
+   **NB:** You may have to reconfigure your bubbly and dashboard to work perfectly based on your display. I had to reconfigure bubbly and dashboard
+   before I got them to work as my inspirations but thankfully enough, I have highlighted where the changes can be made and how to change the values
    as you would like.
 
    *(I really thank [Sidhanth Rathod](https://github.com/siduck) for inspiring me to come with this compillation. You are such a beautiful gem.)
 
    ### Picom
 
-   The [picom](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/picom/picom.conf) plugin will automatically be saved to your `~/.config/picom` directory, as such, any 
-   changes you wish to make to the window transparency, blur or corners should be done in the `~/.config/picom/picom.conf` file. You can also make changes to the animation of windows 
-   in the same file. Here is a highlight of what you can change in picom  
+   The [picom](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/picom/picom.conf) plugin will automatically be saved to your `~/.config/picom` directory, as such, any
+   changes you wish to make to the window transparency, blur or corners should be done in the `~/.config/picom/picom.conf` file. You can also make changes to the animation of windows
+   in the same file. Here is a highlight of what you can change in picom
 
    > - The [animation](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L1)
    > - The [corners](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L14)
    > - The [shadows](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L37)
    > - The [fades](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L112)
    > - The [transparency/opacity](https://github.com/CharaD7/chara-dotfiles/blob/41ff240d832bbd6cc25b64e57c9406be17729fc6/picom/picom.conf#L144)
+   > - The [blur](https://github.com/CharaD7/chara-dotfiles/blob/aae40ed4f6cac8922601d6c28c0f4ca1d1b638de/picom/picom.conf#L222)
+   > - General [render](https://github.com/CharaD7/chara-dotfiles/blob/aae40ed4f6cac8922601d6c28c0f4ca1d1b638de/picom/picom.conf#L285)
 
 </details>
