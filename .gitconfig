@@ -19,6 +19,8 @@
         rao = remote add origin
         rso = remote set-url origin
 
+        rc = rm --cached
+        
         acm = "!f() { git add . && git commit -m \"$(echo $@)\"; }; f";
         aca = "!f() { git commit --amend -m \"$(echo $@)\"; }; f";
         c = checkout
