@@ -195,15 +195,75 @@ ___
 [DWM](https://dwm.suckless.org/) (Dynamic Window Manager) is a window manager for X. It displays windows in several layouts such as
 tiled, monocle and floating. It is more convenient to use though requires some work if you need it to look beautiful and want to
 use your custom keybindings to invoke certain calls or programs. There are several [patches](https://dwm.suckless.org/patches/) available
-on the [suckless](https://dwm.suckless.org) site that can be added to the config to suit user's taste.  
+on the [suckless](https://dwm.suckless.org) site that can be added to the config to suit user's taste.
 
-[Configuration](https://github.com/CharaD7/chara-dotfiles/tree/main/dwm) files for dwm can be found in your `~/.config/dwm/` directory. In there 
-you should see a *scripts* folder which contains *bar*, *bubbly*, *fetch*, *run.sh* and *wal* scripts. In addition to these, there is the *bar_themes* directory.  
+[Configuration](https://github.com/CharaD7/chara-dotfiles/tree/main/dwm) files for dwm can be found in your `~/.config/dwm/` directory. In there
+you should see a *scripts* folder which contains *bar*, *bubbly*, *fetch*, *run.sh* and *wal* scripts. In addition to these, there is the *bar_themes* directory.
 
 - The [wall](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/scripts/wal) script changes the desktop wallpaper after every 20 minutes. You can change the duration [here](https://github.com/CharaD7/chara-dotfiles/blob/d93f53b8b476f13bf767f30c18c055223ce73010/dwm/scripts/wal#L12)
 - The [bubbly](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/scripts/bubbly) script houses methods for calling the chat and keystroke widgets
 - The [bar](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/scripts/bar) script contains methods for the tasks on the status bar. You can add to it if you wish.
 - The [run.sh](https://github.com/CharaD7/chara-dotfiles/blob/main/dwm/scripts/run.sh) script is what gets executed anytime dwm starts
+
+There is provision for extended display in the [run.sh](https://github.com/CharaD7/chara-dotfiles/blob/main/dwm/scripts/run.sh) script and in the [Configuration](https://github.com/CharaD7/chara-dotfiles/tree/main/dwm/) files for dwm can be found in your `~/.config/dwm/` directory. In there [config.def.h](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/dwm/config.def.h).
+You may want to take a look at it to know where to set your display in case you have an extended display on. By default, the *run.sh* script launches dwm with the screen extended to the monitor on the right.
+
+### DWM key combinations
+
+<details>
+    <summary>Let us look at how we can move around and call up applications we need in this dwm config.</summary>
+
+   There are certain things you need to be aware of in the [config.def.h](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/dwm/dwm/config.def.h) folder which you can locate at `~/.config/dwm/dwm/config.def.h`
+   > - You can set border of your windows to `0` on [this line](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L6) so they are not visible.
+   > - You can set a different theme for your topbar on [this line](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L65).
+   > - If you have more launchers you want to add to the topbar, you can add them on [this line](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L97).
+   > - Layouts for your window manager can be found [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L139)
+   > - **MODKEY** is basically your *logo* or *windows* key.
+   > - **ControlMask** is your *Ctrl* key.
+   > - **ShiftMask** is your *Shift* key.
+   > - **Mod1Mask** is your *Alt* key.
+
+   **NB:** You can set extra keys like the Right Ctrl and Right Shift Keys to be distinct from their left counterparts.
+
+   **Keyboard keys**
+   > - **Logo+c** invokes `rofi -show drun`. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L190)
+   > - The audio and brightness keys are set [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L178). You can change them as you wish.
+   > - **Logo+r** invokes `rofi -show run`. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L191)
+   > - **Logo+Return** or **Logo+Enter** invokes the suckless terminal. In this case, I prefer to use tmux so I set it to `st tmux`. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L192).
+   > - **Logo+Shift+Space** toggles a window to float in the screen. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L197)
+   > - **Logo+b** toggles on and off the topbar visibility. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L195)
+   > - **Logo+f** toggles window fullscreen mode. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L198)
+   > - **Logo+Left** and **Logo+Right** switches views to the left and right workspace respectively. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L207)
+   > - **Logo+Shift+j** and **Logo+Shift+k** moves window stacks left and right respectively. You can change that [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L217)
+   > - **Logo+Ctrl+i** and **Logo+Ctrl+d** increases and decreases the overall gaps between the windows respectively. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L223)
+   > - **Logo+Shift+i** and **Logo+Ctrl+Shift+i** increases and decreases the inner gaps between windows respectively. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L227)
+   > - **Logo+Ctrl+o** and **Logo+Ctrl+Shift+o** increases and decreases the outer gaps between windows. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L231)
+   > - **Logo+Shift+,** moves current window to the next display on the left. You can change that [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L259)
+   > - **Logo+Shift+.** moves current window to the next display on the right. You can change that [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L260)
+   > - **Logo+Ctrl+q** kills dwm completely. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L268)
+   > - **Logo+q** kills the current window client. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L271)
+   > - **Logo+e** hides current window. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L277)
+   > - **Logo+Shift+e* unhides hidden window. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L278)
+   > - **Logo+number** *(in this case, 1 to 9)* switches the view to that workspace number. You can change that [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L280)
+   > - **Logo+Ctrl+p** changes current wallpaper. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L285)
+   > - **Logo+Ctrl+l** puts the machine in suspended state. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L287)
+   > - **Logo+Ctrl+r** reboots the machine. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L289)
+   > - **Logo+Ctrl+s** shuts down the machine. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L291)
+   > - **Logo+Alt+Left** spans left monitor display. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L295)
+   > - **Logo+Alt+Right** spans right monitor display. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L298)
+   > - **Logo+Ctrl+c** invokes the chat bubble widget. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L303)
+   > - **Logo+Ctrl+k** invokes the keystroke bubble widget. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L305)
+   > - **Logo+Ctrl+Shift+c** kills the chat bubble widget. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L307)
+   > - **Logo+Ctrl+Shift+k** kills the keystroke bubble widget. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L310)
+
+   **Mouse keys**
+   > - **Logo+Leftclick** moves a floating window. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L339)
+   > - **Logo+Rightclick** resizes a floating window. You can change it [here](https://github.com/CharaD7/chara-dotfiles/blob/0bd6ca0d228ec098cd373df2ed3ebbf5a87d5f0d/dwm/dwm/config.def.h#L341)
+
+   **NB:** You need to hold the mouse buttons down together with the Logo button while performing mouse actions.
+
+</details>
+
 
 <details>
     <summary>Included in this config are the following plugins:</summary>
@@ -331,13 +391,13 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/8ad60084-d06d-4723-a9ee
    what you see in your terminal does not match what is in the keycode file, please modify it to match that of the terminal. You can grep match any other key to get its exact keycodes to use.
 
    #### Dashboard config
- 
+
 https://github.com/CharaD7/chara-dotfiles/assets/9804780/3980af9c-59f2-4dae-a7d8-ec677e0dd2c1
 
 
-   The [dashboard](https://github.com/CharaD7/chara-dotfiles/tree/main/eww) widget serves as a control panel for dwm. You can control your audio and brightness levels, know a summary of your hard disk size, your OS, 
-   the window manager and the current date and time. It is called in the `config.def.h` file which can be located in your `~/.config/dwm/dwm/config.def.h` directory. It is hooked to the launcher defined on  [line 97](https://github.com/CharaD7/chara-dotfiles/blob/b6623c4618239cbc4f6a207c76208876ad1d6be0/dwm/dwm/config.def.h#L97)  
-   Configuration files for the dashboard can be found [here](https://github.com/CharaD7/chara-dotfiles/tree/main/eww). The [var.yuck](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/var.yuck) file defines the various objects 
+   The [dashboard](https://github.com/CharaD7/chara-dotfiles/tree/main/eww) widget serves as a control panel for dwm. You can control your audio and brightness levels, know a summary of your hard disk size, your OS,
+   the window manager and the current date and time. It is called in the `config.def.h` file which can be located in your `~/.config/dwm/dwm/config.def.h` directory. It is hooked to the launcher defined on  [line 97](https://github.com/CharaD7/chara-dotfiles/blob/b6623c4618239cbc4f6a207c76208876ad1d6be0/dwm/dwm/config.def.h#L97)
+   Configuration files for the dashboard can be found [here](https://github.com/CharaD7/chara-dotfiles/tree/main/eww). The [var.yuck](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/var.yuck) file defines the various objects
    in the eww widget and how long it takes for their values to be updated when triggered. Below are styles and script hotlinks for the dashboard:
 
    **The Styles**
@@ -346,7 +406,7 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/3980af9c-59f2-4dae-a7d8
    > - The [header styles](https://github.com/CharaD7/chara-dotfiles/tree/main/eww/scss/header) for the status buttons and system info
    > - The [themes styles](https://github.com/CharaD7/chara-dotfiles/tree/main/eww/scss/themes) for setting the theme of the dashboard
 
-   The theme for the dashboard is set in the [eww.scss](https://github.com/CharaD7/chara-dotfiles/blob/b6623c4618239cbc4f6a207c76208876ad1d6be0/eww/eww.scss#L1) file  
+   The theme for the dashboard is set in the [eww.scss](https://github.com/CharaD7/chara-dotfiles/blob/b6623c4618239cbc4f6a207c76208876ad1d6be0/eww/eww.scss#L1) file
 
    **The Scripts**
    > - The [system script](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/eww/scripts/system) contains scripts for executing package update, battery, cpu, ram, backlight, wifi, power and disk.
