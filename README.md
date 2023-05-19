@@ -165,12 +165,18 @@ some features of [Neovide](https://neovide.dev) configured to make your experien
     <summary>Below is a list of the features enabled and how they are used:</summary>
 
    > - Ligature Support *(enabled by default)*
-   > - Animated Cursor
-   > - Animated Cursor Particles
-   > - Smooth Scrolling
-   > - Animated Windows
-   > - Blurred Floating Windows
-   > - Emoji Support
+   > - Animated Cursor - ```vim.g.neovide_cursor_animation_length = 0.13``` *(set to 0.13seconds)*
+   > - Animated Cursor Particles - ```vim.g.neovide_curosr_vfx_mode =  "railgun"``` *(Leave animated particles anytime cursor jumps around)*
+   > - Smooth Scrolling - *(enabled by default)*
+   > - Animated Windows - *(enabled by default)*
+   > - Blurred Floating Windows - ```vim.g.neovide_floating_blur_amount_x = 4.0``` and ```vim.g.neovide_floating_blur_amount_y = 4.0```
+   > - Emoji Support - *(enabled by default)*
+   > - IDE Paddings - ```vim.g.neovide_padding_[direction] = 10``` *(substitute **[direction]** for **top**, **bottom**, **left** and **right**)*
+
+   You can take a peek at the features enabled using the [permalink](https://github.com/CharaD7/chara-dotfiles/blob/2119a40ee647ae530261c916cd184424a5b7d44c/nvim/lua/chara/options.lua#L88)  
+
+   **NB:** I have enabled autosave on every edit and on focus lost by default in this config. If it is bothersome to you, come to [this block](https://github.com/CharaD7/chara-dotfiles/blob/2119a40ee647ae530261c916cd184424a5b7d44c/nvim/after/plugin/autocommands.lua#L58) 
+   and comment it out.
 </details>
 
 ___
