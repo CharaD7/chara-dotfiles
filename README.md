@@ -205,7 +205,7 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    > - dashboard - *(concept made from siduck's chadwm riced dwm)*
 
    **NB:** You may have to reconfigure your bubbly and dashboard to work perfectly based on your display. I had to reconfigure bubbly and dashboard
-   before I got them to work as my inspirations but thankfully enough, I have highlighted where the changes can be made and how to change the values
+   before I got them to work as my inspiration's but thankfully enough, I have highlighted where the changes can be made and how to change the values
    as you would like.
 
    *(I really thank [Sidhanth Rathod](https://github.com/siduck) for inspiring me to make with this compilation. You are such a beautiful gem.)*
@@ -266,5 +266,57 @@ on the [suckless](https://dwm.suckless.org) site that can be added to the config
    > - [Icon styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L75)
    > - [Button styling](https://github.com/CharaD7/chara-dotfiles/blob/9572bbddb9d2e076eb336c8b2b4ca63028201f7c/rofi/config.rasi#L88)
 
+
+   ### EWW
+
+   [eww](https://elkowar.github.io/eww/) *(Elkowar's Wacky Widgets for dwm)* is stress-free way to create your own widgets in dwm. It uses `eww.yuck` as its configuration file and `eww.scss` as its 
+   stylesheet configuration. Two plugins were used in this config (bubbly, and dashboard).
+
+   #### Bubbly config
+
+   Bubbly is a chat-like widget that displays keystrokes as chat bubbles. There are two modes, the *chat* mode, and the *keystroke* mode. Below are videos demonstating the use of each mode. The script 
+   saves [bubbly desktop](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/bubbly.desktop) to your `/usr/share/applications/` directory.
+
+
+
+
+   The [keystrokes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/config/keystrokes) file is where keystroke limit and theme is set. It is stored in your `~/.config/bubbly/` directory.
+   The [keycodes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/local/keycodes) is where your keycodes are set. The keycodes in here may be different from yours aside the basic alphabet 
+   and number keys. To know and set the keycodes for your audio control keys, run `xmodmap -pK | grep -i audio`. This will show you what keycodes are used for your audio keys so you can map them in the 
+   [keycodes](https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/bubbles/local/keycodes) file. This file will be located in your `~/.local/share/bubbly/` directory.  
+
+   For example, if I want to know the keycode to my audio mute key, this is what it is going to look like.
+
+   - I first run the command
+
+   ```bash
+        xmodmap -pk | grep -i audio
+   ```
+
+   - I get this output
+   ```bash
+    121         0x1008ff12 (XF86AudioMute)      0x0000 (NoSymbol)       0x1008ff12 (XF86AudioMute)
+    122         0x1008ff11 (XF86AudioLowerVolume)       0x0000 (NoSymbol)       0x1008ff11 (XF86AudioLowerVolume)
+    123         0x1008ff13 (XF86AudioRaiseVolume)       0x0000 (NoSymbol)       0x1008ff13 (XF86AudioRaiseVolume)
+    171         0x1008ff17 (XF86AudioNext)      0x0000 (NoSymbol)       0x1008ff17 (XF86AudioNext)
+    172         0x1008ff14 (XF86AudioPlay)      0x1008ff31 (XF86AudioPause)     0x1008ff14 (XF86AudioPlay)      0x1008ff31 (XF86AudioPause)
+    173         0x1008ff16 (XF86AudioPrev)      0x0000 (NoSymbol)       0x1008ff16 (XF86AudioPrev)
+    174         0x1008ff15 (XF86AudioStop)      0x1008ff2c (XF86Eject)  0x1008ff15 (XF86AudioStop)      0x1008ff2c (XF86Eject)
+    175         0x1008ff1c (XF86AudioRecord)    0x0000 (NoSymbol)       0x1008ff1c (XF86AudioRecord)
+    176         0x1008ff3e (XF86AudioRewind)    0x0000 (NoSymbol)       0x1008ff3e (XF86AudioRewind)
+    198         0x1008ffb2 (XF86AudioMicMute)   0x0000 (NoSymbol)       0x1008ffb2 (XF86AudioMicMute)
+    208         0x1008ff14 (XF86AudioPlay)      0x0000 (NoSymbol)       0x1008ff14 (XF86AudioPlay)
+    209         0x1008ff31 (XF86AudioPause)     0x0000 (NoSymbol)       0x1008ff31 (XF86AudioPause)
+    215         0x1008ff14 (XF86AudioPlay)      0x0000 (NoSymbol)       0x1008ff14 (XF86AudioPlay)
+    216         0x1008ff97 (XF86AudioForward)   0x0000 (NoSymbol)       0x1008ff97 (XF86AudioForward)
+    221         0x1008ffb6 (XF86AudioPreset)    0x0000 (NoSymbol)       0x1008ffb6 (XF86AudioPreset)
+    234         0x1008ff32 (XF86AudioMedia)     0x0000 (NoSymbol)       0x1008ff32 (XF86AudioMedia)
+   ```
+
+   As you can see, the **AudioMute** button's keycode has been given up as the very first on the list, now, we need to make sure it is the same keycode for the readable part like `XF86AudioMute` in the keycodes file. 
+   On [this line](https://github.com/CharaD7/chara-dotfiles/blob/213d90fb716366c1b67357773c42eb531b615b4c/bubbles/local/keycodes#L114), you can see that the keycode matches with what was printed in my terminal. If you 
+   what you see in your terminal does not match what is in the keycode file, please modify it to match that of the terminal. You can grep match and other keys to get their exact keycodes to use.
+
+   > - dashboard - *(concept made from siduck's chadwm riced dwm)*
 
 </details>
