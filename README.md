@@ -117,7 +117,7 @@ ___
 
 https://github.com/CharaD7/chara-dotfiles/assets/9804780/324b41a7-729a-4184-8802-bbdafc792238
 
-[Fish](https://fishshell.com) shells is one of the best shells to use as a developer if [VIM](https://vim.org) is your preferred IDE. It
+[Fish](https://fishshell.com) shell is one of the best shells to use as a developer if [VIM](https://vim.org) is your preferred IDE. It
 has been made such that there is a mode you can switch to in order to emulate [VIM](https://vim.org) commands,
 making you the developer super-productive. To learn more about scripting with fish, kindly visit the [docs](https://fishshell.com/docs/current/index.html).
 
