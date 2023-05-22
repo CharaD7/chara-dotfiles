@@ -1,3 +1,4 @@
 # Ignore all neovide log files
-*log
+neovide_backtraces.log
+*.log
 wall/
