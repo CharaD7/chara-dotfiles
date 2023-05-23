@@ -22,7 +22,7 @@ time later, I will consider releasing support for other package managers for Lin
 > To install, simply run the folowing command:
 
 ```bash
-sudo bash <(curl -s https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/install.sh)
+sudo curl https://raw.githubusercontent.com/CharaD7/chara-dotfiles/main/install.sh | sh
 ```
 
 > The document and config follows the structure below:
