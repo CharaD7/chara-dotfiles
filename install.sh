@@ -58,7 +58,7 @@ setGitConfig () {
 
 # Fish terminal config setup function
 setFishConfig() {
-  fishPath="$HOME/.config/fish/"
+  fishPath="$userHome/.config/fish/"
 
   echo "Installing fish shell..."
   curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
@@ -76,7 +76,7 @@ setFishConfig() {
   echo "Installing prerequisites for exa..."
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   echo "Adding cargo bin path to environment variables"
-  export PATH="$HOME/.cargo/bin:$PATH"
+  export PATH="$userHome/.cargo/bin:$PATH"
 
   curl https://github.com/ogham/exa/archive/master.zip
   mv master.zip exa.zip
@@ -88,14 +88,34 @@ setFishConfig() {
     sudo apt install -y unzip
   fi
 
-  unzip exa.zip && mv exa/ $HOME/exa/
-  cd $HOME/exa/
+  unzip exa.zip && mv exa/ $userHome/exa/
+  cd $userHome/exa/
   cargo build --release
   sudo cp -r target/release/exa /usr/bin/exa
 
   echo "Copying fish configuration files to ~/.config/fish..."
   cd $basePath
   cp -rf fish/ $fishPath
+}
+
+# Tmux terminal config setup function
+setTmuxConfig() {
+  echo "Installing tmux essentials..."
+  sudo apt install -y python3 python3-pip powerline
+
+  echo "Installing tmux"
+  sudo apt install tmux
+
+  echo "Copying config files for tmux powerline setup..."
+  sudo cp -r powerline-config /usr/bin/powerline-config
+  cp -r .tmux.conf $userHome/.tmux.conf
+  cp -r .tmux.powerline.conf $userHome/.tmux.powerline.conf
+
+  echo "Running powerline-config to setup tmux..."
+  source $userHome/.tmux.conf
+
+  echo "Setting system default shell to tmux"
+  sudo chsh -s (which tmux)
 }
 
 
