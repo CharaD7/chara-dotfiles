@@ -129,8 +129,8 @@ cp -r NerdFonts/* $userHome/.local/share/fonts/
 # Do fish config task
 setFishConfig
 
-# Install tmux
-configTmux &
+# Do tmux config task
+setTmuxConfig
 
 # Install bubbly on user request
 read -p "Would you like to install the bubbly chat widget now? [Y,n]: " -i Y bubblyReply
