@@ -10,7 +10,7 @@ mkdir -p $basePath && cd $basePath
 
 # do a global system update
 echo "Running system update..."
-sudo apt update && sudo apt upgrade
+sudo apt update -y && sudo apt upgrade -y
 
 echo "Checking for git installation..."
 gitPath=$(which git)
@@ -104,7 +104,7 @@ setTmuxConfig() {
   sudo apt install -y python3 python3-pip powerline
 
   echo "Installing tmux"
-  sudo apt install tmux
+  sudo apt install -y tmux
 
   echo "Copying config files for tmux powerline setup..."
   sudo cp -r powerline-config /usr/bin/powerline-config
@@ -170,7 +170,7 @@ setNeovideConfig() {
     # Checking to see if nvim path is registered
     if [ $nvimPath 2> /dev/null -eq "" ]; then
       echo "Nvim not detected, installing nvim..."
-      sudo apt install nvim
+      sudo apt install -y nvim
     fi
 
     # Copy neovim files to ~/.config/nvim
