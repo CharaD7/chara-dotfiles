@@ -151,6 +151,42 @@ setBubblyConfig() {
 
 }
 
+# Neovide config setup function
+setNeovideConfig() {
+  # Install nvim if it does not exist
+  echo "Checking for nvim installation..."
+  nvimPath=$(which nvim)
+
+  # Checking to see if nvim path is registered
+  if [ $nvimPath 2> /dev/null -eq "" ]; then
+    echo "Nvim not detected, installing nvim..."
+    sudo apt install nvim
+  fi
+
+  # Copy neovim files to ~/.config/nvim
+  nvimPath="$userHome/.config/nvim/"
+  mkdir -p $nvimPath
+  echo "Copying neovim files to $nvimPath..."
+  cp -r nvim/* $nvimPath
+
+  # Ask to install neovide
+  read -p "Would you like to install NEOVIDE now? [Y,n]: " -i Y neovideReply
+  if [ $neovideReply -eq "y" || $neovideReply -eq "Y" ]; then
+    # Install neovide
+    echo "Installing prerequisites..."
+    sudo apt install -y curl \
+        gnupg ca-certificates git \
+        gcc-multilib g++-multilib cmake libssl-dev pkg-config \
+        libfreetype6-dev libasound2-dev libexpat1-dev libxcb-composite0-dev \
+        libbz2-dev libsndio-dev freeglut3-dev libxmu-dev libxi-dev libfontconfig1-dev \
+        libxcursor-dev
+
+    # Use cargo to install neovide
+    cargo install --git https://github.com/neovide/neovide
+  fi
+
+}
+
 # Do git config task
 setGitConfig
 
@@ -166,6 +202,9 @@ setTmuxConfig
 
 # Do bubbly config task
 setBubblyConfig
+
+# Do neovide config task
+setNeovideConfig
 
 # Install bubbly on user request
 read -p "Would you like to install the bubbly chat widget now? [Y,n]: " -i Y bubblyReply
