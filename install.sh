@@ -118,6 +118,38 @@ setTmuxConfig() {
   sudo chsh -s (which tmux)
 }
 
+# Bubbly config setup function
+setBubblyConfig() {
+  # Copy local content to ~/.loca/share/
+  echo "Setting up bubbly..."
+
+  mkdir -p $userHome/.local/share/bubbly
+  echo "Copying bubbly files to respective directories"
+  cp -r bubbles/local/* $userHome/.local/share/bubbly/
+
+  mkdir -p $userHome/.config/bubbly
+  cp -r bubbles/config/* $userHome/.config/bubbly/
+
+  # Register desktop application
+  echo "Registering desktop bubbly application"
+  cp -r bubbles/bubbly.desktop $userHome/.local/share/applications/
+
+  sleep 1
+
+  echo "Setup will now attempt to add you as member of the video group to allow you change screen brightness using the dashboard."
+  # Ask to accept adding to video group
+  read -p "Would you like setup to add you ro video group? [Y,n]: " -i Y videoResult
+  if [ $videoResult -eq "y" || $videoResult -eq "Y" ]; then
+    # Add the user
+    sudo gpasswd video -a $(whoami)
+
+    # Add backlight rule to '/etc/udev/rules/' path
+    sudo cp -r backlight.rules /etc/udev/rules.d/backlight.rules
+
+    echo "User added. Setup will now continue with the remaining steps."
+  fi
+
+}
 
 # Do git config task
 setGitConfig
@@ -131,6 +163,9 @@ setFishConfig
 
 # Do tmux config task
 setTmuxConfig
+
+# Do bubbly config task
+setBubblyConfig
 
 # Install bubbly on user request
 read -p "Would you like to install the bubbly chat widget now? [Y,n]: " -i Y bubblyReply
