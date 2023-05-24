@@ -59,8 +59,9 @@ setGitConfig () {
 # Do git config task
 setGitConfig
 
+# Do NerdFont installation task
 echo "Installing NerdFonts..."
-cp -r NerdFonts/* ~/.local/share/fonts/
+cp -r NerdFonts/* $userHome/.local/share/fonts/
 
 # Install fish terminal
 configFish &
