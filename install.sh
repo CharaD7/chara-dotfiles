@@ -1,10 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 # Stop on errors
 set -e
 
 # Make a base path
-basePath='~/chara-dotfiles/'
+userHome=$(echo $HOME)
+basePath="$userHome/chara-dotfiles"
 mkdir -p $basePath && cd $basePath
 
 # do a global system update
@@ -25,29 +26,38 @@ git clone https://github.com/CharaD7/chara-dotfiles.git .
 
 # .gitconfig setup function
 setGitConfig () {
-  cp -r .gitconfig ~/.gitconfig
 
-  alias g=git
+  # Ask to use repo's gitconfig
+  read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " -i Y gitAliases
+  if [ $gitAliases -eq "y" || $gitAliases -eq "Y" ]; then
+    # Setting up gitconfig with alias
+    cp -r .gitconfig ~/.gitconfig
+
+    alias g=git
+    sleep 1
+  fi
+
+  # Setting up gitconfig with alias
+  read -p "Would you like to setup your gitconfig now? [Y,n]: " -i Y gitConfigReply
+  if [ $gitConfigReply -eq "y" || $gitConfigReply -eq "Y" ]; then
+  # Configure git
+    read -r "Enter your git username: " gitUsername
+    read -r "Enter your git email address: " gitEmail
+
+    echo "Setting your global git username to '$gitUsername'"
+    git config --global user.name "$gitUsername"
+    echo "Setting your global git email to '$gitEmail'"
+    git config --global user.email "$gitEmail"
+  fi
+
   sleep 1
   echo "Your git command is now aliased 'g'"
   echo "You can run 'g cn' to check your global git username and 'g ce' to check your global git email address."
+
 }
 
-# Ask to use repo's gitconfig
-read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " -i Y gitAliases
-if [ $gitAliases -eq "y" || $gitAliases -eq "Y" ]; then
-  # Copy git aliases
-  setGitConfig
-fi
-
-# Setting up gitconfig with alias
-read -p "Would you like to setup your gitconfig now? [Y,n]: " -i Y gitConfigReply
-if [ $gitConfigReply -eq "y" || $gitConfigReply -eq "Y" ]; then
-  # Configure git
-  configGit &
-else
-  echo "Skipping git configuration. Kindly configure your git after installation process..."
-fi
+# Do git config task
+setGitConfig
 
 echo "Installing NerdFonts..."
 cp -r NerdFonts/* ~/.local/share/fonts/
