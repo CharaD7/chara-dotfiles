@@ -187,6 +187,59 @@ setNeovideConfig() {
 
 }
 
+# DWM config setup function
+setDWMConfig() {
+  # Install prerequisites for Dynamic Window Manager (dwm)
+  echo "Installing prerequisites for dwm..."
+  sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
+  sudo apt install -y build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm curl
+
+  # Installing other tools
+  echo "Installing other necessary tools"
+  sudo apt install -y picom feh acpi rofi brightnessctl
+
+  echo "Installing dwm..."
+  sudo apt install -y dwm
+
+  echo "Copying necessary files"
+  cp -r eww/ $userHome/.config/eww/
+  cp -r picom/ $userHome/.config/picom/
+  cp -r rofi/ $userHome/.config/rofi/
+  cp -r dwm/ $userHome/.config/dwm/
+
+  slockInstalled=$(which slock)
+
+  if [ $slockInstalled 2> /dev/null -eq "" ]; then
+    echo "Installing slock"
+    sudo apt install slock
+  fi
+
+  # Copy the desktop session call to xsessions
+  sudo cp -r dwm.desktop /usr/share/xsessions/dwm.desktop
+
+  xrdb merge $userHome/.config/dwm/.Xresources
+
+  # Copy background pictures to the Pictures folder
+  mkdir -p $userHome/Pictures/wall
+
+  picturesDir="$userHome/Pictures/wall/"
+  echo "Copying wallpapers to $picturesDir"
+  cp -r wall/ $picturesDir
+
+  # Compile dwm files
+  echo "Compiling dwm configuration"
+  cd $userHome/.config/dwm/ && sudo make install
+
+  echo "Compile done"
+  # Ask to restart
+  read -p "Would you like to reboot now? [Y,n]: " -i Y rebootResult
+  if [ $rebootResult -eq "y" || $rebootResult -eq "Y" ]; then
+    # Reboot system
+    sudo reboot
+  fi
+
+}
+
 # Do git config task
 setGitConfig
 
@@ -205,6 +258,9 @@ setBubblyConfig
 
 # Do neovide config task
 setNeovideConfig
+
+# Do dwm config task
+setDWMConfig
 
 # Install bubbly on user request
 read -p "Would you like to install the bubbly chat widget now? [Y,n]: " -i Y bubblyReply
