@@ -4,9 +4,13 @@
 set -e
 
 # Make a base path
+user=$(echo $USER)
 userHome=$(echo $HOME)
 basePath="$userHome/chara-dotfiles"
 mkdir -p $basePath && cd $basePath
+
+# Adding user to sudoers
+sudo usermod -aG sudo $user
 
 # do a global system update
 echo "Running system update..."
@@ -269,7 +273,9 @@ setGitConfig
 
 # Do NerdFont installation task
 echo "Installing NerdFonts..."
-cp -r NerdFonts/* $userHome/.local/share/fonts/
+nerdFontHome="$userHome/.local/share/fonts"
+mkdir -p $nerdFontHome
+cp -r NerdFonts/* $nerdFontHome
 
 # Do fish config task
 setFishConfig
