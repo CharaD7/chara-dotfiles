@@ -18,7 +18,7 @@ echo "Checking for git installation..."
 case "$( which git 2> /dev/null)" in
   "")
     echo "Git not detected, installing git..."
-    sudo apt install git;;
+    sudo apt install -y git;;
 esac
 
 # Clone the repository
