@@ -87,7 +87,7 @@ setFishConfig() {
 
   echo "Checking system path for wget..."
   case "$( which wget 2> /dev/null )" in
-    "") sudo apt install wget;;
+    "") sudo apt install wget -y;;
     "/usr/bin/wget") echo "wget installed, moving to the next step...";;
   esac
   wget https://github.com/ogham/exa/archive/master.zip
@@ -162,7 +162,7 @@ setBubblyConfig() {
     echo "Setup will now attempt to add you as member of the video group to allow you change screen brightness using the dashboard."
     # Ask to accept adding to video group
     read -p "Would you like setup to add you ro video group? [Y,n]: " videoResult
-    if [ $videoResult -eq "y" ] || [ $videoResult -eq "Y" ]; then
+    if [ "$videoResult" == "y" ] || [ "$videoResult" == "Y" ]; then
       # Add the user
       sudo gpasswd video -a $(whoami)
 
@@ -182,7 +182,10 @@ setBubblyConfig() {
 setNeovideConfig() {
   # Configure neovim on user request
   read -p "Would you like to configure the neovim IDE now? [Y,n]: " nvimReply
-  if [ $nvimReply -eq "y" ] || [ $nvimReply -eq "Y" ]; then
+  if [ "$nvimReply" == "y" ] || [ "$nvimReply" == "Y" ]; then
+
+    sleep 1
+
     # Install nvim if it does not exist
     echo "Checking for nvim installation..."
     nvimPath=$(which nvim)
@@ -203,11 +206,11 @@ setNeovideConfig() {
 
     # Ask to install neovide
     read -p "Would you like to install NEOVIDE now? [Y,n]: " neovideReply
-    if [ $neovideReply -eq "y" ] || [ $neovideReply -eq "Y" ]; then
+    if [ "$neovideReply" == "y" ] || [ "$neovideReply" == "Y" ]; then
       # Install neovide
       echo "Installing prerequisites..."
       sudo apt install -y curl \
-          gnupg ca-certificates git \
+          gnupg ca-certificates \
           gcc-multilib g++-multilib cmake libssl-dev pkg-config \
           libfreetype6-dev libasound2-dev libexpat1-dev libxcb-composite0-dev \
           libbz2-dev libsndio-dev freeglut3-dev libxmu-dev libxi-dev libfontconfig1-dev \
@@ -224,25 +227,47 @@ setNeovideConfig() {
 
 # DWM config setup function
 setDWMConfig() {
+
+  sleep 1
+
   echo "Last step!"
   # Install dwm
+
+  sleep 1
 
   # Install prerequisites for Dynamic Window Manager (dwm)
   echo "Installing prerequisites for dwm..."
   sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
   sudo apt install -y build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm curl
 
+  sleep 1
+
   # Installing other tools
   echo "Installing other necessary tools"
   sudo apt install -y picom feh acpi rofi brightnessctl
 
+  sleep 1
+
   echo "Installing dwm..."
   sudo apt install -y dwm
 
+  sleep 1
+
   echo "Copying necessary files"
+  ewwHome="$userHome/.config/eww/"
+  mkdir -p $ewwHome
   cp -r eww/ $userHome/.config/eww/
+
+  picomHome="$userHome/.config/picom/"
+  mkdir -p $picomHome
   cp -r picom/ $userHome/.config/picom/
+
+  rofiHome="$userHome/.config/rofi/"
+  mkdir -p $rofiHome
   cp -r rofi/ $userHome/.config/rofi/
+
+  dwmHome="$userHome/.config/dwm/"
+  mkdir -p $dwmHome
   cp -r dwm/ $userHome/.config/dwm/
 
   slockInstalled=$(which slock)
@@ -260,20 +285,24 @@ setDWMConfig() {
   xrdb merge $userHome/.config/dwm/.Xresources
 
   # Copy background pictures to the Pictures folder
-  mkdir -p $userHome/Pictures/wall
+  picHome="$userHome/Pictures/wall/"
+  mkdir -p $picomHome
 
-  picturesDir="$userHome/Pictures/wall/"
-  echo "Copying wallpapers to $picturesDir"
-  cp -r wall/ $picturesDir
+  sleep 1
+
+  echo "Copying wallpapers to $picHome"
+  cp -r wall/ $picHome
 
   # Compile dwm files
   echo "Compiling dwm configuration"
-  cd $userHome/.config/dwm/ && sudo make install
+  cd $dwmHome && sudo make install
+
+  sleep 1
 
   echo "Compile done"
   # Ask to restart
   read -p "Would you like to reboot now? [Y,n]: " rebootResult
-  if [ $rebootResult -eq "y" ] || [ $rebootResult -eq "Y" ]; then
+  if [ "$rebootResult" == "y" ] || [ "$rebootResult" == "Y" ]; then
     # Reboot system
     sudo reboot
   fi
