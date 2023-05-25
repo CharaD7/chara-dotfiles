@@ -40,7 +40,7 @@ setGitConfig () {
   # Setting up gitconfig with alias
   read -p "Would you like to setup your gitconfig now? [Y,n]: " -i Y gitConfigReply
   if [ $gitConfigReply -eq "y" || $gitConfigReply -eq "Y" ]; then
-  # Configure git
+    # Configure git
     read -r "Enter your git username: " gitUsername
     read -r "Enter your git email address: " gitEmail
 
@@ -53,6 +53,8 @@ setGitConfig () {
   sleep 1
   echo "Your git command is now aliased 'g'"
   echo "You can run 'g cn' to check your global git username and 'g ce' to check your global git email address."
+
+  sleep 1
 
 }
 
@@ -92,7 +94,7 @@ setFishConfig() {
   cargo build --release
   sudo cp -r target/release/exa /usr/bin/exa
 
-  echo "Copying fish configuration files to ~/.config/fish..."
+  echo "Copying fish configuration files to $fishPath..."
   cd $basePath
   cp -rf fish/ $fishPath
 }
