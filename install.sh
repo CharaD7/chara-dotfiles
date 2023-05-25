@@ -102,10 +102,11 @@ setFishConfig() {
     "/usr/bin/unzip") echo "Unzip already installed, moving to the next step...";;
   esac
 
-  mkdir -p $userHome/exa
+  exaHome="$userHome/exa/"
+  mkdir -p $exaHome
 
-  unzip exa.zip && mv exa/ $userHome/exa/
-  cd $userHome/exa/
+  unzip exa.zip -d $exaHome
+  cd $exaHome
 
   cargo build --release
   sudo cp -r target/release/exa /usr/bin/exa
