@@ -83,14 +83,19 @@ setFishConfig() {
   echo "Adding cargo bin path to environment variables"
   export PATH="$userHome/.cargo/bin:$PATH"
 
+  sleep 1
+
+  echo "Checking system path for wget..."
   case "$( which wget 2> /dev/null )" in
     "") sudo apt install wget;;
     "/usr/bin/wget") echo "wget installed, moving to the next step...";;
   esac
   wget https://github.com/ogham/exa/archive/master.zip
   mv master.zip exa.zip
-  echo 'Checking for unzip install path'
 
+  sleep 1
+
+  echo 'Checking for unzip install path'
   # Checking to see if path is registered
   case "$( which unzip 2> /dev/null)" in
     "") sudo apt install -y unzip;;
@@ -98,14 +103,16 @@ setFishConfig() {
   esac
 
   mkdir -p $userHome/exa
+
   unzip exa.zip && mv exa/ $userHome/exa/
   cd $userHome/exa/
+
   cargo build --release
   sudo cp -r target/release/exa /usr/bin/exa
 
   echo "Copying fish configuration files to $fishPath..."
   cd $basePath
-  cp -rf fish/ $fishPath
+  cp -rf fish/* $fishPath
 }
 
 # Tmux terminal config setup function
@@ -132,16 +139,19 @@ setTmuxConfig() {
 setBubblyConfig() {
   # Install bubbly on user request
   read -p "Would you like to install the bubbly chat widget now? [Y,n]: " bubblyReply
-  if [ $bubblesReply -eq "y" ] || [ $bubblyReply -eq "Y" ]; then
+  if [ "$bubblesReply" == "y" ] || [ "$bubblyReply" == "Y" ]; then
     # Copy local content to ~/.loca/share/
     echo "Setting up bubbly..."
 
-    mkdir -p $userHome/.local/share/bubbly
-    echo "Copying bubbly files to respective directories"
-    cp -r bubbles/local/* $userHome/.local/share/bubbly/
+    bubblyDir="$userHome/.local/share/bubbly/"
+    mkdir -p $bubblyDir
 
-    mkdir -p $userHome/.config/bubbly
-    cp -r bubbles/config/* $userHome/.config/bubbly/
+    echo "Copying bubbly files to respective directories"
+    cp -r bubbles/local/* $bubblyDir
+
+    bubblyHome="$userHome/.config/bubbly/"
+    mkdir -p $bubblyHome
+    cp -r bubbles/config/* $bubblyHome
 
     # Register desktop application
     echo "Registering desktop bubbly application"
