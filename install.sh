@@ -29,25 +29,13 @@ setGitConfig () {
 
   # Ask to use repo's gitconfig
   read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " -i Y gitAliases
-  case "$( $gitAliases )" in
-    "y")
-      cp -r .gitconfig $userHome/.gitconfig
+  if [ $gitAliases -eq "y" || $gitAliases -eq "Y" ]; then
+    # Configure git
+    cp -r .gitconfig $userHome/.gitconfig
 
-      alias g=git
-      sleep 1;;
-    "Y")
-      cp -r .gitconfig $userHome/.gitconfig
-
-      alias g=git
-      sleep 1;;
-  esac
-  # if [ $gitAliases -eq "y" || $gitAliases -eq "Y" ]; then
-  #   # Setting up gitconfig with alias
-  #   cp -r .gitconfig ~/.gitconfig
-  #
-  #   alias g=git
-  #   sleep 1
-  # fi
+    alias g=git
+    sleep 1
+  fi
 
   # Setting up gitconfig with alias
   read -p "Would you like to setup your gitconfig now? [Y,n]: " -i Y gitConfigReply
