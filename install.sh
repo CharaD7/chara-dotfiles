@@ -32,6 +32,14 @@ git clone https://github.com/CharaD7/chara-dotfiles.git .
 # .gitconfig setup function
 setGitConfig () {
 
+  echo "Installing prerequisites..."
+  sudo apt install -y curl \
+      gnupg ca-certificates \
+      gcc-multilib g++-multilib cmake libssl-dev pkg-config \
+      libfreetype6-dev libasound2-dev libexpat1-dev libxcb-composite0-dev \
+      libbz2-dev libsndio-dev freeglut3-dev libxmu-dev libxi-dev libfontconfig1-dev \
+      libxcursor-dev
+
   # Ask to use repo's gitconfig
   read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " gitAliases
   if [ "$gitAliases" == "y" ] || [ "$gitAliases" == "Y" ]; then
@@ -129,9 +137,6 @@ setTmuxConfig() {
   cp -r .tmux.conf $userHome/.tmux.conf
   cp -r .tmux.powerline.conf $userHome/.tmux.powerline.conf
 
-  echo "Running powerline-config to setup tmux..."
-  source $userHome/.tmux.conf
-
   echo "Setting system default shell to tmux"
   sudo chsh -s $(which tmux)
 }
@@ -140,7 +145,7 @@ setTmuxConfig() {
 setBubblyConfig() {
   # Install bubbly on user request
   read -p "Would you like to install the bubbly chat widget now? [Y,n]: " bubblyReply
-  if [ "$bubblesReply" == "y" ] || [ "$bubblyReply" == "Y" ]; then
+  if [ "$bubblyReply" == "y" ] || [ "$bubblyReply" == "Y" ]; then
     # Copy local content to ~/.loca/share/
     echo "Setting up bubbly..."
 
@@ -209,14 +214,6 @@ setNeovideConfig() {
     read -p "Would you like to install NEOVIDE now? [Y,n]: " neovideReply
     if [ "$neovideReply" == "y" ] || [ "$neovideReply" == "Y" ]; then
       # Install neovide
-      echo "Installing prerequisites..."
-      sudo apt install -y curl \
-          gnupg ca-certificates \
-          gcc-multilib g++-multilib cmake libssl-dev pkg-config \
-          libfreetype6-dev libasound2-dev libexpat1-dev libxcb-composite0-dev \
-          libbz2-dev libsndio-dev freeglut3-dev libxmu-dev libxi-dev libfontconfig1-dev \
-          libxcursor-dev
-
       # Use cargo to install neovide
       cargo install --git https://github.com/neovide/neovide
     fi
