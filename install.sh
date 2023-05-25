@@ -15,10 +15,11 @@ sudo apt update -y && sudo apt upgrade -y
 echo "Checking for git installation..."
 
 # Checking to see if git path is registered
-case "$( which git 2> /dev/null)" in
+case "$(which git 2> /dev/null)" in
   "")
     echo "Git not detected, installing git..."
     sudo apt install -y git;;
+  "/usr/bin/git") echo "Git already installed, moving to the next step...";;
 esac
 
 # Clone the repository
@@ -29,7 +30,7 @@ setGitConfig () {
 
   # Ask to use repo's gitconfig
   read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " -i Y gitAliases
-  if [ $gitAliases -eq "y" || $gitAliases -eq "Y" ]; then
+  if [ $gitAliases -eq "y" ] || [ $gitAliases -eq "Y" ]; then
     # Configure git
     cp -r .gitconfig $userHome/.gitconfig
 
@@ -39,7 +40,7 @@ setGitConfig () {
 
   # Setting up gitconfig with alias
   read -p "Would you like to setup your gitconfig now? [Y,n]: " -i Y gitConfigReply
-  if [ $gitConfigReply -eq "y" || $gitConfigReply -eq "Y" ]; then
+  if [ $gitConfigReply -eq "y" ] || [ $gitConfigReply -eq "Y" ]; then
     # Configure git
     read -r "Enter your git username: " gitUsername
     read -r "Enter your git email address: " gitEmail
@@ -51,6 +52,7 @@ setGitConfig () {
   fi
 
   sleep 1
+
   echo "Your git command is now aliased 'g'"
   echo "You can run 'g cn' to check your global git username and 'g ce' to check your global git email address."
 
@@ -87,6 +89,7 @@ setFishConfig() {
   # Checking to see if path is registered
   case "$( which unzip 2> /dev/null)" in
     "") sudo apt install -y unzip;;
+    "/usr/bin/unzip") echo "Unzip already installed, moving to the next step...";;
   esac
 
   unzip exa.zip && mv exa/ $userHome/exa/
@@ -123,7 +126,7 @@ setTmuxConfig() {
 setBubblyConfig() {
   # Install bubbly on user request
   read -p "Would you like to install the bubbly chat widget now? [Y,n]: " -i Y bubblyReply
-  if [ $bubblesReply -eq "y" || $bubblyReply -eq "Y" ]; then
+  if [ $bubblesReply -eq "y" ] || [ $bubblyReply -eq "Y" ]; then
     # Copy local content to ~/.loca/share/
     echo "Setting up bubbly..."
 
@@ -143,7 +146,7 @@ setBubblyConfig() {
     echo "Setup will now attempt to add you as member of the video group to allow you change screen brightness using the dashboard."
     # Ask to accept adding to video group
     read -p "Would you like setup to add you ro video group? [Y,n]: " -i Y videoResult
-    if [ $videoResult -eq "y" || $videoResult -eq "Y" ]; then
+    if [ $videoResult -eq "y" ] || [ $videoResult -eq "Y" ]; then
       # Add the user
       sudo gpasswd video -a $(whoami)
 
@@ -163,16 +166,18 @@ setBubblyConfig() {
 setNeovideConfig() {
   # Configure neovim on user request
   read -p "Would you like to configure the neovim IDE now? [Y,n]: " -i Y nvimReply
-  if [ $nvimReply -eq "y" || $nvimReply -eq "Y" ]; then
+  if [ $nvimReply -eq "y" ] || [ $nvimReply -eq "Y" ]; then
     # Install nvim if it does not exist
     echo "Checking for nvim installation..."
     nvimPath=$(which nvim)
 
     # Checking to see if nvim path is registered
-    if [ $nvimPath 2> /dev/null -eq "" ]; then
-      echo "Nvim not detected, installing nvim..."
-      sudo apt install -y nvim
-    fi
+    case "$($nvimPath 2> /dev/null)" in
+      "")
+        echo "Nvim not detected, installing nvim..."
+        sudo apt install -y nvim;;
+      "/usr/bin/nvim") echo "Nvim already installed, moving to the next step...";;
+    esac
 
     # Copy neovim files to ~/.config/nvim
     nvimPath="$userHome/.config/nvim/"
@@ -182,7 +187,7 @@ setNeovideConfig() {
 
     # Ask to install neovide
     read -p "Would you like to install NEOVIDE now? [Y,n]: " -i Y neovideReply
-    if [ $neovideReply -eq "y" || $neovideReply -eq "Y" ]; then
+    if [ $neovideReply -eq "y" ] || [ $neovideReply -eq "Y" ]; then
       # Install neovide
       echo "Installing prerequisites..."
       sudo apt install -y curl \
@@ -226,10 +231,12 @@ setDWMConfig() {
 
   slockInstalled=$(which slock)
 
-  if [ $slockInstalled 2> /dev/null -eq "" ]; then
-    echo "Installing slock"
-    sudo apt install slock
-  fi
+  case "$($slockInstalled 2> /dev/null)" in
+    "")
+      echo "Installing slock"
+      sudo apt install -y slock;;
+    "/usr/bin/slock") echo "slock already installed, moving to the next step...";;
+  esac
 
   # Copy the desktop session call to xsessions
   sudo cp -r dwm.desktop /usr/share/xsessions/dwm.desktop
@@ -250,7 +257,7 @@ setDWMConfig() {
   echo "Compile done"
   # Ask to restart
   read -p "Would you like to reboot now? [Y,n]: " -i Y rebootResult
-  if [ $rebootResult -eq "y" || $rebootResult -eq "Y" ]; then
+  if [ $rebootResult -eq "y" ] || [ $rebootResult -eq "Y" ]; then
     # Reboot system
     sudo reboot
   fi
