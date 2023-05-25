@@ -13,13 +13,13 @@ echo "Running system update..."
 sudo apt update -y && sudo apt upgrade -y
 
 echo "Checking for git installation..."
-gitPath=$(which git)
 
 # Checking to see if git path is registered
-if [ $gitPath 2> /dev/null -eq "" ]; then
-  echo "Git not detected, installing git..."
-  sudo apt install git
-fi
+case "$( which git 2> /dev/null)" in
+  "")
+    echo "Git not detected, installing git..."
+    sudo apt install git;;
+esac
 
 # Clone the repository
 git clone https://github.com/CharaD7/chara-dotfiles.git .
@@ -29,13 +29,20 @@ setGitConfig () {
 
   # Ask to use repo's gitconfig
   read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " -i Y gitAliases
-  if [ $gitAliases -eq "y" || $gitAliases -eq "Y" ]; then
-    # Setting up gitconfig with alias
-    cp -r .gitconfig ~/.gitconfig
+  case "$( $gitAliases )" in
+    "y" || "Y")
+      cp -r .gitconfig $userHome/.gitconfig
 
-    alias g=git
-    sleep 1
-  fi
+      alias g=git
+      sleep 1
+  esac
+  # if [ $gitAliases -eq "y" || $gitAliases -eq "Y" ]; then
+  #   # Setting up gitconfig with alias
+  #   cp -r .gitconfig ~/.gitconfig
+  #
+  #   alias g=git
+  #   sleep 1
+  # fi
 
   # Setting up gitconfig with alias
   read -p "Would you like to setup your gitconfig now? [Y,n]: " -i Y gitConfigReply
@@ -81,12 +88,11 @@ setFishConfig() {
   curl https://github.com/ogham/exa/archive/master.zip
   mv master.zip exa.zip
   echo 'Checking for unzip install path'
-  unzipPath=$(which unzip)
 
   # Checking to see if path is registered
-  if [ $unzipPath 2> /dev/null -eq "" ]; then
-    sudo apt install -y unzip
-  fi
+  case "$( which unzip 2> /dev/null)" in
+    "") sudo apt install -y unzip;;
+  esac
 
   unzip exa.zip && mv exa/ $userHome/exa/
   cd $userHome/exa/
