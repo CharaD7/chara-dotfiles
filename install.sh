@@ -114,7 +114,7 @@ setTmuxConfig() {
   source $userHome/.tmux.conf
 
   echo "Setting system default shell to tmux"
-  sudo chsh -s (which tmux)
+  sudo chsh -s $(which tmux)
 }
 
 # Bubbly config setup function
