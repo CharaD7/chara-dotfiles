@@ -106,7 +106,7 @@ setFishConfig() {
   mkdir -p $exaHome
 
   unzip exa.zip -d $exaHome
-  cd $exaHome
+  cd $exaHome/exa-master/
 
   cargo build --release
   sudo cp -r target/release/exa /usr/bin/exa
