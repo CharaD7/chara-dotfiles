@@ -34,7 +34,7 @@ setGitConfig () {
 
   # Ask to use repo's gitconfig
   read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " gitAliases
-  if [ $gitAliases -eq "y" ] || [ $gitAliases -eq "Y" ]; then
+  if [ "$gitAliases" == "y" ] || [ "$gitAliases" == "Y" ]; then
     # Configure git
     cp -r .gitconfig $userHome/.gitconfig
 
@@ -44,10 +44,10 @@ setGitConfig () {
 
   # Setting up gitconfig with alias
   read -p "Would you like to setup your gitconfig now? [Y,n]: " gitConfigReply
-  if [ $gitConfigReply -eq "y" ] || [ $gitConfigReply -eq "Y" ]; then
+  if [ "$gitConfigReply" == "y" ] || [ "$gitConfigReply" == "Y" ]; then
     # Configure git
-    read -r "Enter your git username: " gitUsername
-    read -r "Enter your git email address: " gitEmail
+    read -p "Enter your git username: " gitUsername
+    read -p "Enter your git email address: " gitEmail
 
     echo "Setting your global git username to '$gitUsername'"
     git config --global user.name "$gitUsername"
@@ -67,17 +67,14 @@ setGitConfig () {
 # Fish terminal config setup function
 setFishConfig() {
   fishPath="$userHome/.config/fish/"
+  mkdir -p $fishPath
 
   echo "Installing fish shell..."
-  curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-
-  echo "Setting up fish terminal..."
-  omf install z peco
-  omf theme bobthefish
+  sudo apt install fish -y
+  curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | bash
 
   echo "Installing fisher, fish's plugin manager..."
-  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-  fisher install x-motemen/ghq
+  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
 
   sleep 1
 
@@ -86,7 +83,11 @@ setFishConfig() {
   echo "Adding cargo bin path to environment variables"
   export PATH="$userHome/.cargo/bin:$PATH"
 
-  curl https://github.com/ogham/exa/archive/master.zip
+  case "$( which wget 2> /dev/null )" in
+    "") sudo apt install wget;;
+    "/usr/bin/wget") echo "wget installed, moving to the next step...";;
+  esac
+  wget https://github.com/ogham/exa/archive/master.zip
   mv master.zip exa.zip
   echo 'Checking for unzip install path'
 
@@ -96,6 +97,7 @@ setFishConfig() {
     "/usr/bin/unzip") echo "Unzip already installed, moving to the next step...";;
   esac
 
+  mkdir -p $userHome/exa
   unzip exa.zip && mv exa/ $userHome/exa/
   cd $userHome/exa/
   cargo build --release

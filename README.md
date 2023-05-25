@@ -121,6 +121,15 @@ https://github.com/CharaD7/chara-dotfiles/assets/9804780/324b41a7-729a-4184-8802
 has been made such that there is a mode you can switch to in order to emulate [VIM](https://vim.org) commands,
 making you the developer super-productive. To learn more about scripting with fish, kindly visit the [docs](https://fishshell.com/docs/current/index.html).
 
+After system reboots, you will need to run the following commands to install the packages listed below for the fish terminal.
+
+```fish
+    omf install z peco
+    omf theme bobthefish
+    fisher install jorgebucaran/fisher
+    fisher install x-motemen/ghq
+```
+
 <details>
     <summary>The fish config script installs a couple of packages to make your experience with fish seemless:</summary>
 
