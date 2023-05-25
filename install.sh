@@ -29,7 +29,7 @@ git clone https://github.com/CharaD7/chara-dotfiles.git .
 setGitConfig () {
 
   # Ask to use repo's gitconfig
-  read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " -i Y gitAliases
+  read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " gitAliases
   if [ $gitAliases -eq "y" ] || [ $gitAliases -eq "Y" ]; then
     # Configure git
     cp -r .gitconfig $userHome/.gitconfig
@@ -39,7 +39,7 @@ setGitConfig () {
   fi
 
   # Setting up gitconfig with alias
-  read -p "Would you like to setup your gitconfig now? [Y,n]: " -i Y gitConfigReply
+  read -p "Would you like to setup your gitconfig now? [Y,n]: " gitConfigReply
   if [ $gitConfigReply -eq "y" ] || [ $gitConfigReply -eq "Y" ]; then
     # Configure git
     read -r "Enter your git username: " gitUsername
@@ -125,7 +125,7 @@ setTmuxConfig() {
 # Bubbly config setup function
 setBubblyConfig() {
   # Install bubbly on user request
-  read -p "Would you like to install the bubbly chat widget now? [Y,n]: " -i Y bubblyReply
+  read -p "Would you like to install the bubbly chat widget now? [Y,n]: " bubblyReply
   if [ $bubblesReply -eq "y" ] || [ $bubblyReply -eq "Y" ]; then
     # Copy local content to ~/.loca/share/
     echo "Setting up bubbly..."
@@ -145,7 +145,7 @@ setBubblyConfig() {
 
     echo "Setup will now attempt to add you as member of the video group to allow you change screen brightness using the dashboard."
     # Ask to accept adding to video group
-    read -p "Would you like setup to add you ro video group? [Y,n]: " -i Y videoResult
+    read -p "Would you like setup to add you ro video group? [Y,n]: " videoResult
     if [ $videoResult -eq "y" ] || [ $videoResult -eq "Y" ]; then
       # Add the user
       sudo gpasswd video -a $(whoami)
@@ -165,7 +165,7 @@ setBubblyConfig() {
 # Neovide config setup function
 setNeovideConfig() {
   # Configure neovim on user request
-  read -p "Would you like to configure the neovim IDE now? [Y,n]: " -i Y nvimReply
+  read -p "Would you like to configure the neovim IDE now? [Y,n]: " nvimReply
   if [ $nvimReply -eq "y" ] || [ $nvimReply -eq "Y" ]; then
     # Install nvim if it does not exist
     echo "Checking for nvim installation..."
@@ -186,7 +186,7 @@ setNeovideConfig() {
     cp -r nvim/* $nvimPath
 
     # Ask to install neovide
-    read -p "Would you like to install NEOVIDE now? [Y,n]: " -i Y neovideReply
+    read -p "Would you like to install NEOVIDE now? [Y,n]: " neovideReply
     if [ $neovideReply -eq "y" ] || [ $neovideReply -eq "Y" ]; then
       # Install neovide
       echo "Installing prerequisites..."
@@ -256,7 +256,7 @@ setDWMConfig() {
 
   echo "Compile done"
   # Ask to restart
-  read -p "Would you like to reboot now? [Y,n]: " -i Y rebootResult
+  read -p "Would you like to reboot now? [Y,n]: " rebootResult
   if [ $rebootResult -eq "y" ] || [ $rebootResult -eq "Y" ]; then
     # Reboot system
     sudo reboot
