@@ -184,6 +184,42 @@ setBubblyConfig() {
 
 }
 
+
+# Neovim installation
+installNeovim() {
+	cd $userHome/Downloads/
+	
+	sleep 1
+	
+	# Download the image file
+	echo "Downloading neovim image..."
+	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+	chmod u+x nvim.appimage
+	
+	sleep 1
+	
+	# Exctract the files
+	echo "Extracting the image file"
+	./nvim.appimage --appimage-extract
+	
+	# Exposing the executable globally
+	echo "Moving and registering Neovim globally..."
+	sudo mv squashfs-root /
+	sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+	
+	if [ "$( nvim --version 2> /dev/null )" != "" ]; then
+		echo "Done."
+		
+		sleep 1
+		
+		echo "Moving to the next step..."
+		
+		cd $basePath
+	else
+		echo "There was a problem installing neovim"
+	fi
+}
+
 # Neovide config setup function
 setNeovideConfig() {
   # Configure neovim on user request
