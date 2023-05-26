@@ -230,15 +230,22 @@ setNeovideConfig() {
 
     # Install nvim if it does not exist
     echo "Checking for nvim installation..."
-    nvimPath=$(which neovim)
-
     # Checking to see if nvim path is registered
-    case "$($nvimPath 2> /dev/null)" in
-      "")
+    if [ "$(which nvim)" == "" ]; then
         echo "Nvim not detected, installing nvim..."
-        sudo apt install -y neovim;;
-      "/usr/bin/nvim") echo "Nvim already installed, moving to the next step...";;
-    esac
+        installNeovim
+    else
+    	# Check nvim version
+    	nvimVersion=$(nvim --version | head -1 | grep -o '[0-9]\.[0-9]')
+    	
+     	if (( $(echo "$nvimVersion < 0.9 " |bc -l) )); then
+        echo "Unsupported version installed. Removing version and installing a supported version"
+        sudo apt remove -y neovim
+        installNeovim
+      else
+      	echo "Nvim version 0.9 or greater is installed. Moving to the next step."
+      fi
+    fi
 
     # Copy neovim files to ~/.config/nvim
     nvimPath="$userHome/.config/nvim/"
