@@ -194,13 +194,13 @@ setNeovideConfig() {
 
     # Install nvim if it does not exist
     echo "Checking for nvim installation..."
-    nvimPath=$(which nvim)
+    nvimPath=$(which neovim)
 
     # Checking to see if nvim path is registered
     case "$($nvimPath 2> /dev/null)" in
       "")
         echo "Nvim not detected, installing nvim..."
-        sudo apt install -y nvim;;
+        sudo apt install -y neovim;;
       "/usr/bin/nvim") echo "Nvim already installed, moving to the next step...";;
     esac
 
@@ -214,8 +214,9 @@ setNeovideConfig() {
     read -p "Would you like to install NEOVIDE now? [Y,n]: " neovideReply
     if [ "$neovideReply" == "y" ] || [ "$neovideReply" == "Y" ]; then
       # Install neovide
+      sudo snap install neovide
       # Use cargo to install neovide
-      cargo install --git https://github.com/neovide/neovide
+      # cargo install --git https://github.com/neovide/neovide
     fi
 
   else
