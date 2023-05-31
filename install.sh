@@ -284,7 +284,7 @@ setDWMConfig() {
   # Install prerequisites for Dynamic Window Manager (dwm)
   echo "Installing prerequisites for dwm..."
   sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
-  sudo apt install -y build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm curl
+  sudo apt install -y build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm curl libimlib2-dev
 
   sleep 1
 
@@ -318,12 +318,12 @@ setDWMConfig() {
 
   slockInstalled=$(which slock)
 
-  case "$($slockInstalled 2> /dev/null)" in
-    "")
-      echo "Installing slock"
-      sudo apt install -y slock;;
-    "/usr/bin/slock") echo "slock already installed, moving to the next step...";;
-  esac
+  # Checking to see if slock path is registered
+  if [ "$($slockInstalled 2> /dev/null)" == "" ]; then
+      echo "slock not detected, installing slock..."
+      sudo apt install -y slock
+  else
+    echo "slock already installed, moving to the next step...";;
 
   # Copy the desktop session call to xsessions
   sudo cp -r dwm.desktop /usr/share/xsessions/dwm.desktop
@@ -341,7 +341,7 @@ setDWMConfig() {
 
   # Compile dwm files
   echo "Compiling dwm configuration"
-  cd $dwmHome && sudo make install
+  cd $dwmHome/dwm && sudo make install
 
   sleep 1
 
