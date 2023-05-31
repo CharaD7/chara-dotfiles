@@ -12,7 +12,7 @@ configuration{
     display-drun: "   Apps ";
 }
 
-@theme "/home/charapyge/.config/rofi/themes/onedark.rasi"
+@theme "~/.config/rofi/themes/onedark.rasi"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;
