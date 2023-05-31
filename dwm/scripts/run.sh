@@ -9,6 +9,6 @@ picom &
 wal &
 fetch &
 
-~/.config/chadwm/scripts/bar &
+~/.config/dwm/scripts/bar &
 
 while type dwm >/dev/null; do dwm && continue || break; done
