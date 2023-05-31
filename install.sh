@@ -167,7 +167,7 @@ setBubblyConfig() {
 
     echo "Setup will now attempt to add you as member of the video group to allow you change screen brightness using the dashboard."
     # Ask to accept adding to video group
-    read -p "Would you like setup to add you ro video group? [Y,n]: " videoResult
+    read -p "Would you like setup to add you to video group? [Y,n]: " videoResult
     if [ "$videoResult" == "y" ] || [ "$videoResult" == "Y" ]; then
       # Add the user
       sudo gpasswd video -a $(whoami)
