@@ -337,7 +337,7 @@ setDWMConfig() {
   sleep 1
 
   echo "Copying wallpapers to $picHome"
-  cp -r wall/ $picHome
+  cp -r wall/* $picHome/
 
   # Compile dwm files
   echo "Compiling dwm configuration"
