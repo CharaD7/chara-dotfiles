@@ -36,7 +36,6 @@ local servers = {
 	"jsonls",
 	"rust_analyzer",
 	"tsserver",
-	"pyright",
 	"astro",
 	"bashls",
 	"clangd",
