@@ -7,7 +7,29 @@ if not status_ok then return end
 
 treesitter.setup {
 	autopairs = { enable = true },
-	ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	-- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	ensure_installed = {
+		"bash",
+		"c",
+		"css",
+		"fish",
+		"gitignore",
+		"html",
+		"javascript",
+		"json",
+		"lua",
+		"markdown_inline",
+		"prisma",
+		"python",
+		"rust",
+		"solidity",
+		"sql",
+		"svelte",
+		"typescript",
+		"vim",
+		"vue",
+		"yaml",
+	}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 	sync_install = true,
 	highlight = { enable = true },
 	rainbow = { enable = true, extended_mode = true },
