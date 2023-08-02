@@ -151,8 +151,8 @@ ___
 
 ## :pager: TMUX :pager:
 
- ![tmux](https://github.com/CharaD7/chara-dotfiles/assets/9804780/c1eba1d3-3591-4c7b-99f4-5dc1d36b89d2)
- *Tmux preview*
+![fish-tmux](https://github.com/CharaD7/chara-dotfiles/assets/9804780/b28af3a8-bc9e-40ef-9a47-a8e87f326fdf)
+*Tmux preview*
 
 [tmux](https://github.com/tmux/tmux/wiki) is a terminal multiplexer, allowing you to switch between several programs, detach and reattach them in
 different programs, it proves to be one of the best terminals out there. to know more about it and how to easily navigate your way while using it,
