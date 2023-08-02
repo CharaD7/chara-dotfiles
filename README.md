@@ -124,6 +124,7 @@ making you the developer super-productive. To learn more about scripting with fi
 After system reboots, you will need to run the following commands to install the packages listed below for the fish terminal.
 
 ```fish
+    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
     omf install z peco
     omf theme bobthefish
     fisher install jorgebucaran/fisher

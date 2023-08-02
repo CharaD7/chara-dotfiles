@@ -81,9 +81,6 @@ setFishConfig() {
   sudo apt install fish -y
   curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | bash
 
-  echo "Installing fisher, fish's plugin manager..."
-  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish
-
   sleep 1
 
   echo "Installing prerequisites for exa..."
