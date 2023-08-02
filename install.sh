@@ -339,7 +339,7 @@ setDWMConfig() {
   echo "Compiling dwm configuration"
   cd $dwmHome/dwm && sudo make install
 
-  xrdb merge $userHome/.config/dwm/.Xresources
+  xrdb merge $dwmHome/.Xresources
 
   sleep 1
 
