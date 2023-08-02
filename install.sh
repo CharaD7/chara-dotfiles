@@ -299,19 +299,19 @@ setDWMConfig() {
   echo "Copying necessary files"
   ewwHome="$userHome/.config/eww/"
   mkdir -p $ewwHome
-  cp -r eww/ $userHome/.config/eww/
+  cp -r eww/ $ewwHome
 
   picomHome="$userHome/.config/picom/"
   mkdir -p $picomHome
-  cp -r picom/ $userHome/.config/picom/
+  cp -r picom/ $picomHome
 
   rofiHome="$userHome/.config/rofi/"
   mkdir -p $rofiHome
-  cp -r rofi/ $userHome/.config/rofi/
+  cp -r rofi/ $rofiHome
 
   dwmHome="$userHome/.config/dwm/"
   mkdir -p $dwmHome
-  cp -r dwm/ $userHome/.config/dwm/
+  cp -r dwm/ $dwmHome
 
   slockInstalled=$(which slock)
 
@@ -326,8 +326,6 @@ setDWMConfig() {
   # Copy the desktop session call to xsessions
   sudo cp -r dwm.desktop /usr/share/xsessions/dwm.desktop
 
-  xrdb merge $userHome/.config/dwm/.Xresources
-
   # Copy background pictures to the Pictures folder
   picHome="$userHome/Pictures/wall/"
   mkdir -p $picomHome
@@ -340,6 +338,8 @@ setDWMConfig() {
   # Compile dwm files
   echo "Compiling dwm configuration"
   cd $dwmHome/dwm && sudo make install
+
+  xrdb merge $userHome/.config/dwm/.Xresources
 
   sleep 1
 
