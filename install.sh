@@ -324,6 +324,7 @@ setDWMConfig() {
       sudo apt install -y slock
   else
     echo "slock already installed, moving to the next step...";;
+  fi
 
   # Copy the desktop session call to xsessions
   sudo cp -r dwm.desktop /usr/share/xsessions/dwm.desktop
