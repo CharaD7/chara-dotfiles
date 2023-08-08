@@ -144,31 +144,31 @@ create({
 }, {
   callback = function()
     -- All Keywords
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Keyword gui=underdotted cterm=underdotted ]]
+    vim.cmd [[ hi Keyword gui=underdotted cterm=underdotted ]]
     -- All Comments
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Comment gui=italic cterm=italic ]]
+    vim.cmd [[ hi Comment gui=italic cterm=italic ]]
     -- All Functions
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Function gui=bold cterm=bold ]]
+    vim.cmd [[ hi Function gui=bold cterm=bold ]]
     -- All Constants
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Constant gui=underline cterm=underline ]]
+    vim.cmd [[ hi Constant gui=underline cterm=underline ]]
     -- All Exceptions
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Exception gui=italic cterm=italic ]]
+    vim.cmd [[ hi Exception gui=italic cterm=italic ]]
     -- All Types
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Type gui=italic cterm=italic ]]
+    vim.cmd [[ hi Type gui=italic cterm=italic ]]
     -- All Labels
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Label gui=italic cterm=italic ]]
+    vim.cmd [[ hi Label gui=italic cterm=italic ]]
     -- All Includes
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Include gui=underdashed cterm=underdashed ]]
+    vim.cmd [[ hi Include gui=underdashed cterm=underdashed ]]
     -- All StorageClasses
-    vim.cmd [[ autocmd ColorScheme zephyr highlight StorageClass gui=underdashed cterm=underdashed ]]
+    vim.cmd [[ hi StorageClass gui=underdashed cterm=underdashed ]]
     -- All Structures
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Structure gui=italic cterm=italic ]]
+    vim.cmd [[ hi Structure gui=italic cterm=italic ]]
     -- All Typedefs
-    vim.cmd [[ autocmd ColorScheme zephyr highlight Typedef gui=underdouble cterm=underdouble ]]
+    vim.cmd [[ hi Typedef gui=underdouble cterm=underdouble ]]
     -- All SpecialComments
-    vim.cmd [[ autocmd ColorScheme zephyr highlight SpecialComment gui=italic cterm=italic ]]
+    vim.cmd [[ hi SpecialComment gui=italic cterm=italic ]]
     -- All PreProcs
-    vim.cmd [[ autocmd ColorScheme zephyr highlight PreProc gui=italic cterm=italic ]]
+    vim.cmd [[ hi PreProc gui=italic cterm=italic ]]
   end
 })
 

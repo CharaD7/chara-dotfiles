@@ -12,7 +12,7 @@ mason.setup {
 			package_pending = "",
 			package_uninstalled = ""
 		},
-		border = 'rounded',
+		border = "rounded", -- could be double | single | rounded
 	}
 }
 
@@ -21,7 +21,7 @@ local servers = {
 	"lua_ls",
 	"html",
 	"emmet_ls",
-	"vuels",
+	"vls",
 	"marksman",
 	"intelephense",
 	"solang",

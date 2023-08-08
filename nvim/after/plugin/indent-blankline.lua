@@ -4,7 +4,7 @@ if not status_ok then return end
 
 indent_blankline.setup {
 	buftype_exclude = { "terminal", "telescope", "nvim-tree" },
-	-- space_char_blankline = " ",
+	space_char_blankline = " ",
 	show_current_context = true,
 	show_end_of_line = true,
 	show_current_context_start = true,
