@@ -39,8 +39,9 @@ packer.init {
 
 return packer.startup(function(use)
 	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+	use('wbthomason/packer.nvim')
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } } })
+	use('ThePrimeagen/harpoon')
 	use("glepnir/zephyr-nvim")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	use("nvim-treesitter/nvim-treesitter-textobjects")
@@ -85,6 +86,11 @@ return packer.startup(function(use)
 		config = function()
 			require('git-conflict').setup()
 		end,
+	})
+	-- Markdown preview
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
 	})
 	-- git related
 	use("rmagatti/auto-session")

@@ -42,8 +42,9 @@ local options = {
   incsearch = true,                  -- enable incremental search
   inccommand = "split",
   smarttab = true,
-  foldmethod = "indent",
-  foldlevel = indent,
+  foldmethod = "manual",
+  foldcolumn = '2',
+  foldlevel = 2,
   foldclose = "all",
   breakindent = true,
   lbr = true,
@@ -79,6 +80,7 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 vim.opt.fillchars:append('fold:•')
 -- More options for listchars.
 vim.opt.listchars:append("space:⋅")
+vim.opt.list = true
 vim.opt.listchars:append("eol:↴")
 -- vim.g.loaded_python_provider = 0
 -- vim.g.loaded_python4_provider = 3
