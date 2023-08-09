@@ -20,6 +20,12 @@
         rso = remote set-url origin
 
         rc = rm --cached
+        # reset to a commit hash
+        rs = reset --hard
+        # revert commit
+        rv = revert
+        # revert merge commit
+        rvm = revert -m
         
         acm = "!f() { git add . && git commit -m \"$(echo $@)\"; }; f";
         aca = "!f() { git commit --amend -m \"$(echo $@)\"; }; f";
