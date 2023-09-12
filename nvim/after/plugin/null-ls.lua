@@ -15,6 +15,7 @@ null_ls.setup {
 		},
 		diagnostics.fish,
 		diagnostics.dotenv_linter,
+		diagnostics.flake8,
 		diagnostics.editorconfig_checker,
 		diagnostics.golangci_lint,
 		diagnostics.hadolint, -- for docker linting
