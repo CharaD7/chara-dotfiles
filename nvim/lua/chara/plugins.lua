@@ -57,7 +57,19 @@ return packer.startup(function(use)
 	use("mbbill/undotree")
 	use("ericglau/vim-reach")
 	use({ "autozimu/LanguageClient-neovim", run = "bash install.sh" })
-	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({
+		"rcarriga/nvim-dap-ui",
+		dependencies = "mfussenegger/nvim-dap",
+	})
+	use({
+		'mfussenegger/nvim-dap-python',
+		filetype = 'python',
+		requires = { "nvim-dap" },
+		config = function ()
+			local path = '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
+			require('dap-python').setup(path)
+		end
+	})
 	use("junegunn/fzf")
 	use("sharkdp/fd")
 	use("sheerun/vim-polyglot") -- This is to help with razor files

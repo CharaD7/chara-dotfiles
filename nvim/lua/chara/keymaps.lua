@@ -86,15 +86,9 @@ map('n', ';tc', ':Telescope commands<CR>', opts)
 map('n', ';tm', ':Telescope marks<CR>', opts)
 map('n', ';te', ':Telescope emoji<CR>', opts)
 -- DapUi commands
-map('n', '<F5>', ':lua require("dap").continue()<CR>', opts)                                               -- Press f5 to debug
-map('n', ';b', ':lua require("dap").toggle_breakpoint()<CR>', opts)                                        -- Press CTRL + b to toggle regular breakpoint
 map('n', '<c-c>', ':lua require("dap").set_breakpoint(vim.fn.input("Breakpoint Condition: "))<CR>', opts)  -- Press CTRL + c to toggle Breakpoint with Condition
 map('n', ';db', ':lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log Point Msg: "))<CR>', opts) -- Press CTRL + l to toggle Logpoint
-map('n', '<F10>', ':lua require("dap").step_over()<CR>', opts)                                             -- Pressing F10 to step over
-map('n', '<F11>', ':lua require("dap").step_into()<CR>', opts)                                             -- Pressing F11 to step into
-map('n', '<F12>', ':lua require("dap").step_out()<CR>', opts)                                              -- Pressing F12 to step out
-map('n', '<F6>', ':lua require("dap").repl.open()<CR>', opts)                                              -- Press F6 to open REPL
-map('n', ';dl', ':lua require("dap").run_last()<CR>', opts)                                                -- Press dl to run last ran configuration (if you used f5 before it will re run it etc)
+map('n', '<leader>dr', ':lua require("dap-python").test_method()<CR>', opts)                                                -- Press dl to run last ran configuration (if you used f5 before it will re run it etc)
 -- Neotest
 map("n", "<leader>na", ":lua require('neotest').run.attach()<CR>", opts)
 map("n", "<leader>nf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", opts)
