@@ -121,16 +121,11 @@ create({ 'FileChangedShellPost' }, {
   end
 })
 
--- Border color for all floating windows
 create({ 'VimEnter' }, {
   callback = function()
+    -- Border color for all floating windows
     vim.cmd [[ highlight FloatBorder guifg=#61AFEF ]]
-  end
-})
-
--- Change comment color for more visibility on transparent views
-create({ 'VimEnter' }, {
-  callback = function()
+    -- Change comment color for more visibility on transparent views
     vim.cmd [[ highlight Comment guifg=#bb89bb ]]
   end
 })

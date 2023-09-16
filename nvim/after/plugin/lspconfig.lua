@@ -42,10 +42,6 @@ nvim_lsp.rust_analyzer.setup {
   },
 }
 nvim_lsp.graphql.setup {}
-nvim_lsp.black.setup {
-  on_attach = on_attach,
-  format = { enable = true },
-}
 nvim_lsp.volar.setup {
   on_attach = on_attach
 }
