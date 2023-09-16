@@ -46,7 +46,15 @@ nvim_lsp.black.setup {
   on_attach = on_attach,
   format = { enable = true },
 }
-nvim_lsp.pyright.setup {
+nvim_lsp.black.setup {
+  on_attach = on_attach,
+  format = { enabled = false },
+}
+nvim_lsp.flake8.setup {
+  on_attach = on_attach,
+  format = { enabled = false },
+}
+nvim_lsp.debugpy.setup {
   on_attach = on_attach,
   format = { enabled = false },
 }

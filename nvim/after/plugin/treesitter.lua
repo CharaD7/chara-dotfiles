@@ -18,7 +18,6 @@ treesitter.setup {
 		"html",
 		"javascript",
 		"scss",
-		"help",
 		"json",
 		"lua",
 		"markdown",
