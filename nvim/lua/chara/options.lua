@@ -79,8 +79,9 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 -- PRETTY FOLD
 vim.opt.fillchars:append('fold:•')
 -- More options for listchars.
-vim.opt.listchars = 'tab:»·,nbsp:+,space:⋅,trail:·,extends:→,precedes:←,eol:↴'
+vim.opt.listchars:append("space:⋅")
 vim.opt.list = true
+vim.opt.listchars:append("eol:↴")
 -- vim.g.loaded_python_provider = 0
 -- vim.g.loaded_python4_provider = 3
 vim.g.loaded_ruby_provider = 0

@@ -28,6 +28,9 @@ map('n', '<leader>h', ':FocusSplitLeft<CR>', opts)
 map('n', '<leader>j', ':FocusSplitDown<CR>', opts)
 map('n', '<leader>k', ':FocusSplitUp<CR>', opts)
 map('n', '<leader>l', ':FocusSplitRight<CR>', opts)
+-- Moving tabs
+map('n', '<Tab>', ':BufferLineMoveNext<CR>', opts)
+map('n', '<S-Tab>', ':BufferLineMovePrev<CR>', opts)
 -- Move by visual line, not actual line
 map('n', 'j', 'gj', opts)
 map('n', 'k', 'gk', opts)
@@ -69,11 +72,11 @@ map('n', '<leader>hl', ':HopLine<CR>', opts)
 -- Telescope commands
 map('n', ';ff', ':Telescope find_files hidden=true<CR>', opts)
 map('n', ';gf', ':Telescope git_files<CR>', opts)
-map('n', ';gc', ':Telescope git_commits<CR>', opts) -- view git commits
+map('n', ';gc', ':Telescope git_commits<CR>', opts)  -- view git commits
 map('n', ';bc', ':Telescope git_bcommits<CR>', opts) -- lists git commits with diff preview and checks them out on <cr>
-map('n', ';bs', ':Telescope git_status<CR>', opts) -- lists current changes per file with diff preview and add action
+map('n', ';bs', ':Telescope git_status<CR>', opts)   -- lists current changes per file with diff preview and add action
 map('n', ';br', ':Telescope git_branches<CR>', opts) -- lists alll branches with log preview, checkout action <cr>, track action <c-t> and rebase action <c-r>
-map('n', ';st', ':Telescope git_stash<CR>', opts) -- lists stash items in current repository with ability to apply them on <cr>
+map('n', ';st', ':Telescope git_stash<CR>', opts)    -- lists stash items in current repository with ability to apply them on <cr>
 map('n', ';fg', ':Telescope live_grep grep_open_files=true<CR>', opts)
 map('n', ';gs', ':Telescope grep_string<CR>', opts)
 map('n', ';bb', ':Telescope buffers<CR>', opts)
@@ -83,15 +86,15 @@ map('n', ';tc', ':Telescope commands<CR>', opts)
 map('n', ';tm', ':Telescope marks<CR>', opts)
 map('n', ';te', ':Telescope emoji<CR>', opts)
 -- DapUi commands
-map('n', '<F5>', ':lua require("dap").continue()<CR>', opts) -- Press f5 to debug
-map('n', ';b', ':lua require("dap").toggle_breakpoint()<CR>', opts) -- Press CTRL + b to toggle regular breakpoint
-map('n', '<c-c>', ':lua require("dap").set_breakpoint(vim.fn.input("Breakpoint Condition: "))<CR>', opts) -- Press CTRL + c to toggle Breakpoint with Condition
+map('n', '<F5>', ':lua require("dap").continue()<CR>', opts)                                               -- Press f5 to debug
+map('n', ';b', ':lua require("dap").toggle_breakpoint()<CR>', opts)                                        -- Press CTRL + b to toggle regular breakpoint
+map('n', '<c-c>', ':lua require("dap").set_breakpoint(vim.fn.input("Breakpoint Condition: "))<CR>', opts)  -- Press CTRL + c to toggle Breakpoint with Condition
 map('n', ';db', ':lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log Point Msg: "))<CR>', opts) -- Press CTRL + l to toggle Logpoint
-map('n', '<F10>', ':lua require("dap").step_over()<CR>', opts) -- Pressing F10 to step over
-map('n', '<F11>', ':lua require("dap").step_into()<CR>', opts) -- Pressing F11 to step into
-map('n', '<F12>', ':lua require("dap").step_out()<CR>', opts) -- Pressing F12 to step out
-map('n', '<F6>', ':lua require("dap").repl.open()<CR>', opts) -- Press F6 to open REPL
-map('n', ';dl', ':lua require("dap").run_last()<CR>', opts) -- Press dl to run last ran configuration (if you used f5 before it will re run it etc)
+map('n', '<F10>', ':lua require("dap").step_over()<CR>', opts)                                             -- Pressing F10 to step over
+map('n', '<F11>', ':lua require("dap").step_into()<CR>', opts)                                             -- Pressing F11 to step into
+map('n', '<F12>', ':lua require("dap").step_out()<CR>', opts)                                              -- Pressing F12 to step out
+map('n', '<F6>', ':lua require("dap").repl.open()<CR>', opts)                                              -- Press F6 to open REPL
+map('n', ';dl', ':lua require("dap").run_last()<CR>', opts)                                                -- Press dl to run last ran configuration (if you used f5 before it will re run it etc)
 -- Neotest
 map("n", "<leader>na", ":lua require('neotest').run.attach()<CR>", opts)
 map("n", "<leader>nf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", opts)

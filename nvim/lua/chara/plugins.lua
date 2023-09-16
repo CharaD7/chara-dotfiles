@@ -66,7 +66,6 @@ return packer.startup(function(use)
 	use("MunifTanjim/prettier.nvim")
 	use({ "CRAG666/code_runner.nvim" })
 	use({ "numToStr/Comment.nvim" })
-	use("SmiteshP/nvim-navic")
 	use("ryanoasis/vim-devicons") -- optional, for file icon
 	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
 	use({
@@ -169,11 +168,11 @@ return packer.startup(function(use)
 	use("artur-shaik/jc.nvim")
 	-- Grammar suggestions load_extension
 	use("neovim/nvim-lspconfig")
+	use("SmiteshP/nvim-navic")
 	use("RRethy/vim-illuminate")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use("xiyaowong/nvim-transparent")
-	use({ "diepm/vim-rest-console", ft = { "rest" } }) -- rest live testing
 	use({
 		"nvim-neotest/neotest",
 		requires = {
@@ -265,12 +264,6 @@ return packer.startup(function(use)
 	-- intuitive toggleterm
 	use { "akinsho/toggleterm.nvim", tag = '*' }
 	use("sindrets/diffview.nvim") -- diff compare
-	use({
-		"SmiteshP/nvim-gps",
-		config = function()
-			require("nvim-gps").setup()
-		end,
-	})
 	use("p00f/nvim-ts-rainbow") -- Rainbow matching
 	use("folke/todo-comments.nvim")
 	use("tpope/vim-fugitive")
