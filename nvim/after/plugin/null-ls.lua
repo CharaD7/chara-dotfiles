@@ -15,11 +15,6 @@ null_ls.setup {
 		},
 		diagnostics.fish,
 		diagnostics.dotenv_linter,
-		diagnostics.mypy,
-		diagnostics.ruff,
-		formatting.black.with {
-			filetype = 'python',
-		},
 		diagnostics.editorconfig_checker,
 		diagnostics.golangci_lint,
 		diagnostics.hadolint, -- for docker linting

@@ -14,15 +14,11 @@ treesitter.setup {
 		"css",
 		"fish",
 		"gitignore",
-		"graphql",
 		"html",
 		"javascript",
-		"scss",
 		"json",
 		"lua",
-		"markdown",
 		"markdown_inline",
-		"php",
 		"prisma",
 		"python",
 		"rust",
@@ -34,11 +30,7 @@ treesitter.setup {
 		"vue",
 		"yaml",
 	}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  -- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = true,
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-  auto_install = true,
 	highlight = { enable = true },
 	rainbow = { enable = true, extended_mode = true },
 	indent = { enable = true },
