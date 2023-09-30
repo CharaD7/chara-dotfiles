@@ -172,20 +172,6 @@ create({
   end
 })
 
--- IndentBlankline colors
-create({ 'VimEnter' }, {
-  callback = function()
-    vim.cmd [[
-      highlight IndentBlanklineIndent2 guifg=#E06C75 gui=nocombine
-      highlight IndentBlanklineIndent3 guifg=#E5C07B gui=nocombine
-      highlight IndentBlanklineIndent4 guifg=#98C379 gui=nocombine
-      highlight IndentBlanklineIndent5 guifg=#56B6C2 gui=nocombine
-      highlight IndentBlanklineIndent6 guifg=#61AFEF gui=nocombine
-      highlight IndentBlanklineIndent7 guifg=#C678DD gui=nocombine
-    ]]
-  end
-})
-
 -- Configuring Reach language intellisense
 create({ 'BufRead' }, {
   pattern = { '*.rsh' },
