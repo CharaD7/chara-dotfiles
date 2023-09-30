@@ -57,19 +57,7 @@ return packer.startup(function(use)
 	use("mbbill/undotree")
 	use("ericglau/vim-reach")
 	use({ "autozimu/LanguageClient-neovim", run = "bash install.sh" })
-	use({
-		"rcarriga/nvim-dap-ui",
-		dependencies = "mfussenegger/nvim-dap",
-	})
-	use({
-		'mfussenegger/nvim-dap-python',
-		filetype = 'python',
-		requires = { "nvim-dap" },
-		config = function ()
-			local path = '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
-			require('dap-python').setup(path)
-		end
-	})
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	use("junegunn/fzf")
 	use("sharkdp/fd")
 	use("sheerun/vim-polyglot") -- This is to help with razor files
@@ -78,6 +66,7 @@ return packer.startup(function(use)
 	use("MunifTanjim/prettier.nvim")
 	use({ "CRAG666/code_runner.nvim" })
 	use({ "numToStr/Comment.nvim" })
+	use("SmiteshP/nvim-navic")
 	use("ryanoasis/vim-devicons") -- optional, for file icon
 	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
 	use({
@@ -180,11 +169,11 @@ return packer.startup(function(use)
 	use("artur-shaik/jc.nvim")
 	-- Grammar suggestions load_extension
 	use("neovim/nvim-lspconfig")
-	use("SmiteshP/nvim-navic")
 	use("RRethy/vim-illuminate")
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
 	use("xiyaowong/nvim-transparent")
+	use({ "diepm/vim-rest-console", ft = { "rest" } }) -- rest live testing
 	use({
 		"nvim-neotest/neotest",
 		requires = {
@@ -276,6 +265,12 @@ return packer.startup(function(use)
 	-- intuitive toggleterm
 	use { "akinsho/toggleterm.nvim", tag = '*' }
 	use("sindrets/diffview.nvim") -- diff compare
+	use({
+		"SmiteshP/nvim-gps",
+		config = function()
+			require("nvim-gps").setup()
+		end,
+	})
 	use("p00f/nvim-ts-rainbow") -- Rainbow matching
 	use("folke/todo-comments.nvim")
 	use("tpope/vim-fugitive")
