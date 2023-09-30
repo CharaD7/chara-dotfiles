@@ -25,7 +25,11 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
     vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
 end)
 
+
+vim.g.rainbow_delimeters = { highlight = highlight } -- This is gotten from https://gitlab.com/HiPhish/rainbow-delimiters.nvim
 indent_blankline.setup {
-    indent = { highlight = highlight },
-    scope = { enabled = true },
+    scope = { highlight = highlight },
+    indent = { highlight = highlight }
 }
+
+hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
