@@ -52,10 +52,6 @@ nvim_lsp.jdtls.setup {
   on_attach = on_attach
 }
 nvim_lsp.prismals.setup {}
-nvim_lsp.pyright.setup {
-  on_attach = on_attach,
-  filetypes = {'python'},
-}
 nvim_lsp.solang.setup {
   on_attach = on_attach
 }
