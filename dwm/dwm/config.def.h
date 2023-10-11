@@ -36,7 +36,7 @@ static const int vertpadtab = 35;
 static const int horizpadtabi = 15;
 static const int horizpadtabo = 15;
 static const int scalepreview = 4;
-static const int tag_preview = 0; /* 1 means enable, 0 is off */
+static const int tag_preview = 1; /* 1 means enable, 0 is off */
 static const int colorfultag =
     1; /* 0 means use SchemeSel for selected non vacant tag */
 static const char *upvol[] = {"/usr/bin/pactl", "set-sink-volume", "0", "+5%",
