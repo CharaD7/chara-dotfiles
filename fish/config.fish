@@ -1,7 +1,7 @@
 # set -g fish_greeting "The Quieter You Are, The More You Are Able To Listen"
 
-set -gx TERM screen-256color
-# set -gx TERM xterm-256color
+set -gx TERM xterm-256color
+# set -gx TERM screen-256color
 
 # theme
 set -g theme_color_scheme dracula
@@ -28,17 +28,32 @@ alias ll "exa --long --header --all --git --classify --modified --created --git 
 alias lla "exa --long --header --all --git --classify--accessed --modified --created --git --icons"
 alias llt "exa --long --header --all --git --classify --accessed --modified --created --tree --level=2 --git --icons"
 
-# alias ls "ls -p -G"
-# alias la "ls -A"
-# alias ll "ls -l"
-# alias lla "ll -A"
 alias g git
+alias bat batcat
 command -qv nvim &&
 # alias vim nvim
 alias fishprofile='neovide ~/.config/fish/config.fish'
 alias nvimprofile='neovide ~/.config/nvim/init.lua'
 alias tmuxprofile='neovide ~/.tmux.conf'
 alias restart='source ~/.config/fish/config.fish'
+alias bee='/usr/bin/Beekeeper-Studio-4.0.0.AppImage'
+
+# aliases for tmuxifier
+alias tns='tmuxifier new-session'
+alias tes='tmuxifier edit-session'
+alias tnw='tmuxifier new-window'
+alias tew='tmuxifier edit-window'
+alias tls='tmuxifier load-session'
+alias tlw='tmuxifier load-window'
+alias tlss='tmuxifier list-sessions'
+alias tlww='tmuxifier list-windows'
+alias tll='tmuxifier list'
+
+alias tda='tmux detach-client -a'
+
+
+set -gx PATH '~/.tmuxifier/bin' $PATH
+eval (tmuxifier init -)
 
 set -gx EDITOR nvim
 
