@@ -9,7 +9,8 @@ noice.setup {
       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
       ["cmp.entry.get_documentation"] = true,
     },
-    -- hover = {
-    --   enabled = false,
-    -- }
+    hover = {
+      enabled = false,
+    }
+  }
 }

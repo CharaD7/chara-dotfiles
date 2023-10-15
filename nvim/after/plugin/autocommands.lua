@@ -124,7 +124,8 @@ create({ 'FileChangedShellPost' }, {
 -- Border color for all floating windows
 create({ 'VimEnter' }, {
   callback = function()
-    vim.cmd [[ highlight FloatBorder guifg=#61AFEF ]]
+    vim.cmd [[ highlight FloatBorder guifg=#F28FAD ]]
+    -- vim.cmd [[ highlight FloatBorder guifg=#61AFEF ]]
   end
 })
 
