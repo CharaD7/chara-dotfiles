@@ -129,11 +129,11 @@ create({ 'VimEnter' }, {
 })
 
 -- Change comment color for more visibility on transparent views
-create({ 'VimEnter' }, {
-  callback = function()
-    vim.cmd [[ highlight Comment guifg=#bb89bb ]]
-  end
-})
+-- create({ 'VimEnter' }, {
+--   callback = function()
+--     vim.cmd [[ highlight Comment guifg=#bb89bb ]]
+--   end
+-- })
 
 -- Italic font support for various neovim highlights
 create({
