@@ -136,25 +136,8 @@ return packer.startup(function(use)
 	-- Noice
 	use({
 		"folke/noice.nvim",
-		event = "VimEnter",
-		config = function()
-			local noice_status_ok, noice = pcall(require, 'noice')
-			if not noice_status_ok then return end
-			noice.setup {
-				lsp = {
-					override = {
-						["vim.lsp.textDocument_hover"] = false,
-						["vim.lsp.util.stylize_markdown"] = true,
-						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-						["cmp.entry.get_documentation"] = true,
-					},
-					hover = {
-						enabled = false,
-					}
-				}
-			}
-		end,
-		requires = {
+		event = "VeryLazy",
+		dependencies = {
 			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			"MunifTanjim/nui.nvim",
 			-- OPTIONAL:
