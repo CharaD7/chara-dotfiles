@@ -221,7 +221,10 @@ create({
   'FocusGained'
 }, {
   callback = function()
-    vim.cmd [[ silent! lua require('scrollbar').show() ]]
+    vim.cmd [[
+      silent! lua require('scrollbar').show() 
+      let g:scrollbar_excluded_filetypes = [ 'nvim-tree', 'tagbar', 'nerdtree']
+    ]]
   end
 })
 -- When to hide
