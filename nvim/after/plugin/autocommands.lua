@@ -58,7 +58,7 @@ create({ 'CursorHold', 'CursorHoldI' }, {
 -- Enable autosave at every edit and on focus lost
 create({ 'CursorHold', 'CursorHoldI', 'FocusLost' }, {
   callback = function()
-    vim.cmd [[ :wa ]]
+    vim.cmd [[ :wa! ]]
   end
 })
 
