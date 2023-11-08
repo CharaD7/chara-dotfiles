@@ -74,7 +74,11 @@ create({
   callback = function()
     vim.cmd [[
       set filetype=reach
-      set syntax=javascript
+      set syntax=javascriptreact
+      let g:LanguageClient_serverCommands = { 'reach': '~/.local/share/nvim/site/reach-ide/server/out/server.js', '--stdio' }
+      let g:LanguageClient_loggingLevel = 'DEBUG'
+      let g:LanguageClient_loggingFile = expand('~/.local/share/nvim/site/reach-ide/reach-language-client.log')
+      let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/site/reach-ide/reach-language-server.log')
     ]]
   end
 })
