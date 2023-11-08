@@ -147,6 +147,13 @@ return packer.startup(function(use)
 			"rcarriga/nvim-notify",
 		},
 	})
+	use({
+		"max397574/colortils.nvim",
+		cmd = "Colortils",
+		config = function()
+			require("colortils").setup()
+		end,
+	})
 	-- Java support
 	use("mfussenegger/nvim-jdtls")
 	use("artur-shaik/jc.nvim")
