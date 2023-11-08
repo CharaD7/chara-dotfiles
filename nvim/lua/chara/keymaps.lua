@@ -23,43 +23,56 @@ map('n', '<c-h>', '<c-w>h', opts)
 map('n', '<c-j>', '<c-w>j', opts)
 map('n', '<c-k>', '<c-w>k', opts)
 map('n', '<c-l>', '<c-w>l', opts)
+
 -- Split Focus
 map('n', '<leader>h', ':FocusSplitLeft<CR>', opts)
 map('n', '<leader>j', ':FocusSplitDown<CR>', opts)
 map('n', '<leader>k', ':FocusSplitUp<CR>', opts)
 map('n', '<leader>l', ':FocusSplitRight<CR>', opts)
+
 -- Move by visual line, not actual line
 map('n', 'j', 'gj', opts)
 map('n', 'k', 'gk', opts)
+
 -- Easy sourcing of lua files
 map('n', 'so', ':so<CR>', opts)
+
 -- Quit commands
 map('n', 'q', ':q<CR>', opts)
 map('n', 'Q', ':qa<CR>', opts)
+
 -- For unknown extensions for js files
 map('n', '<leader>js', ':set filetype=javascript<CR>', opts)
+
 --After searching, pressing escape stops the highlight
 map('n', '<esc>', ':noh<cr><esc>', opts)
+
 -- Easy select all of file
 map('n', '<c-a>', 'ggVG<c-$>', opts)
+
 -- Line bubbling
 map('n', '<s-a-j>', ':m .+1<CR>==', opts)
 map('n', '<s-a-k>', ':m .-2<CR>==', opts)
+
 -- Save file
 map('n', '<c-s>', ':w!<CR>', opts)
+
 -- Delete current buffer
 map('n', '<c-x>', ':bdelete<CR>', opts)
+
 -- -- Remove newbie crutches in COMMAND mode
 map('n', '<Up>', '<Nop>', opts)
 map('n', '<Down>', '<Nop>', opts)
 map('n', '<Left>', '<Nop>', opts)
 map('n', '<Right>', '<Nop>', opts)
+
 -- VIM-TMUX Keybindings
 map('n', '<c-h>', ':<c-u>TmuxNavigateLeft<CR>', opts)
 map('n', '<c-l>', ':<c-u>TmuxNavigateRight<CR>', opts)
 map('n', '<c-k>', ':<c-u>TmuxNavigateUp<CR>', opts)
 map('n', '<c-j>', ':<c-u>TmuxNavigateDown<CR>', opts)
 map('n', '<c-/>', ':<c-u>TmuxNavigatePrevious<CR>', opts)
+
 -- Git conflict commands
 map('n', '<leader>co', ':GitConflictChooseOurs<CR>', opts)
 map('n', '<leader>ct', ':GitConflictChooseTheirs<CR>', opts)
@@ -67,11 +80,14 @@ map('n', '<leader>cb', ':GitConflictChooseBoth<CR>', opts)
 map('n', '<leader>c0', ':GitConflictChooseNone<CR>', opts)
 map('n', '<leader>cp', ':GitConflictPrevConflict<CR>', opts)
 map('n', '<leader>cn', ':GitConflictNextConflict<CR>', opts)
+
 -- Toggle Transparency
 map('n', 'T', ':TransparentToggle<CR>', opts)
+
 -- Easy motions
 map('n', '<leader>hw', ':HopWord<CR>', opts)
 map('n', '<leader>hl', ':HopLine<CR>', opts)
+
 -- Telescope commands
 map('n', ';ff', ':Telescope find_files hidden=true<CR>', opts)
 map('n', ';gf', ':Telescope git_files<CR>', opts)
@@ -88,9 +104,11 @@ map('n', ';ts', ':Telescope treesitter<CR>', opts)
 map('n', ';tc', ':Telescope commands<CR>', opts)
 map('n', ';tm', ':Telescope marks<CR>', opts)
 map('n', ';te', ':Telescope emoji<CR>', opts)
+
 -- DapUi commands
 map('n', '<c-c>', ':lua require("dap").set_breakpoint(vim.fn.input("Breakpoint Condition: "))<CR>', opts) -- Press CTRL + c to toggle Breakpoint with Condition
 map('n', ';db', ':lua require("dap").set_breakpoint(nil, nil, vim.fn.input("Log Point Msg: "))<CR>', opts) -- Press CTRL + l to toggle Logpoint
+
 -- Neotest
 map("n", "<leader>na", ":lua require('neotest').run.attach()<CR>", opts)
 map("n", "<leader>nf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", opts)
@@ -102,14 +120,17 @@ map("n", "<leader>nN", ":lua require('neotest').run.run({strategy = 'dap'})<CR>"
 map("n", "<leader>no", ":lua require('neotest').output.open({ enter = true })<CR>", opts)
 map("n", "<leader>nS", ":lua require('neotest').run.stop()<CR>", opts)
 map("n", "<leader>ns", ":lua require('neotest').summary.toggle()<CR>", opts)
+
 -- Messages
 map('n', 'mg', ':messages<CR>', opts)
+
 -- Sessions
 map('n', '<leader>ss', ':SaveSession .sessions<CR>', opts)
 map('n', '<leader>sh', ':Telescope session-lens search_session<CR>', opts)
 map('n', '<leader>sr', ':RestoreSession .sessions<CR>', opts)
 map('n', '<leader>sd', ':DeleteSession .sessions<CR>', opts)
 map('n', '<leader>sl', ':SessionLoad .sessions<CR>', opts)
+
 -- BufferLine
 map('n', ';bp', ':BufferLinePick<CR>', opts)
 map('n', ';bt', ':BufferLineTogglePin<CR>', opts)
@@ -117,6 +138,7 @@ map('n', 'L', ':BufferLineCloseRight<CR>', opts)
 map('n', 'H', ':BufferLineCloseLeft<CR>', opts)
 map('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', opts)
 map('n', '<Tab>', ':BufferLineCycleNext<CR>', opts)
+
 -- Lspsaga
 map("n", "[f", ":Lspsaga lsp_finder<CR>", opts)
 map("n", "[a", ":Lspsaga code_action<CR>", opts)
@@ -139,15 +161,18 @@ end, opts)
 map("n", "]E", function()
 	require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
 end, opts)
+
 -- Nvim workspace
 map("n", "<space>wa", ":lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 map("n", "<space>wr", ":lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
 map("n", "<space>wl", ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
+
 -- Toggleterm
 map('n', '<leader>tf', ':ToggleTerm<CR>', opts)
 map('n', '<leader>th', ':ToggleTerm direction=horizontal size=10<CR>', opts)
 map('n', '<leader>tt', ':ToggleTerm direction=tab size=10<CR>', opts)
 map('n', '<leader>tv', ':ToggleTerm direction=vertical size=10<CR>', opts)
+
 -- UndoTree
 map('n', '<c-u>', ':UndotreeToggle<CR>', opts)
 
@@ -186,3 +211,4 @@ map('c', '<Up>', '<Nop>', opts)
 map('c', '<Down>', '<Nop>', opts)
 map('c', '<Left>', '<Nop>', opts)
 map('c', '<Right>', '<Nop>', opts)
+
