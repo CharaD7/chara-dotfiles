@@ -102,8 +102,6 @@ map("n", "<leader>nN", ":lua require('neotest').run.run({strategy = 'dap'})<CR>"
 map("n", "<leader>no", ":lua require('neotest').output.open({ enter = true })<CR>", opts)
 map("n", "<leader>nS", ":lua require('neotest').run.stop()<CR>", opts)
 map("n", "<leader>ns", ":lua require('neotest').summary.toggle()<CR>", opts)
--- NvimTree
-map('n', '<leader>n', ':NvimTreeToggle<CR>', opts)
 -- Messages
 map('n', 'mg', ':messages<CR>', opts)
 -- Sessions
