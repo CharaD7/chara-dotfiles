@@ -131,6 +131,19 @@ create({ 'FileChangedShellPost' }, {
   end
 })
 
+-- Set popup scrollbar color and vertical split color
+create({
+  'VimEnter',
+  'BufEnter',
+  'WinEnter',
+  'BufWinEnter'
+}, {
+  callback = function()
+    vim.cmd [[ highlight PmenuThumb guifg=#61AFEF guibg=#61AFEF ]]
+    vim.cmd [[ highlight VertSplit guifg=#61AFEF ]]
+  end
+})
+
 -- Border color for all floating windows
 create({ 'VimEnter' }, {
   callback = function()
