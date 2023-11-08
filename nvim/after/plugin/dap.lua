@@ -9,6 +9,17 @@ if not dap_ui_status_ok then
   return
 end
 
+local codelldb_path = "~/.local/share/nvim/mason/packages/codelldb/extension/adapter/codelldb"
+
+dap.adapters.codelldb = {
+  type = "server",
+  port = "${port}",
+  executable = {
+    command = codelldb_path,
+    args = {"--port", "${port}"}
+  },
+}
+
 -- dapui.setup()
 dapui.setup {
   icons = { expanded = "▾", collapsed = "▸" },
