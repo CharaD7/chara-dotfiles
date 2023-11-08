@@ -24,6 +24,12 @@ map('n', '<c-j>', '<c-w>j', opts)
 map('n', '<c-k>', '<c-w>k', opts)
 map('n', '<c-l>', '<c-w>l', opts)
 
+-- Resize with arrows
+map('n', '<c-up>', ':resize -2<CR>', opts)
+map('n', '<c-down>', ':resize +2<CR>', opts)
+map('n', '<c-left>', ':vertical resize -2<CR>', opts)
+map('n', '<c-right>', ':vertical resize +2<CR>', opts)
+
 -- Split Focus
 map('n', '<leader>h', ':FocusSplitLeft<CR>', opts)
 map('n', '<leader>j', ':FocusSplitDown<CR>', opts)
