@@ -154,6 +154,7 @@ return packer.startup(function(use)
 			require("colortils").setup()
 		end,
 	})
+	use("simrat39/rust-tools.nvim")
 	-- Java support
 	use("mfussenegger/nvim-jdtls")
 	use("artur-shaik/jc.nvim")
