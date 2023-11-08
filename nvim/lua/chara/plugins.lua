@@ -68,7 +68,7 @@ return packer.startup(function(use)
 	use({ "numToStr/Comment.nvim" })
 	use("SmiteshP/nvim-navic")
 	use("ryanoasis/vim-devicons") -- optional, for file icon
-	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = 'nvim-tree/nvim-web-devicons' })
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = {
