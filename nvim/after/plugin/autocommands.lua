@@ -228,7 +228,7 @@ create({
   end
 })
 -- When to hide
-create({ 'WinLeave', 'BufWinLeave', 'FocusLost' }, {
+create({ 'WinLeave', 'BufUnload', 'BufWinLeave', 'FocusLost' }, {
   callback = function()
     vim.cmd [[ silent! lua require('scrollbar').clear() ]]
   end
