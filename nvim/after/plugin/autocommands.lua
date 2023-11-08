@@ -63,7 +63,13 @@ create({ 'CursorHold', 'CursorHoldI', 'FocusLost' }, {
 })
 
 -- Set all .rsh files to use js syntax and highlighting
-create({ 'BufRead' }, {
+create({
+  'VimEnter',
+  'BufEnter',
+  'WinEnter',
+  'BufWinEnter',
+  'BufRead'
+  }, {
   pattern = { '.rsh' },
   callback = function()
     vim.cmd [[
