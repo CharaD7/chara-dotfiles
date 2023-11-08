@@ -22,7 +22,7 @@ end
 -- TypeScript
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "typescript", "typescriptreact" },
   cmd = { "typescript-language-server", "--stdio" },
 }
 nvim_lsp.tailwindcss.setup {}
