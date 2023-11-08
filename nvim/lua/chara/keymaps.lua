@@ -54,6 +54,12 @@ map('n', '<Up>', '<Nop>', opts)
 map('n', '<Down>', '<Nop>', opts)
 map('n', '<Left>', '<Nop>', opts)
 map('n', '<Right>', '<Nop>', opts)
+-- VIM-TMUX Keybindings
+map('n', '<c-h>', ':<c-u>TmuxNavigateLeft<CR>', opts)
+map('n', '<c-l>', ':<c-u>TmuxNavigateRight<CR>', opts)
+map('n', '<c-k>', ':<c-u>TmuxNavigateUp<CR>', opts)
+map('n', '<c-j>', ':<c-u>TmuxNavigateDown<CR>', opts)
+map('n', '<c-/>', ':<c-u>TmuxNavigatePrevious<CR>', opts)
 -- Git conflict commands
 map('n', '<leader>co', ':GitConflictChooseOurs<CR>', opts)
 map('n', '<leader>ct', ':GitConflictChooseTheirs<CR>', opts)
