@@ -199,6 +199,7 @@ create({
 })
 
 -- VM_MAPS
+-- FIX: FIX THIS MAPPING
 create({ 'VimEnter' }, {
   callback = function()
     vim.cmd [[
