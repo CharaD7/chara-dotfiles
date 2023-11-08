@@ -89,7 +89,6 @@ vim.g.loaded_perl_provider = 0
 -- VIM-TMUX plugin
 vim.g.tmux_navigator_no_mappings = 1
 
-
 -- NEOVIDE CONFIGURATIONS
 vim.g.neovide_fullscreen = false
 vim.g.neovide_floating_blur_amount_x = 4.0
@@ -134,7 +133,7 @@ end
 
 -- INDENT BLANKLINE
 vim.g.indent_blankline_char_highlight_list = "['|', '¦', '┆', '┊']"
-vim.g.indent_blankline_filetype_exclude = "['help', 'dashboard', 'NvimTree', 'telescope', 'packer']"
+vim.g.indent_blankline_filetype_exclude = "['help', 'dashboard', 'NvimTree', 'telescope', 'packer', 'alpha']"
 
 vim.g.dashboard_default_executive = 'telescope'
 vim.api.nvim_exec([[ let g:dashboard_custom_footer = ['LuaJIT loaded ' .. packages .. ' packages'] ]], false)
