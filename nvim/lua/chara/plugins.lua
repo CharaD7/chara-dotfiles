@@ -218,9 +218,6 @@ return packer.startup(function(use)
 	use({
 		"weilbith/nvim-code-action-menu",
 		cmd = "CodeActionMenu",
-		config = function()
-			require("nvim-code-action").setup()
-		end,
 	})
 	use({
 		"glepnir/lspsaga.nvim",
