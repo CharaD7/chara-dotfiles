@@ -155,6 +155,13 @@ return packer.startup(function(use)
 		end,
 	})
 	use("simrat39/rust-tools.nvim")
+	use({
+			'glepnir/nerdicons.nvim',
+			cmd = 'NerdIcons',
+			config = function()
+				require('nerdicons').setup({})
+		end
+	})
 	-- Java support
 	use("mfussenegger/nvim-jdtls")
 	use("artur-shaik/jc.nvim")
