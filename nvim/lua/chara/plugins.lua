@@ -133,6 +133,10 @@ return packer.startup(function(use)
 			require("telescope").load_extension("projects")
 		end,
 	})
+	use({
+		"MunifTanjim/nui.nvim",
+	})
+	use("christoomey/vim-tmux-navigator")
 	-- Noice
 	use({
 		"folke/noice.nvim",
