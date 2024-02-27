@@ -107,7 +107,6 @@ enum {
   SchemeTag7,
   SchemeTag8,
   SchemeTag9,
-  SchemeTag10,
   SchemeLayout,
   TabSel,
   TabNorm,
@@ -327,7 +326,7 @@ static void showhide(Client *c);
 static void showtagpreview(int tag);
 static void sigchld(int unused);
 static void spawn(const Arg *arg);
-static void switchtag(void);
+// static void switchtag(void);
 static Monitor *systraytomon(Monitor *m);
 static void tabmode(const Arg *arg);
 static void tag(const Arg *arg);
@@ -2168,10 +2167,11 @@ monocle(Monitor *m)
 }
 
 void motionnotify(XEvent *e) {
-  unsigned int i, x;
   static Monitor *mon = NULL;
   Monitor *m;
   XMotionEvent *ev = &e->xmotion;
+
+  unsigned int i, x;
 
   if (ev->window == selmon->barwin) {
 		i = x = 0;
