@@ -1,7 +1,7 @@
 # set -g fish_greeting "The Quieter You Are, The More You Are Able To Listen"
 
-set -gx TERM xterm-256color
-# set -gx TERM screen-256color
+# set -gx TERM xterm-256color
+set -gx TERM screen-256color
 
 # theme
 set -g theme_color_scheme dracula
@@ -37,6 +37,7 @@ alias nvimprofile='neovide ~/.config/nvim/init.lua'
 alias tmuxprofile='neovide ~/.tmux.conf'
 alias restart='source ~/.config/fish/config.fish'
 alias bee='/usr/bin/Beekeeper-Studio-4.0.0.AppImage'
+alias unset='set --erase'
 
 # aliases for tmuxifier
 alias tns='tmuxifier new-session'
@@ -82,8 +83,13 @@ set -g ANDROID_PLATFORM_TOOLS "$ANDROID_HOME/platform-tools"
 set -gx PATH "$ANDROID_PLATFORM_TOOLS:$PATH"
 
 # JAVA_HOME
-set -g JAVA_HOME "/usr/lib/jvm/java-18-openjdk-amd64/bin"
+set -g JAVA_HOME "/usr/lib/jvm/java-21-openjdk-amd64/"
 set -gx PATH "$JAVA_HOME:$PATH"
+
+# sdkman
+set -g SDKMAN_DIR "$HOME/.sdkman"
+set -g SDKMAN_PLATFORM "$SDKMAN_DIR/var/platform"
+set -gx PATH "$SDKMAN_DIR/bin:$PATH"
 
 # Go
 set -g GOPATH "$HOME/go"
@@ -91,6 +97,9 @@ set -gx PATH "$GOPATH/bin:$PATH"
 
 # Global path
 set PATH "$HOME/bin:$PATH"
+
+# dotnet
+complete -f -c dotnet -a "(dotnet complete (commandline -cp))"
 
 # NVM
 function __check_rvm --on-variable PWD --description 'Do nvm stuff'

@@ -32,4 +32,4 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/charapyge/\x2efzf/bin
+SETUVAR fish_user_paths:/opt/nodejs/bin\x1e/home/charapyge/\x2enpm\x2dglobal/bin\x1e/home/charapyge/Android/Sdk/platform\x2dtools\x1e/home/charapyge/Android/Sdk/emulator\x1e/home/charapyge/Android/Sdk\x1e/home/charapyge/Android\x1e/home/charapyge/flutter/bin\x1e/home/charapyge/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/charapyge/\x2envm\x1e/home/charapyge/\x2ecargo/bin\x1e/home/charapyge/\x2etmuxifier/bin\x1e/opt/mssql\x2dtools18/bin\x1e/home/charapyge/squashfs\x2droot/usr/bin\x1e/home/charapyge/lua\x1e/home/charapyge/reach\x1e/opt/lampp\x1e/home/charapyge/\x2elocal/bin\x1e/home/charapyge/\x2efzf/bin
