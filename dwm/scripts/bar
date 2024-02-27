@@ -6,7 +6,8 @@
 interval=0
 
 # load colors
-. ~/.config/dwm/scripts/bar_themes/catppuccin
+# . ~/.config/chadwm/scripts/bar_themes/onedark
+. ~/.config/chadwm/scripts/bar_themes/catppuccin
 
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
@@ -31,40 +32,72 @@ pkg_updates() {
 battery() {
   get_capacity="$(cat /sys/class/power_supply/BAT1/capacity)"
   case "$(cat /sys/class/power_supply/BAT1/status 2> /dev/null)" in
-    Discharging) printf "^c$black^ ^b$red^ 󰂃 ^d^%s" "^c$red^ $get_capacity% Discharging";;
-    "Not charging") printf "^c$black^ ^b$yellow^ 󰂃 ^d^%s" "^c$yellow^ $get_capacity% Not charging";;
-    Charging) printf "^c$black^ ^b$green^ 󱊥 ^d^%s" "^c$green^ $get_capacity% Charging";;
-    Unknown) printf "^c$white^ ^b$red^ 󰂑 ^d^%s" "^c$red^ $get_capacity% Unknown";;
-    Full) printf "^c$black^ ^b$blue^ 󱟢 ^d^%s" "^c$white^ $get_capacity% Fully charged";;
+    Discharging) printf "^c$black^ ^b$red^ 󰂃 ^d^%s" "^c$red^ $get_capacity%";;
+    "Not charging") printf "^c$black^ ^b$yellow^ 󰂃 ^d^%s" "^c$yellow^ $get_capacity%";;
+    Charging) printf "^c$black^ ^b$green^ 󱊥 ^d^%s" "^c$green^ $get_capacity%";;
+    Unknown) printf "^c$black^ ^b$red^ 󰂑 ^d^%s" "^c$red^ $get_capacity%";;
+    Full) printf "^c$black^ ^b$green^ 󱟢 ^d^%s" "^c$white^ $get_capacity%";;
   esac
 }
 
 brightness() {
-  printf "^c$black^ ^b$red^ 󰃞 ^d^%s" "^c$red^ $(cat /sys/class/backlight/*/brightness) "
+  printf "^c$black^ ^b$darkblue^ 󰃞 ^d^%s" "^c$blue^ $(cat /sys/class/backlight/*/brightness) "
   # printf "^c$red^%.0f\n" $(cat /sys/class/backlight/*/brightness)
 }
 
 mem() {
-  printf "^c$blue^^b$black^ 󰍛 "
-  printf "^c$blue^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+  printf "^c$black^ ^b$darkblue^ 󰍛"
+  printf "^c$blue^ ^b$grey^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
 wlan() {
 	case "$(cat /sys/class/net/wl*/operstate 2>/dev/null)" in
-	up) printf "^c$black^ ^b$blue^ 󰀂 ^d^%s" " ^c$blue^Connected" ;;
-	down) printf "^c$black^ ^b$blue^ 󰯡 ^d^%s" " ^c$blue^Disconnected" ;;
+	up) printf "^c$black^ ^b$green^ 󰀂 ^d^%s" ;;
+	down) printf "^c$black^ ^b$red^ 󰯡 ^d^%s" ;;
 	esac
+}
+
+nettrafic() {
+  # Module showing network traffic. Shows how much data has been received (RX) or
+  # transmitted (TX) since the previous time this script ran. So if run every
+  # second, gives network traffic per second.
+
+  case $BLOCK_BUTTON in
+    1) setsid -f "$TERMINAL" -e bmon ;;
+    3) notify-send "🌐 Network traffic module" "🔻: Traffic received
+  🔺: Traffic transmitted" ;;
+    6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+  esac
+
+  update() {
+      sum=0
+      for arg; do
+          read -r i < "$arg"
+          sum=$(( sum + i ))
+      done
+      cache=/tmp/${1##*/}
+      [ -f "$cache" ] && read -r old < "$cache" || old=0
+      printf %d\\n "$sum" > "$cache"
+      printf %d\\n $(( sum - old ))
+  }
+
+  rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
+  tx=$(update /sys/class/net/[ew]*/statistics/tx_bytes)
+
+  printf "^c$blue^ 🔻%4sB 🔺%4sB\\n" $(numfmt --to=iec $rx $tx)
 }
 
 clock() {
 	printf "^c$black^ ^b$darkblue^ 󰥔 "
-	printf "^c$black^^b$blue^ $(date '+%H:%M')  "
+	printf "^c$black^^b$blue^ $(date)  "
+  # printf "^c$black^ ^b$blue^ $(date '+(%a) %d-%m-%y %T')  "
+	# printf "^c$black^^b$blue^ $(date '+%H:%M')  "
 }
 
 while true; do
 
-  [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
+  [ "$interval" = 0 ] || [ $(($interval % 3600)) = 0 ] && updates=$(pkg_updates)
   interval=$((interval + 1))
 
-  sleep 1 && xsetroot -name "$updates $(battery) $(brightness) $(cpu) $(mem) $(wlan) $(clock)"
+  sleep 1 && xsetroot -name "$updates $(battery) $(brightness) $(cpu) $(mem) $(wlan) $(nettrafic) $(clock)"
 done
