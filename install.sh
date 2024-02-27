@@ -38,7 +38,7 @@ setGitConfig () {
       gcc-multilib g++-multilib cmake libssl-dev pkg-config \
       libfreetype6-dev libasound2-dev libexpat1-dev libxcb-composite0-dev \
       libbz2-dev libsndio-dev freeglut3-dev libxmu-dev libxi-dev libfontconfig1-dev \
-      libxcursor-dev
+      libxcursor-dev dunst
 
   # Ask to use repo's gitconfig
   read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " gitAliases
