@@ -1,0 +1,16 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.dap.core",
+    "lazyvim.plugins.extras.editor.navic",
+    "lazyvim.plugins.extras.formatting.black",
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.omnisharp",
+    "lazyvim.plugins.extras.lang.yaml",
+    "lazyvim.plugins.extras.editor.aerial",
+    "lazyvim.plugins.extras.editor.outline"
+  ],
+  "news": {
+    "NEWS.md": "5204"
+  },
+  "version": 6
+}

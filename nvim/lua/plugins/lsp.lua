@@ -8,11 +8,15 @@ return {
         "luacheck",
         "shfmt",
         "eslint-lsp",
+        "dart-debug-adapter",
         "csharp-language-server",
         "htmx-lsp",
+        "pyright",
+        "rust-analyzer",
+        "svelte-language-server",
+        "taplo",
         "tailwindcss-language-server",
         "typescript-language-server",
-        "pylyzer",
         "css-lsp",
         "emmet-ls",
         "shellcheck",
@@ -53,6 +57,37 @@ return {
             },
           },
         },
+        -- PYTHON
+        pyright = {
+          enabled = lsp == "pyright",
+        },
+        ruff_lsp = {
+          keys = {
+            {
+              "<leader>oi",
+              function ()
+                vim.lsp.buf.code_action({
+                  apply = true,
+                  context = {
+                    only = { "source.organizeImports"},
+                    diagnostics = {},
+                  }
+                })
+              end,
+              desc = "Organize Imports",
+            },
+          },
+        },
+        setup = {
+          ruff_lsp = function()
+            LazyVim.lsp.on_attach(function (client, _)
+              if client.name == "ruff_lsp" then
+                -- Disable hover in favour of pyright
+                client.server_capabilities.hoverProvider = false
+              end
+            end)
+          end,
+        },
         -- CSS
         cssls = {},
         -- eslint
@@ -64,6 +99,13 @@ return {
         },
       },
     },
+  },
+  -- Mason lspconfig
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup()
+    end,
   },
   -- Null-ls
   {

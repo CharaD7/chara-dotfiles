@@ -15,7 +15,7 @@ keymap.set("n", "<C-a>", "gg<s-v>G")
 keymap.set("n", "<C-m>", "<c-i>", opts)
 
 -- New tab
-keymap.set("n", "te", ":tabedit", opts)
+keymap.set("n", "<leaader>te", ":tabedit", opts)
 
 -- Cycle buffers
 keymap.set("n", "<tab>", ":BufferLineCycleNext<cr>", opts)
@@ -65,13 +65,14 @@ keymap.set("n", ";s", ":Lspsaga signature_help<cr>", opts)
 keymap.set("n", ";t", ":Lspsaga outline<cr>", opts)
 keymap.set("n", ";n", ":Lspsaga rename<cr>", opts)
 keymap.set("n", ";N", ":Lspsaga rename ++project<cr>", opts)
-keymap.set("n", "gd", ":Lspsaga preview_definition<cr>", opts)
+keymap.set("n", ";p", ":Lspsaga peek_definition<cr>", opts)
 keymap.set("n", "<A-d>", ":Lspsaga term_toggle<cr>", opts)
 keymap.set("n", "<leader>cd", ":Lspsaga show_line_diagnostics<cr>", opts)
 keymap.set("n", "<leader>cd", ":Lspsaga show_cursor_diagnostics<cr>", opts)
 keymap.set("n", ";b", ":Lspsaga show_buf_diagnostics<cr>", opts)
 keymap.set("n", ";e", ":Lspsaga diagnostic_jump_next<cr>", opts)
 keymap.set("n", ";E", ":Lspsaga diagnostic_jump_prev<cr>", opts)
+keymap.set("n", ";w", ":Lspsaga show_workspace_diagnostics<cr>", opts)
 
 --Toggleterm
 keymap.set("n", "<leader>tf", ":ToggleTerm<cr>", opts)
@@ -101,6 +102,9 @@ local lazygit = Terminal:new({
 function _lazygit_toggle()
   lazygit:toggle()
 end
+
+-- Messages
+keymap.set("n", ";m", ":messages<cr>", opts)
 
 -- Toggleterm lazygit
 keymap.set("n", "<leader>tg", ":lua _lazygit_toggle()<cr>", opts)

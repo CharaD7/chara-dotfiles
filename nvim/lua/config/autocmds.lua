@@ -19,6 +19,17 @@ create("FileType", {
   end,
 })
 
+-- Enable italics if colorscheme is set to gruvbox
+create("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    local colorscheme = vim.g.colors_name
+    if colorscheme == "gruvbox" then
+      vim.g.gruvbox_italic = 1
+    end
+  end,
+})
+
 -- Remove trailing whitespace
 create({ "BufWritePre" }, {
   pattern = { "*" },
@@ -80,7 +91,7 @@ create({
   callback = function()
     vim.cmd [[ highlight FloatBorder guifg=#F28FAD ]]
     vim.cmd [[ highlight CursorLineNr gui=bold guifg=#F28FAD ]]
-    vim.cmd [[ highlight CursorLine guibg=#002b36 ]]
+    -- vim.cmd [[ highlight CursorLine guibg=#002b36 ]]
     vim.cmd [[ highlight LineNr guifg=#2aa198 ]]
   end
 })

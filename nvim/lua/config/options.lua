@@ -29,6 +29,10 @@ vim.opt.fillchars:append('fold:•')
 vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:↴")
 
+-- LSP Server to use for Python.
+-- Set to "basedpyright" to use basedpyright instead of pyright.
+vim.g.lazyvim_python_slp = "pyright"
+
 -- Neovide Configuration
 vim.g.neovide_fullscreen = false
 vim.g.neovide_floating_blur_amount_x = 4.0
