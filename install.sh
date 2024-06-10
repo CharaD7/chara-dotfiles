@@ -236,8 +236,8 @@ installNeovim() {
 
 	# Exposing the executable globally
 	echo "Moving and registering Neovim globally..."
-	sudo mv squashfs-root /
-	sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
+	sudo mv squashfs-root ~
+	sudo ln -s ~/squashfs-root/AppRun /usr/bin/nvim
 
 	if [ "$( nvim --version 2> /dev/null )" != "" ]; then
 		echo "Done."
