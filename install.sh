@@ -289,11 +289,9 @@ setNeovideConfig() {
     read -p "Would you like to install NEOVIDE now? [Y,n]: " neovideReply
     if [ "$neovideReply" == "y" ] || [ "$neovideReply" == "Y" ]; then
       # Install neovide
-      cd $userHome/Downloads
-      wget https://github.com/neovide/neovide/releases/latest/download/neovide.tar.gz
-      tar zxf neovide.tar.gz
-      sudo cp -r neovide /usr/bin/neovide
-      rm -r neovide.tar.gz
+      fish
+      cargo install --git https://github.com/neovide/neovide
+      bash
 
       cd $basePath
     fi
