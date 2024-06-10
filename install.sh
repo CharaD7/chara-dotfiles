@@ -118,7 +118,7 @@ setFishConfig() {
     "") sudo apt install wget -y;;
     "/usr/bin/wget") echo "wget installed, moving to the next step...";;
   esac
-  wget https://github.com/ogham/exa/archive/master.zip
+  wget https://github.com/ogham/exa/archive/refs/heads/master.zip
   mv master.zip exa.zip
 
   sleep 1
