@@ -225,7 +225,7 @@ installNeovim() {
 
 	# Download the image fil
 	echo "Downloading neovim image..."
-	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+	curl -LO https://github.com/neovim/neovim/releases/latest/download/v0.10.0/nvim.appimage
 	chmod u+x nvim.appimage
 
 	sleep 1
