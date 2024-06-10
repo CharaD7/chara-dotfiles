@@ -40,9 +40,6 @@ setGitConfig () {
       libbz2-dev libsndio-dev freeglut3-dev libxmu-dev libxi-dev libfontconfig1-dev \
       libxcursor-dev dunst
 
-echo "Prepping dunst configuration"
-cp -rf dunst $userHome/.config/
-
   # Ask to use repo's gitconfig
   read -p "Would you like to use repo's gitconfig aliases? [Y,n]: " gitAliases
   if [ "$gitAliases" == "y" ] || [ "$gitAliases" == "Y" ]; then
@@ -73,6 +70,29 @@ cp -rf dunst $userHome/.config/
 
   sleep 1
 
+}
+
+# Dunst and bat
+setDunstConfig() {
+  dunstPath="$userHome/.config/dunst/"
+  mkdir -p $dunstPath
+
+  # Prep dunst configuration
+  echo "Prepping dunst configuration"
+  cp -rf dunst $userHome/.config/
+
+  sleep 1
+
+  # Install batcat and assign to alias "bat"
+  read -p "Would you like to install batcat, a more intuitive version of cat, now? [Y,n]: " batReply
+  if [ "$batReply" == "y" ] || [ "$batReply" == "Y" ]; then
+    echo "Installing batcat..."
+    sudo apt install batcat -y
+
+    # Set batcat alias to bat
+    alias bat=batcat
+    sleep 1
+  fi
 }
 
 # Fish terminal config setup function
@@ -358,6 +378,9 @@ setDWMConfig() {
 
 # Do git config task
 setGitConfig
+
+# Do dunst and bat task
+setDunstConfig
 
 # Do NerdFont installation task
 echo "Installing NerdFonts..."
