@@ -159,6 +159,16 @@ setTmuxConfig() {
 
   echo "Setting system default shell to tmux"
   sudo chsh -s $(which tmux)
+
+  echo "Changing to fish shell"
+  tmux
+  omf install agnoster
+  omf theme agnoster
+
+  sleep 1
+
+  echo "Reverting to bash shell"
+  bash
 }
 
 # Bubbly config setup function
