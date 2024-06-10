@@ -289,9 +289,7 @@ setNeovideConfig() {
     read -p "Would you like to install NEOVIDE now? [Y,n]: " neovideReply
     if [ "$neovideReply" == "y" ] || [ "$neovideReply" == "Y" ]; then
       # Install neovide
-      fish
-      cargo install --git https://github.com/neovide/neovide
-      bash
+      fish && cargo install --git https://github.com/neovide/neovide && bash
 
       cd $basePath
     fi
