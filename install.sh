@@ -160,10 +160,13 @@ setTmuxConfig() {
   echo "Setting system default shell to tmux"
   sudo chsh -s $(which tmux)
 
-  echo "Changing to fish shell"
+  echo "Changing to fish shell..."
   tmux
   omf install agnoster
   omf theme agnoster
+
+  ech "Adding cargo bin directory to fish path..."
+  fish_add_path ~/.cargo/bin/
 
   sleep 1
 
