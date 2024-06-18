@@ -90,6 +90,7 @@
 
 [core]
         ignorecase = false
+        pager = bat
 
 [init]
         defaultBranch = main
