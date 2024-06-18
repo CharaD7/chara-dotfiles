@@ -92,7 +92,6 @@
 [core]
         ignorecase = false
         pager = bat
-        autocrlf = true
 
 [init]
         defaultBranch = main
