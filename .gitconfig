@@ -86,7 +86,7 @@
         unstage = reset HEAD -- #file;
 [user]
         name = enter_your_username
-        email = your_email@domain.extension
+        email = your_username@domain.extension
 
 [core]
         ignorecase = false
