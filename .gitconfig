@@ -93,3 +93,5 @@
 
 [init]
         defaultBranch = main
+[commit]
+	template = .gitmessage.txt
