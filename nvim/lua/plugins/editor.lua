@@ -3,7 +3,6 @@ return {
   {
     enabled = false,
     "folke/flash.nvim",
-    ---@type Flash.Config
     opts = {
       search = {
         forward = true,
@@ -97,6 +96,7 @@ return {
                 vim.cmd("startinsert")
               end,
               ["<c-u>"] = function(prompt_bufnr)
+                ---@diagnostic disable-next-line: undefined-global
                 for i = i, 10 do
                   actions.move_selection_previous(prompt_bufnr)
                 end
