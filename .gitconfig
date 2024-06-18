@@ -32,6 +32,7 @@
         c = checkout
         cn = config --get user.name
         ce = config --get user.email
+        g = config --global
         con = checkout main
         cob = checkout -b
         co = checkout --orphan
