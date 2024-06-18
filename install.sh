@@ -70,6 +70,11 @@ setGitConfig () {
 
   sleep 1
 
+  echo "Copying global gitignore and git template message to home directory"
+  cp -rf .gitignore_global gitmessage.txt $userHome/
+
+  sleep 1
+
 }
 
 # Dunst and bat
