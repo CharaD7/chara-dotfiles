@@ -1,0 +1,14 @@
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
+
+# Neovide
+nohup.out
+
+# Lazy lock
+lazy-lock.json
