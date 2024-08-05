@@ -21,12 +21,17 @@ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
     vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
 end)
 
+hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+
 return {
   "lukas-reineke/indent-blankline.nvim",
   main = "ibl",
   opts = {
     indent = {
       highlight = highlight,
-    }
+    },
+    scope = {
+      highlight = highlight,
+    },
   }
 }
