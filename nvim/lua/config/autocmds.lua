@@ -106,6 +106,16 @@ create({
   end
 })
 
+-- Source bufferline config on VimEnter and BufEnter
+create({
+  'VimEnter',
+  'BufEnter',
+}, {
+  callback = function()
+    vim.cmd [[ source ~/.config/nvim/lua/plugins/bufferline.lua ]]
+  end
+})
+
 -- Italic/Bold/Underline/underdashed font support for various neovim highlights
 create({
   'VimEnter',
