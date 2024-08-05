@@ -37,12 +37,12 @@ static const int new_window_attach_on_end = 0; /*  1 means the new window will a
 #define ICONSIZE 18   /* icon size */
 #define ICONSPACING 3 /* space between icon and title */
 
-// static const char *fonts[] = {"Iosevka:style:medium:size=12",
-//                               "Fira Code iScript:style:medium:size=15",
-//                               "Material Design Icons Desktop:size=11"};
-static const char *fonts[] = {
-    "Iosevka:style:medium:size=10",
-    "JetBrainsMono Nerd Font Mono:style:medium:size=8"};
+static const char *fonts[] = {"Iosevka:style:medium:size=10",
+                              "Fira Code iScript:style:medium:size=12",
+                              "Material Design Icons Desktop:size=10"};
+/*static const char *fonts[] = {*/
+/*    "Iosevka:style:medium:size=10",*/
+/*    "JetBrainsMono Nerd Font Mono:style:medium:size=8"};*/
 
 // theme
 // #include "themes/onedark.h"
@@ -298,6 +298,10 @@ static const Key keys[] = {
      SHCMD("eww -c ~/.local/share/bubbly/keystrokes close keystrokes")},
     // Open flatpak's smile
     // {MODKEY | ControlMask, XK_., spawn, SHCMD("flatpak run it.mijorus.smile")},
+    // Toggle menu bar
+    // {MODKEY | ControlMask, XK_m, togglebar, {0}},
+    {MODKEY | Mod1Mask, XK_m, spawn,
+     SHCMD("~/.config/chadwm/scripts/toggle_menu.sh")},
 };
 
 /* button definitions */

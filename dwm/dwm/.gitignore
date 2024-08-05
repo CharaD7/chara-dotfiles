@@ -1,0 +1,9 @@
+chadwm/dwm 
+chadwm/config.h 
+chadwm/*.o
+chadwm/*.orig
+chadwm/*.rej
+.ccls-cache/
+
+# neovide output file
+nohup.out

@@ -6,12 +6,12 @@ Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
 ! window padding
-st.borderpx: 20
+st.borderpx: 5
 
 !-- values between 0.1  - 1.0 --!
 
 st.alpha: 0.8
-st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=12
+st.font:           JetBrainsMono Nerd Font:style:medium:pixelsize=10
 
 #define base00 #282c34
 #define base01 #353b45
