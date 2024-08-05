@@ -2,3 +2,6 @@
 neovide_backtraces.log
 *.log
 nohup.out
+.luarc.json
+.neoconf.json
+lazy-lock.json
