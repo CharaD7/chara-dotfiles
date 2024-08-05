@@ -1,4 +1,4 @@
 # Ignore all neovide log files
 neovide_backtraces.log
 *.log
-wall/
+nohup.out
