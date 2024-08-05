@@ -8,9 +8,6 @@ return {
     return vim.tbl_deep_extend("force", opts, {
       name = {
         "venv",
-        ".venv",
-        "env",
-        ".env",
       },
     })
   end,
