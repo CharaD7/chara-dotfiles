@@ -78,7 +78,71 @@ return {
           },
         }
       end
+
+      local set_python_dap = function()
+        require('dap-python').setup() -- earlier, so I can setup the various defaults ready to be replaced
+        require('dap-python').resolve_python = function()
+          return "venv/bin/python3"
+        end
+        dap.configurations.python = {
+          {
+            type = 'python';
+            request = 'launch';
+            name = "Launch file";
+            program = "${file}";
+            pythonPath = "venv/bin/python3"
+          },
+          {
+            type = 'debugpy',
+            request = 'launch',
+            name = 'Django',
+            program = '${workspaceFolder}/manage.py',
+            args = {
+              'runserver',
+            },
+            justMyCode = true,
+            django = true,
+            console = "integratedTerminal",
+            pythonPath = "venv/bin/python3"
+          },
+          {
+            type = 'python';
+            request = 'attach';
+            name = 'Attach remote';
+            connect = function()
+              return {
+                host = 'localhost',
+                port = 5678
+              }
+            end;
+          },
+          {
+            type = 'python';
+            request = 'launch';
+            name = 'Launch file with arguments';
+            program = '${file}';
+            args = function()
+              local args_string = vim.fn.input('Arguments: ')
+              return vim.split(args_string, " +")
+            end;
+            console = "integratedTerminal",
+            pythonPath = "venv/bin/python3"
+          }
+        }
+
+        dap.adapters.python = {
+          type = 'executable',
+          command = "venv/bin/python3",
+          args = {'-m', 'debugpy.adapter'}
+        }
+      end
+
+      set_python_dap()
+      vim.api.nvim_create_autocmd({"DirChanged", "BufEnter"}, {
+        callback = function() set_python_dap() end,
+      })
     end,
+
     keys = {
       {
         "<leader>dO",
@@ -97,7 +161,7 @@ return {
       {
         "<leader>da",
         function ()
-          if vimm.fn.filereadable(".vscode/launch.json") then
+          if vim.fn.filereadable(".vscode/launch.json") then
             local dap_vscode = require("dap.ext.vscode")
             dap_vscode.load_launchjs(nil, {
               ["pwa-node"] = js_based_languages,
