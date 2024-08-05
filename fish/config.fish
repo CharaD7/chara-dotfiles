@@ -28,13 +28,16 @@ alias ll "exa --long --header --all --git --classify --modified --created --git 
 alias lla "exa --long --header --all --git --classify--accessed --modified --created --git --icons"
 alias llt "exa --long --header --all --git --classify --accessed --modified --created --tree --level=2 --git --icons"
 
+alias fp "fzf-tmux -p"
+alias bat "batcat"
+alias bubbly "~/.local/share/bubbly/start.sh"
+
 alias g git
-alias bat batcat
 command -qv nvim &&
 # alias vim nvim
-alias fishprofile='neovide ~/.config/fish/config.fish'
-alias nvimprofile='neovide ~/.config/nvim/init.lua'
-alias tmuxprofile='neovide ~/.tmux.conf'
+alias fishprofile='nohup neovide ~/.config/fish/config.fish &'
+alias nvimprofile='nohup neovide ~/.config/nvim/init.lua &'
+alias tmuxprofile='nohup neovide ~/.tmux.conf &'
 alias restart='source ~/.config/fish/config.fish'
 alias bee='/usr/bin/Beekeeper-Studio-4.0.0.AppImage'
 alias unset='set --erase'
@@ -83,8 +86,8 @@ set -g ANDROID_PLATFORM_TOOLS "$ANDROID_HOME/platform-tools"
 set -gx PATH "$ANDROID_PLATFORM_TOOLS:$PATH"
 
 # JAVA_HOME
-set -g JAVA_HOME "/usr/lib/jvm/java-21-openjdk-amd64/"
-set -gx PATH "$JAVA_HOME:$PATH"
+set -g JAVA_HOME "/usr/lib/jvm/java-17-openjdk-amd64/"
+set -gx PATH "$JAVA_HOME/bin:$PATH"
 
 # sdkman
 set -g SDKMAN_DIR "$HOME/.sdkman"
@@ -109,6 +112,11 @@ function __check_rvm --on-variable PWD --description 'Do nvm stuff'
     nvm use
   else
   end
+end
+
+if test -d ~/.fzf
+    source ~/.fzf/shell/completion.fish
+    source ~/.fzf/shell/key-bindings.fish
 end
 
 switch (uname)
