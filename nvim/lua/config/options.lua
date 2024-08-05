@@ -8,11 +8,16 @@ local options = {
   guifont = "Fira Code iScript:h10",
   ve = "block", -- All virtual text editing modes in block
   list = true,
+  relativenumber = true,
+  encoding = 'utf-8',
+  fileencoding = 'utf-8',
   updatetime = 100,
   timeoutlen = 500,
   ttimeoutlen = 11,
   wildoptions = "pum",
-  -- guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
+  expandtab = true,
+  shiftwidth = 2,
+  tabstop = 2,
   guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait400-blinkoff400-blinkon400-Cursor/lCursor,sm:block-blinkwait175-blinkoff175-blinkon175",
   pumblend = 15,
   winblend = 15,
@@ -26,17 +31,17 @@ end
 cmd([[ let &t_Cs = "\e[4:3m]" ]])
 cmd([[ let &t_Ce = "\e[4:0m]" ]])
 
+-- Stop auto commenting new lines
+cmd([[ au BufEnter * set formatoptions+=/ ]])
+
 -- Pretty Fold
 vim.opt.fillchars:append('fold:•')
 -- More options for listchars.
 vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:↴")
 vim.opt.listchars:append("trail:◊")
-vim.opt.listchars:append("tab:▷▷")
+vim.opt.listchars:append("tab:▷▷⋮")
 
--- LSP Server to use for Python.
--- Set to "basedpyright" to use basedpyright instead of pyright.
-vim.g.lazyvim_python_slp = "pyright"
 
 -- Neovide Configuration
 vim.g.neovide_fullscreen = false
@@ -48,10 +53,10 @@ vim.g.neovide_floating_blur_amount_y = 4.0 -- works only on mac
 vim.g.neovide_remember_window_size = true
 vim.g.neovide_transparency = 1
 -- vim.g.neovide_transparency = 0.8
-vim.g.neovide_padding_top = 10
-vim.g.neovide_padding_bottom = 10
-vim.g.neovide_padding_right = 10
-vim.g.neovide_padding_left = 10
+vim.g.neovide_padding_top = 5
+vim.g.neovide_padding_bottom = 5
+vim.g.neovide_padding_right = 5
+vim.g.neovide_padding_left = 5
 vim.g.neovide_cursor_animation_length = 0.15
 vim.g.neovide_cursor_animate_in_insert_mode = true
 vim.g.neovide_cursor_animate_command_line = true
