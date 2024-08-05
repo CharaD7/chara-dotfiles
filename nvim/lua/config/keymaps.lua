@@ -14,9 +14,6 @@ keymap.set("n", "<C-a>", "gg<s-v>G")
 -- Jumplist
 keymap.set("n", "<C-m>", "<c-i>", opts)
 
--- New tab
-keymap.set("n", "<leaader>te", ":tabedit", opts)
-
 -- Cycle buffers
 keymap.set("n", "<tab>", ":BufferLineCycleNext<cr>", opts)
 keymap.set("n", "<s-tab>", ":BufferLineCyclePrev<cr>", opts)
@@ -24,6 +21,10 @@ keymap.set("n", "<s-tab>", ":BufferLineCyclePrev<cr>", opts)
 -- Close bulk buffers
 keymap.set("n", "L", ":BufferLineCloseRight<cr>", opts)
 keymap.set("n", "H", ":BufferLineCloseLeft<cr>", opts)
+
+-- Move buffers forwards or backwards
+keymap.set("n", "<Left>", ":BufferLineMovePrev<cr>", opts)
+keymap.set("n", "<Right>", ":BufferLineMoveNext<cr>", opts)
 
 -- Split window
 keymap.set("n", "ss", ":split<cr>", opts)
@@ -57,11 +58,13 @@ keymap.set("n", "<c-right>", ":vertical resize +2<cr>", opts)
 keymap.set("n", "<c-up", ":resize -2<cr>", opts)
 keymap.set("n", "<c-down", ":resize +2<cr>", opts)
 
+-- Telescope buffers
+keymap.set("n", "<leader>tb", ":Telescope buffers<cr>", opts)
+
 -- Lspsaga
-keymap.set("n", ";f", ":Lspsaga lsp_finder<cr>", opts )
+keymap.set("n", ";f", ":Lspsaga finder<cr>", opts )
 keymap.set("n", ";a", ":Lspsaga code_action<cr>", opts)
 keymap.set("n", ";o", ":Lspsaga hover_doc<cr>", opts)
-keymap.set("n", ";s", ":Lspsaga signature_help<cr>", opts)
 keymap.set("n", ";t", ":Lspsaga outline<cr>", opts)
 keymap.set("n", ";n", ":Lspsaga rename<cr>", opts)
 keymap.set("n", ";N", ":Lspsaga rename ++project<cr>", opts)
@@ -80,34 +83,8 @@ keymap.set("n", "<leader>th", ":ToggleTerm direction=horizontal size=25<cr>", op
 keymap.set("n", "<leader>tt", ":ToggleTerm direction=tab<cr>", opts)
 keymap.set("n", "<leader>tv", ":ToggleTerm direction=vertical size=25<cr>", opts)
 
-local Terminal = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({
-  cmd = "lazygit",
-  dir = "git_dir",
-  direction = "float",
-  float_opts = {
-    border = "curved",
-  },
-  -- function to run on opening the terminal
-  on_open = function(term)
-    vim.cmd("startinsert!")
-    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", {noremap = true, silent = true})
-  end,
-  -- function to run on closing the terminal
-  on_close = function(term)
-    vim.cmd("startinsert!")
-  end,
-})
-
-function _lazygit_toggle()
-  lazygit:toggle()
-end
-
 -- Messages
 keymap.set("n", ";m", ":messages<cr>", opts)
-
--- Toggleterm lazygit
-keymap.set("n", "<leader>tg", ":lua _lazygit_toggle()<cr>", opts)
 
 -- Checkhealth
 keymap.set("n", "<leader>ch", ":checkhealth<cr>", opts)
