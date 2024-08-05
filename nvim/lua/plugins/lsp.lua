@@ -5,16 +5,13 @@ return {
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
         "stylua",
-        "luacheck",
         "shfmt",
         "eslint-lsp",
         "dart-debug-adapter",
         "csharp-language-server",
         "htmx-lsp",
-        "pyright",
         "rust-analyzer",
         "svelte-language-server",
-        "taplo",
         "tailwindcss-language-server",
         "typescript-language-server",
         "css-lsp",
@@ -58,9 +55,6 @@ return {
           },
         },
         -- PYTHON
-        pyright = {
-          enabled = lsp == "pyright",
-        },
         ruff_lsp = {
           keys = {
             {
@@ -77,16 +71,6 @@ return {
               desc = "Organize Imports",
             },
           },
-        },
-        setup = {
-          ruff_lsp = function()
-            LazyVim.lsp.on_attach(function (client, _)
-              if client.name == "ruff_lsp" then
-                -- Disable hover in favour of pyright
-                client.server_capabilities.hoverProvider = false
-              end
-            end)
-          end,
         },
         -- CSS
         cssls = {},
