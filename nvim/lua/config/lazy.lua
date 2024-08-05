@@ -10,7 +10,9 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = {
-      colorscheme = "tokyonight",
+      -- colorscheme = "zephyr", -- or catppuccin
+      colorscheme = "zephyr",
+      -- colorscheme = "tokyonight",
     } },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.linting.eslint" },
@@ -23,9 +25,11 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "lazyvim.plugins.extras.coding.codeium" },
     { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = "lazyvim.plugins.extras.ui.edgy" },
     { import = "lazyvim.plugins.extras.lsp.none-ls" },
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+    { import = "lazyvim.plugins.extras.util.octo" },
     { import = "lazyvim.plugins.extras.test.core" },
     -- import/override with your plugins
     { import = "plugins" },
@@ -56,4 +60,7 @@ require("lazy").setup({
       },
     },
   },
+  ui = {
+    border = "rounded",
+  }
 })
