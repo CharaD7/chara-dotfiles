@@ -4,8 +4,8 @@ userName=$(echo $USER)
 
 xrdb merge ~/.Xresources
 
-# use `xrandr --query` to show available monitors
-xrandr --output HDMI-1 --auto --left-of eDP-1
+# use `xrandr --query` to view a list of available displays`
+xrandr --output HDMI-0 --auto --left-of eDP-1-1
 
 xpad -h &
 
@@ -16,6 +16,7 @@ picom &
 
 ~/.config/chadwm/scripts/wal &
 dunst & # Add notification daemon to startup
+flameshot & # A screen capture utility
 
 ~/.config/chadwm/scripts/bar &
 dwm 2> ~/dwm.log
