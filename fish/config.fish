@@ -72,32 +72,15 @@ set -gx PATH '~/.npm-global' $PATH
 set -gx PATH "$NODE_JS/bin:$PATH"
 
 # ANDROID_SDK
-set -g ANDROID_HOME "$HOME/Android/Sdk"
-set -gx PATH "$ANDROID_HOME:$PATH"
-
-set -g ANDROID_SDK_ROOT "$HOME/Android/Sdk"
-set -gx PATH "$ANDROID_SDK_ROOT:$PATH"
-
-# ANDROID_EMULATOR
-set -g ANDROID_EMULATOR "$ANDROID_HOME/emulator"
-set -gx PATH "$ANDROID_EMULATOR:$PATH"
-
-# ANDROID_PLATFORM_TOOLS
-set -g ANDROID_PLATFORM_TOOLS "$ANDROID_HOME/platform-tools"
-set -gx PATH "$ANDROID_PLATFORM_TOOLS:$PATH"
+set -gx ANDROID_SDK_ROOT "$HOME/Android/Sdk"
+set -gx PATH "$ANDROID_SDK_ROOT/cmdline-tools/bin:$PATH"
+set -gx PATH "$ANDROID_SDK_ROOT/platform-tools:$PATH"
+set -gx PATH "$ANDROID_SDK_ROOT/emulator:$PATH"
 
 # JAVA_HOME
 set -g JAVA_HOME "/usr/lib/jvm/java-17-openjdk-amd64/"
 set -gx PATH "$JAVA_HOME/bin:$PATH"
 
-# sdkman
-set -g SDKMAN_DIR "$HOME/.sdkman"
-set -g SDKMAN_PLATFORM "$SDKMAN_DIR/var/platform"
-set -gx PATH "$SDKMAN_DIR/bin:$PATH"
-
-# Go
-set -g GOPATH "$HOME/go"
-set -gx PATH "$GOPATH/bin:$PATH"
 
 # Global path
 set PATH "$HOME/bin:$PATH"
