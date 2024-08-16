@@ -81,8 +81,8 @@ set -gx PATH "$ANDROID_SDK_ROOT/emulator:$PATH"
 set -g JAVA_HOME "/usr/lib/jvm/java-17-openjdk-amd64/"
 set -gx PATH "$JAVA_HOME/bin:$PATH"
 
-
 # Global path
+set -gx DOCKER_HOST "unix:///run/user/1000/docker.sock"
 set PATH "$HOME/bin:$PATH"
 
 # dotnet
