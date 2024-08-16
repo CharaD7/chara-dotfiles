@@ -68,6 +68,7 @@ set -gx PATH "~/.local/bin:$PATH"
 # NodeJS
 # set -gx PATH "node_modules/.bin:$PATH"
 set -g NODE_JS ".npm-packages/"
+set -gx PATH '~/.npm-global' $PATH
 set -gx PATH "$NODE_JS/bin:$PATH"
 
 # ANDROID_SDK
