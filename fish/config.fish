@@ -116,3 +116,9 @@ set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f "$LOCAL_CONFIG"
   source "$LOCAL_CONFIG"
 end
+
+function fish_greeting
+  set_color $fish_color_autosuggestion
+  echo -e "\033[1;32m🌟 Welcome to your terminal! 🌟\n\033[1;34m✨ Embrace the challenges ahead and let your creativity flow! ✨\n\033[1;33m🚀 Remember: Every command is a step towards your goals! 🚀\n"
+  set_color normal
+end
