@@ -1,7 +1,5 @@
 # set -g fish_greeting "The Quieter You Are, The More You Are Able To Listen"
 
-# set -gx TERM xterm-256color
-set -gx TERM screen-256color
 set -gx TERM xterm-256color
 # set -gx TERM screen-256color
 
@@ -73,6 +71,10 @@ set -g NODE_JS ".npm-packages/"
 set -gx PATH '~/.npm-global' $PATH
 set -gx PATH "$NODE_JS/bin:$PATH"
 
+# Libtorch
+set -gx LIBTORCH_ROOTDIR "~/.local/share/libtorch"
+set -gx PATH "$LIBTORCH_ROOTDIR/bin:$PATH"
+
 # ANDROID_SDK
 set -gx ANDROID_SDK_ROOT "$HOME/Android/Sdk"
 set -gx PATH "$ANDROID_SDK_ROOT/cmdline-tools/bin:$PATH"
@@ -124,3 +126,7 @@ function fish_greeting
   echo -e "\033[1;32m🌟 Welcome to your terminal! 🌟\n\033[1;34m✨ Embrace the challenges ahead and let your creativity flow! ✨\n\033[1;33m🚀 Remember: Every command is a step towards your goals! 🚀\n"
   set_color normal
 end
+
+# Created by `pipx` on 2024-08-24 14:27:18
+set PATH $PATH /home/charad7/.local/bin
+/opt/intel/openvino_2024.3.0/setupvars.sh
