@@ -25,7 +25,7 @@ set -g theme_nerd_fonts yes
 
 # aliases
 alias ll "exa --long --header --all --git --classify --modified --created --git --icons"
-alias lla "exa --long --header --all --git --classify--accessed --modified --created --git --icons"
+alias lla "exa --long --header --all --git --classify --accessed --modified --created --git --icons"
 alias llt "exa --long --header --all --git --classify --accessed --modified --created --tree --level=2 --git --icons"
 
 alias fp "fzf-tmux -p"
